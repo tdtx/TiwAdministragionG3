@@ -1,7 +1,6 @@
 package filtros;
 
 import java.io.IOException;
-
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -11,7 +10,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 /**
  * Este filtro intercepta cualquier peticion que vaya a la pagina listado.jsp y
  * comprueba que el usuario se haya autenticado con un token en sesion, en caso
@@ -19,7 +17,7 @@ import javax.servlet.http.HttpSession;
  * 
  * @author David Palomar
  */
-@WebFilter(urlPatterns = { "/listado.jsp" })
+@WebFilter(urlPatterns = {"/index.jsp" })
 public class LoginFilter implements Filter {
 
 	/**
@@ -28,29 +26,10 @@ public class LoginFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
 
-		HttpSession sesion = ((HttpServletRequest) request).getSession(); // accedemos
-																			// a
-																			// la
-																			// sesion
-																			// del
-																			// servidor
-																			// usando
-																			// un
-																			// casting
-																			// al
-																			// objeto
-																			// HttpServletRequest
-																			// ya
-																			// que
-																			// nos
-																			// pasan
-																			// solamente
-																			// ServletRequest
+		HttpSession sesion = ((HttpServletRequest) request).getSession();
 
 		if (sesion.getAttribute("acceso") != null
-				&& sesion.getAttribute("acceso").equals("ok")) { // buscamos el
-																	// token de
-																	// autenticacion
+				&& sesion.getAttribute("acceso").equals("ok")) {
 
 			chain.doFilter(request, response);
 		} else {
