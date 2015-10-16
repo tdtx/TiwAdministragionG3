@@ -9,8 +9,6 @@
 <title>Login</title>
 </head>
 <body>
-	<!-- Inclusión de una cabecera que muestra/oculta la opción Logout -->
-	<jsp:include page="header.jsp"></jsp:include>
 	<!-- El siguiente ejemplo de JSTL muestra como usar un if-else mediante la libreria cor: si hay atributo mensaje se muestra en color rojo dicho mensaje, en caso contrario un texto par el formulario  -->
 	<div>
 
