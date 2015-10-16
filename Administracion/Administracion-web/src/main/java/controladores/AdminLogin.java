@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dominio.crearCurso;
+import dominio.uMarculado;
+import dominio.uRegistrado;
+
 /**
  * Servlet de ejemplo que muestra distintos aspectos dentro de los ambitos
  * request y session. -Como usar el metodo init para inicializar datos -Como
@@ -20,14 +24,21 @@ import javax.servlet.http.HttpSession;
  * 
  */
 @WebServlet("/login")
-public class LoginServlet extends HttpServlet {
-	private static final String ENTRADA_JSP = "/index.jsp";
-	private static final String LOGIN_JSP = "/login.jsp";
+public class AdminLogin extends HttpServlet {
+	private static final String indexJSP = "/index.jsp";
+	private static final String longinJSP = "/login.jsp";
 	private static final long serialVersionUID = 1L;
+	private crearCurso cc;
+	private uMarculado um;
+	private uRegistrado ur;
+	
+	public AdminLogin() {
+		super();
+	}
 
 	@Override
 	public void init() throws ServletException {
-
+			
 	}
 
 	/**
@@ -40,7 +51,7 @@ public class LoginServlet extends HttpServlet {
 		if (salir != null && !salir.equals("")) {
 			request.getSession().invalidate();
 		}
-		this.getServletContext().getRequestDispatcher(LOGIN_JSP)
+		this.getServletContext().getRequestDispatcher(longinJSP)
 				.forward(request, response);
 	}
 
@@ -52,13 +63,13 @@ public class LoginServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 
 		String user = request.getParameter("usuario");
-		String pass = request.getParameter("password");
+		String pass = request.getParameter("pass");
 		String mensaje = "";
 		String pagina = "";
-		pagina = LOGIN_JSP;
+		pagina = longinJSP;
 		HttpSession sesion = request.getSession(true);
-		if (user.equals("admin") && pass.equals("admin")) {
-			pagina = ENTRADA_JSP;
+		if (user.equals("admin@admin.es") && pass.equals("admin")) {
+			pagina = indexJSP;
 			sesion.setAttribute("acceso", "ok");
 
 		} else {

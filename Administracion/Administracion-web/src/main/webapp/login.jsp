@@ -30,7 +30,7 @@
 							type="text" id="usuario" name="usuario" required class="text"
 							placeholder="Correo algo@algo.es"></li>
 						<li><span class="un"><i class="correccion fa fa-lock"></i></span><input
-							type="password" id="password" name="password" required
+							type="password" id="pass" name="pass" required
 							class="text" placeholder="Contraseña"></li>
 						<li><input type="submit" value="Iniciar Sesion" class="btn"></li>
 					</ul>

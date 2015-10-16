@@ -14,7 +14,19 @@
 				<!-- Page Heading -->
 				<div class="row">
 					<div class="col-lg-12 ">
-						<h1 class="page-header">Registrados</h1>
+						<div class="table-responsive panel panel-default">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>Nombre</th>
+										<th>Correo</th>
+										<th>Teléfono</th>
+										<th class="text-center">Opciones</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
