@@ -24,16 +24,18 @@ public class crearCurso {
 	String fechaFIn;
 	String asociado;
 	String cierreCurso;
+	String peticionE;
 	public crearCurso() {
 		super();
 	}
+	
 	public crearCurso(int id, String titulo, String descripcion, String nHoras,
 			String temario, String profesor, String certificado,
 			String secciones, String lecciones, String material,
 			String notificaciones, String calificaciones, String categoria,
 			String destacado, String validado, String precio, String tOferta,
 			String img, String dificultad, String fechaIni, String fechaFIn,
-			String asociado, String cierreCurso) {
+			String asociado, String cierreCurso, String peticionE) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -58,7 +60,17 @@ public class crearCurso {
 		this.fechaFIn = fechaFIn;
 		this.asociado = asociado;
 		this.cierreCurso = cierreCurso;
+		this.peticionE = peticionE;
 	}
+
+	public String getPeticionE() {
+		return peticionE;
+	}
+
+	public void setPeticionE(String peticionE) {
+		this.peticionE = peticionE;
+	}
+
 	public int getId() {
 		return id;
 	}

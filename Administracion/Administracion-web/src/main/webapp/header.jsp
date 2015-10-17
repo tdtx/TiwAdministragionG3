@@ -56,16 +56,9 @@
 			<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
-					<li><a href="registrado.jsp"> Registrados</a></li>
-					<li><a href="matriculado.jsp"> Matriculados</a></li>
-					<li><a href="cursos.jsp"> Cursos</a></li>
-					<li><a href="javascript:;" data-toggle="collapse"
-						data-target="#demo"> Validacion <i
-							class="fa fa-fw fa-caret-down"></i></a>
-						<ul id="demo" class="collapse">
-							<li><a href="validarCurso.jsp">Validar Curso</a></li>
-							<li><a href="eliminarCurso.jsp">Eliminar Curso</a></li>
-						</ul></li>
+					<li><a href="login?accion=ur"> Registrados</a></li>
+					<li><a href="login?accion=um"> Matriculados</a></li>
+					<li><a href="login?accion=cc"> Cursos</a></li>
 					<!-- aqui van las redireciones entre li a -->
 				</ul>
 			</div>

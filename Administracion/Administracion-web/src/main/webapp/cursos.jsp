@@ -15,6 +15,35 @@
 				<div class="row">
 					<div class="col-lg-12 ">
 						<h1 class="page-header">Cursos</h1>
+						<div class="table-responsive panel panel-default">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>Titulo</th>
+										<th>Profesor</th>
+										<th>Validado</th>
+										<th>Eliminar</th>
+										<th class="text-center">Opciones</th>
+										
+									</tr>
+								</thead>
+                               <c:forEach items="${cursos }" var="curso">
+                                    <tr>
+                                        <td>${curso.id}</td>
+                                        <td>${curso.titulo}</td>
+                                        <td>${curso.profesor}</td>
+                                        <td>${curso.validado}</td>  
+                                         <td>${curso.peticionE}</td>  
+                                          <td class="text-center">
+                                         <button class="btn btn-info btn-xs" data-toggle="modal" data-toggle="tooltip" data-placement="left" title="Editar Proveedor" >
+                                                <span class="glyphicon glyphicon-pencil"></span>
+                                        </button>
+                                        <a class="btn btn-danger btn-xs" data-toggle="modal tooltip" data-placement="left" title="Eliminar Proveedor" href="#"> <span class="glyphicon glyphicon-trash"></span></a></td>
+                                    </tr>
+                                    </c:forEach>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>

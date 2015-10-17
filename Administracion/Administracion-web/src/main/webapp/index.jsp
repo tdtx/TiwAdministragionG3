@@ -12,7 +12,7 @@
 			<div id="Contenido">
 				<h1>Bienvenido a la pagina de administracion de iLexion</h1>
 				<h2>En esta pagina web puedes modificar los formularios de los
-					datos Reguistrado, Matriculado , Cursos, validacion de cursos y su eliminacion</h2>
+					datos Reguistrado, Matriculado y Cursos.</h2>
 				<!-- /.container-fluid -->
 			</div>
 
