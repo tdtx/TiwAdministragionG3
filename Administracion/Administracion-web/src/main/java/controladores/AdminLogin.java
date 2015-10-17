@@ -1,6 +1,7 @@
 package controladores;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,14 +32,43 @@ public class AdminLogin extends HttpServlet {
 	private crearCurso cc;
 	private uMarculado um;
 	private uRegistrado ur;
-	
+	private ArrayList<uRegistrado> registrados;
+	private ArrayList<uMarculado> matriculados;
+	private ArrayList<crearCurso> cursos;
 	public AdminLogin() {
 		super();
 	}
 
 	@Override
 	public void init() throws ServletException {
-			
+		uRegistrado ur1 = new uRegistrado("TDTX", "Tomas", "Tee", "Xia", "tomas@tomas.es", "clave", "23/09/1990");
+		uRegistrado ur2 = new uRegistrado("JSTX", "Juan", "Tee", "Xia", "juan@juan.es", "clave", "23/12/1991");
+		
+		registrados = new ArrayList<uRegistrado>();
+		registrados.add(ur1);
+		registrados.add(ur2);
+		
+		uMarculado um1 = new uMarculado("TDTX", "Tomas", "Tee", "Xia", "tomas@tomas.es", "clave", "23/09/1990", 777777777, "M", "calle", "localidad", 11111, "provincia", "pais", "img", "dni", "cupon", "precio", "logro", "cursos");
+		uMarculado um2 = new uMarculado("JSTX", "Juan", "Tee", "Xia", "juan@juan.es", "clave", "23/12/1991", 666666666, "M", "calle", "localidad", 22222, "provincia", "pais", "img", "dni", "cupon", "precio", "logro", "cursos");
+		
+		matriculados = new ArrayList<uMarculado>();
+		matriculados.add(um1);
+		matriculados.add(um2);
+		
+		crearCurso cc1 = new crearCurso(1, "calculo", "matematica 1", "100", "corto-b", "Tomas", "si", "si", "1", "docente", "si", "si", "si", "si", "si", "100€", "si", "si", "bajo-b", "26/10/2015", "26/10/2016", "juan", "26/12/2016");
+		crearCurso cc2 = new crearCurso(2, "calculo diferencial", "matematica 2", "200", "corto-a", "juan", "si", "si", "2", "docente", "si", "si", "si", "no",  "no", "200€", "no", "si", "bajo-a", "26/10/2015", "26/10/2016", "tomas", "26/12/2016");
+		crearCurso cc3 = new crearCurso(3, "calculo discreto", "matematica 3", "300", "medio-b", "Tomas", "si", "si", "3", "docente", "si", "si", "si", "si", "si", "300€", "si", "si", "medio-b", "26/10/2015", "26/10/2016", "juan", "26/12/2016");
+		crearCurso cc4 = new crearCurso(4, "calculo algebraico", "matematica 4", "400", "corto-a", "juan", "si", "si", "4", "docente", "si", "si", "si", "no",  "no", "400€", "no", "si", "medio-a", "26/10/2015", "26/10/2016", "tomas", "26/12/2016");
+		crearCurso cc5 = new crearCurso(5, "calculo fisico", "matematica 5", "500", "alto-b", "Tomas", "si", "si", "5", "docente", "si", "si", "si", "no", "no", "500€", "no", "si", "alto-b", "26/10/2015", "26/10/2016", "juan", "26/12/2016");
+		crearCurso cc6 = new crearCurso(6, "calculo espacial", "matematica 6", "600", "alto-a", "juan", "si", "si", "6", "docente", "si", "si", "si", "no",  "no", "600€", "no", "si", "alto-a", "26/10/2015", "26/10/2016", "tomas", "26/12/2016");
+		
+		cursos = new ArrayList<crearCurso>();
+		cursos.add(cc1);
+		cursos.add(cc2);
+		cursos.add(cc3);
+		cursos.add(cc4);
+		cursos.add(cc5);
+		cursos.add(cc6);
 	}
 
 	/**
