@@ -51,19 +51,19 @@ public class AdminLogin extends HttpServlet {
 		registrados.add(ur1);
 		registrados.add(ur2);
 		
-		uMarculado um1 = new uMarculado("TDTX", "Tomas", "Tee", "Xia", "tomas@tomas.es", "clave", "23/09/1990", 777777777, "M", "calle", "localidad", 11111, "provincia", "pais", "img", "dni", "cupon", "precio", "logro", "cursos");
-		uMarculado um2 = new uMarculado("JSTX", "Juan", "Tee", "Xia", "juan@juan.es", "clave", "23/12/1991", 666666666, "M", "calle", "localidad", 22222, "provincia", "pais", "img", "dni", "cupon", "precio", "logro", "cursos");
+		uMarculado um1 = new uMarculado("TDTX", "Tomas", "Tee", "Xia", "tomas@tomas.es", "clave", "23/09/1990", 777777777, "M", "calle", "localidad", 11111, "provincia", "pais", "fonts/users_folder_128.png", "dni", "cupon", "precio", "logro", "cursos");
+		uMarculado um2 = new uMarculado("JSTX", "Juan", "Tee", "Xia", "juan@juan.es", "clave", "23/12/1991", 666666666, "M", "calle", "localidad", 22222, "provincia", "pais", "fonts/users_folder_128.png", "dni", "cupon", "precio", "logro", "cursos");
 		
 		matriculados = new ArrayList<uMarculado>();
 		matriculados.add(um1);
 		matriculados.add(um2);
 		
-		crearCurso cc1 = new crearCurso(1, "calculo", "matematica 1", "100", "corto-b", "Tomas", "si", "si", "1", "docente", "si", "si", "si", "si", "si", "100€", "si", "si", "bajo-b", "26/10/2015", "26/10/2016", "juan", "26/12/2016","no");
-		crearCurso cc2 = new crearCurso(2, "calculo diferencial", "matematica 2", "200", "corto-a", "juan", "si", "si", "2", "docente", "si", "si", "si", "no",  "no", "200€", "no", "si", "bajo-a", "26/10/2015", "26/10/2016", "tomas", "26/12/2016","no");
-		crearCurso cc3 = new crearCurso(3, "calculo discreto", "matematica 3", "300", "medio-b", "Tomas", "si", "si", "3", "docente", "si", "si", "si", "si", "si", "300€", "si", "si", "medio-b", "26/10/2015", "26/10/2016", "juan", "26/12/2016","si");
-		crearCurso cc4 = new crearCurso(4, "calculo algebraico", "matematica 4", "400", "corto-a", "juan", "si", "si", "4", "docente", "si", "si", "si", "no",  "no", "400€", "no", "si", "medio-a", "26/10/2015", "26/10/2016", "tomas", "26/12/2016","no");
-		crearCurso cc5 = new crearCurso(5, "calculo fisico", "matematica 5", "500", "alto-b", "Tomas", "si", "si", "5", "docente", "si", "si", "si", "no", "no", "500€", "no", "si", "alto-b", "26/10/2015", "26/10/2016", "juan", "26/12/2016","no");
-		crearCurso cc6 = new crearCurso(6, "calculo espacial", "matematica 6", "600", "alto-a", "juan", "si", "si", "6", "docente", "si", "si", "si", "no",  "no", "600€", "no", "si", "alto-a", "26/10/2015", "26/10/2016", "tomas", "26/12/2016","no");
+		crearCurso cc1 = new crearCurso(1, "calculo", "matematica 1", "100", "corto-b", "Tomas", "si", "si", "1", "docente", "si", "si", "si", "si", "si", "100€", "si", "fonts/addressbook_add_128.png", "bajo-b", "26/10/2015", "26/10/2016", "juan", "26/12/2016","no");
+		crearCurso cc2 = new crearCurso(2, "calculo diferencial", "matematica 2", "200", "corto-a", "juan", "si", "si", "2", "docente", "si", "si", "si", "no",  "no", "200€", "no", "fonts/addressbook_add_128.png", "bajo-a", "26/10/2015", "26/10/2016", "tomas", "26/12/2016","no");
+		crearCurso cc3 = new crearCurso(3, "calculo discreto", "matematica 3", "300", "medio-b", "Tomas", "si", "si", "3", "docente", "si", "si", "si", "si", "si", "300€", "si", "fonts/addressbook_add_128.png", "medio-b", "26/10/2015", "26/10/2016", "juan", "26/12/2016","si");
+		crearCurso cc4 = new crearCurso(4, "calculo algebraico", "matematica 4", "400", "corto-a", "juan", "si", "si", "4", "docente", "si", "si", "si", "no",  "no", "400€", "no", "fonts/addressbook_add_128.png", "medio-a", "26/10/2015", "26/10/2016", "tomas", "26/12/2016","no");
+		crearCurso cc5 = new crearCurso(5, "calculo fisico", "matematica 5", "500", "alto-b", "Tomas", "si", "si", "5", "docente", "si", "si", "si", "no", "no", "500€", "no", "fonts/addressbook_add_128.png", "alto-b", "26/10/2015", "26/10/2016", "juan", "26/12/2016","no");
+		crearCurso cc6 = new crearCurso(6, "calculo espacial", "matematica 6", "600", "alto-a", "juan", "si", "si", "6", "docente", "si", "si", "si", "no",  "no", "600€", "no", "fonts/addressbook_add_128.png", "alto-a", "26/10/2015", "26/10/2016", "tomas", "26/12/2016","no");
 		
 		cursos = new ArrayList<crearCurso>();
 		cursos.add(cc1);
@@ -76,7 +76,7 @@ public class AdminLogin extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 *      response)e
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {

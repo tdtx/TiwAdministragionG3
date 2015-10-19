@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  * 
  * @author David Palomar
  */
-@WebFilter(urlPatterns = {"/index.jsp" })
+@WebFilter(urlPatterns = {"/index.jsp", "/registrado.jsp"})
 public class LoginFilter implements Filter {
 
 	/**
