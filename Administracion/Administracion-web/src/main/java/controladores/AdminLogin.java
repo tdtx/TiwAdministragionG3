@@ -29,47 +29,13 @@ import dominio.uRegistrado;
 public class AdminLogin extends HttpServlet {
 	private static final String indexJSP = "/index.jsp";
 	private static final String longinJSP = "/login.jsp";
-	private static final String requistradoJSP = "/registrado.jsp";
-	private static final String matriculadoJSP = "/matriculado.jsp";
-	private static final String cursosJSP = "/cursos.jsp";
 	private static final long serialVersionUID = 1L;
-	private ArrayList<uRegistrado> registrados;
-	private ArrayList<uMarculado> matriculados;
-	private ArrayList<crearCurso> cursos;
 	public AdminLogin() {
 		super();
 	}
 
 	@Override
 	public void init() throws ServletException {
-		uRegistrado ur1 = new uRegistrado("TDTX", "Tomas", "Tee", "Xia", "tomas@tomas.es", "clave", "23/09/1990");
-		uRegistrado ur2 = new uRegistrado("JSTX", "Juan", "Tee", "Xia", "juan@juan.es", "clave", "23/12/1991");
-		
-		registrados = new ArrayList<uRegistrado>();
-		registrados.add(ur1);
-		registrados.add(ur2);
-		
-		uMarculado um1 = new uMarculado("TDTX", "Tomas", "Tee", "Xia", "tomas@tomas.es", "clave", "23/09/1990", 777777777, "M", "calle", "localidad", 11111, "provincia", "pais", "fonts/users_folder_128.png", "dni", "cupon", "precio", "logro", "cursos");
-		uMarculado um2 = new uMarculado("JSTX", "Juan", "Tee", "Xia", "juan@juan.es", "clave", "23/12/1991", 666666666, "M", "calle", "localidad", 22222, "provincia", "pais", "fonts/users_folder_128.png", "dni", "cupon", "precio", "logro", "cursos");
-		
-		matriculados = new ArrayList<uMarculado>();
-		matriculados.add(um1);
-		matriculados.add(um2);
-		
-		crearCurso cc1 = new crearCurso(1, "calculo", "matematica 1", "100", "corto-b", "Tomas", "si", "si", "1", "docente", "si", "si", "si", "si", "si", "100€", "si", "fonts/addressbook_add_128.png", "bajo-b", "26/10/2015", "26/10/2016", "juan", "26/12/2016","no");
-		crearCurso cc2 = new crearCurso(2, "calculo diferencial", "matematica 2", "200", "corto-a", "juan", "si", "si", "2", "docente", "si", "si", "si", "no",  "no", "200€", "no", "fonts/addressbook_add_128.png", "bajo-a", "26/10/2015", "26/10/2016", "tomas", "26/12/2016","no");
-		crearCurso cc3 = new crearCurso(3, "calculo discreto", "matematica 3", "300", "medio-b", "Tomas", "si", "si", "3", "docente", "si", "si", "si", "si", "si", "300€", "si", "fonts/addressbook_add_128.png", "medio-b", "26/10/2015", "26/10/2016", "juan", "26/12/2016","si");
-		crearCurso cc4 = new crearCurso(4, "calculo algebraico", "matematica 4", "400", "corto-a", "juan", "si", "si", "4", "docente", "si", "si", "si", "no",  "no", "400€", "no", "fonts/addressbook_add_128.png", "medio-a", "26/10/2015", "26/10/2016", "tomas", "26/12/2016","no");
-		crearCurso cc5 = new crearCurso(5, "calculo fisico", "matematica 5", "500", "alto-b", "Tomas", "si", "si", "5", "docente", "si", "si", "si", "no", "no", "500€", "no", "fonts/addressbook_add_128.png", "alto-b", "26/10/2015", "26/10/2016", "juan", "26/12/2016","no");
-		crearCurso cc6 = new crearCurso(6, "calculo espacial", "matematica 6", "600", "alto-a", "juan", "si", "si", "6", "docente", "si", "si", "si", "no",  "no", "600€", "no", "fonts/addressbook_add_128.png", "alto-a", "26/10/2015", "26/10/2016", "tomas", "26/12/2016","no");
-		
-		cursos = new ArrayList<crearCurso>();
-		cursos.add(cc1);
-		cursos.add(cc2);
-		cursos.add(cc3);
-		cursos.add(cc4);
-		cursos.add(cc5);
-		cursos.add(cc6);
 	}
 
 	/**
@@ -81,85 +47,18 @@ public class AdminLogin extends HttpServlet {
 		String accion = request.getParameter("accion");
 		String pagina = indexJSP;
 		if (accion != null && accion.equals("salir")) {
-			pagina = indexJSP;
+			pagina = longinJSP;
 			request.getSession().invalidate();
-		}
-		if (accion != null && accion.equals("ur")) {
-			request.setAttribute("registrados", registrados);
-			pagina = requistradoJSP;
-		}
-		if (accion != null && accion.equals("um")) {
-			request.setAttribute("matriculados", matriculados);
-			pagina = matriculadoJSP;
-		}
-		if (accion != null && accion.equals("cc")) {
-			request.setAttribute("cursos", cursos);
-			pagina = cursosJSP;
-		}
-		if(accion!=null && accion.equals("eliminarR")){
-				String correo = request.getParameter("correo");
-				eliminarRegistrado(correo);
-				request.setAttribute("registrados", registrados);
-				pagina = requistradoJSP;
-		}
-		if(accion!=null && accion.equals("eliminarM")){
-			String correo = request.getParameter("correo");
-			eliminarMatriculado(correo);
-			request.setAttribute("matriculados", matriculados);
-			pagina = matriculadoJSP;
-		}
-		if(accion!=null && accion.equals("eliminarC")){
-			String titulo = request.getParameter("titulo");
-			eliminarCurso(titulo);
-			request.setAttribute("cursos", cursos);
-			pagina = cursosJSP;
-		}
+		}	
 		response.setContentType("text/html");
 		this.getServletContext().getRequestDispatcher(pagina)
 				.forward(request, response);
 	}
-	
-	private void eliminarCurso(String titulo) {
-		int x = 0;
-		for (crearCurso cC : cursos) {
-			if (titulo.equals(cC.getTitulo())){
-				cursos.remove(x);
-				break;
-			}
-			x++;
-		}
-	}
-
-	private void eliminarMatriculado(String correo) {
-		int x = 0;
-		for (uMarculado uM : matriculados) {
-			if (correo.equals(uM.getCorreo())){
-				matriculados.remove(x);
-				break;
-			}
-			x++;
-		}
-		
-	}
-
-	private void  eliminarRegistrado(String correo) {
-		int x = 0;
-		for (uRegistrado ur : registrados) {
-			if (correo.equals(ur.getCorreo())){
-				registrados.remove(x);
-				break;
-			}
-			x++;
-		}
-	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String user = request.getParameter("usuario");
 		String pass = request.getParameter("pass");
 		String mensaje = "";
@@ -169,16 +68,12 @@ public class AdminLogin extends HttpServlet {
 		if (user.equals("admin@admin.es") && pass.equals("admin")) {
 			pagina = indexJSP;
 			sesion.setAttribute("acceso", "ok");
-			
-
 		} else {
-
 			mensaje = "Usuario o contraseña incorrectos";
 			request.setAttribute("mensaje", mensaje);
 		}
 
-		this.getServletContext().getRequestDispatcher(pagina)
-				.forward(request, response);
+		this.getServletContext().getRequestDispatcher(pagina).forward(request, response);
 
 	}
 }

@@ -37,7 +37,7 @@
                                          <button class="btn btn-info btn-xs" data-toggle="modal" data-toggle="tooltip" data-placement="left" title="Editar Matriculado" data-target="#miDialog">
                                                 <span class="glyphicon glyphicon-pencil"></span>
                                         </button>
-                                        <a class="btn btn-danger btn-xs" data-toggle="modal tooltip" data-placement="left" title="Eliminar Matriculado" href="login?accion=eliminarM&correo=${matriculado.correo}"> <span class="glyphicon glyphicon-trash"></span></a></td>
+                                        <a class="btn btn-danger btn-xs" data-toggle="modal tooltip" data-placement="left" title="Eliminar Matriculado" href="gestionMatriculado?accion=eliminarM&correo=${matriculado.correo}"> <span class="glyphicon glyphicon-trash"></span></a></td>
                                     </tr>
                                     <div class="modal fade" id="miDialog" tabindex="-1"
 										role="dialog" aria-labelledby="myModalLabel"

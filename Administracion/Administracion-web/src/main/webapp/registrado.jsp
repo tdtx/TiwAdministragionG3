@@ -42,7 +42,7 @@
 												title="Editar Registrado" data-target="#myModal">							
 												<span class="glyphicon glyphicon-pencil"></span>
 											</button> <a class="btn btn-danger btn-xs" data-toggle="modal tooltip"
-											data-placement="left" title="Eliminar Registrado"  href="login?accion=eliminarR&correo=${registrado.correo}">
+											data-placement="left" title="Eliminar Registrado"  href="gestionRegistrado?accion=eliminarR&correo=${registrado.correo}">
 												<span class="glyphicon glyphicon-trash"></span>
 										</a>
 										</td>
@@ -69,8 +69,8 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	<label for="nick">Nick </label> <input type="text"
-																		class="form-control" id="nick" name="nick"
+																	<label for="nickR">Nick </label> <input type="text"
+																		class="form-control" id="nickR" name="nickR"
 																		value="${registrado.nick}">
 																</div>
 																<div class="form-group col-md-5">
