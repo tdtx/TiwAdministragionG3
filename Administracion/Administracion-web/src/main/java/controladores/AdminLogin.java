@@ -3,6 +3,7 @@ package controladores;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.ejb.Remove;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,9 +33,6 @@ public class AdminLogin extends HttpServlet {
 	private static final String matriculadoJSP = "/matriculado.jsp";
 	private static final String cursosJSP = "/cursos.jsp";
 	private static final long serialVersionUID = 1L;
-	private crearCurso cc;
-	private uMarculado um;
-	private uRegistrado ur;
 	private ArrayList<uRegistrado> registrados;
 	private ArrayList<uMarculado> matriculados;
 	private ArrayList<crearCurso> cursos;
@@ -98,8 +96,61 @@ public class AdminLogin extends HttpServlet {
 			request.setAttribute("cursos", cursos);
 			pagina = cursosJSP;
 		}
+		if(accion!=null && accion.equals("eliminarR")){
+				String correo = request.getParameter("correo");
+				eliminarRegistrado(correo);
+				request.setAttribute("registrados", registrados);
+				pagina = requistradoJSP;
+		}
+		if(accion!=null && accion.equals("eliminarM")){
+			String correo = request.getParameter("correo");
+			eliminarMatriculado(correo);
+			request.setAttribute("matriculados", matriculados);
+			pagina = matriculadoJSP;
+		}
+		if(accion!=null && accion.equals("eliminarC")){
+			String titulo = request.getParameter("titulo");
+			eliminarCurso(titulo);
+			request.setAttribute("cursos", cursos);
+			pagina = cursosJSP;
+		}
+		response.setContentType("text/html");
 		this.getServletContext().getRequestDispatcher(pagina)
 				.forward(request, response);
+	}
+	
+	private void eliminarCurso(String titulo) {
+		int x = 0;
+		for (crearCurso cC : cursos) {
+			if (titulo.equals(cC.getTitulo())){
+				cursos.remove(x);
+				break;
+			}
+			x++;
+		}
+	}
+
+	private void eliminarMatriculado(String correo) {
+		int x = 0;
+		for (uMarculado uM : matriculados) {
+			if (correo.equals(uM.getCorreo())){
+				matriculados.remove(x);
+				break;
+			}
+			x++;
+		}
+		
+	}
+
+	private void  eliminarRegistrado(String correo) {
+		int x = 0;
+		for (uRegistrado ur : registrados) {
+			if (correo.equals(ur.getCorreo())){
+				registrados.remove(x);
+				break;
+			}
+			x++;
+		}
 	}
 
 	/**

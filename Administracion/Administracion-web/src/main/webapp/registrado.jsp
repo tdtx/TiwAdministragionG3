@@ -4,7 +4,10 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
+
+
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -36,15 +39,15 @@
 										<td class="text-center">
 											<button class="btn btn-info btn-xs" data-toggle="modal"
 												data-toggle="tooltip" data-placement="left"
-												title="Editar Registrado" data-target="#miDialog">
+												title="Editar Registrado" data-target="#myModal">							
 												<span class="glyphicon glyphicon-pencil"></span>
 											</button> <a class="btn btn-danger btn-xs" data-toggle="modal tooltip"
-											data-placement="left" title="Eliminar Registrado" href="#">
+											data-placement="left" title="Eliminar Registrado"  href="login?accion=eliminarR&correo=${registrado.correo}">
 												<span class="glyphicon glyphicon-trash"></span>
 										</a>
 										</td>
 									</tr>
-									<div class="modal fade" id="miDialog" tabindex="-1"
+									<div class="modal fade" id="myModal" tabindex="-1"
 										role="dialog" aria-labelledby="myModalLabel"
 										aria-hidden="true">
 										<div class="modal-dialog">
