@@ -12,6 +12,16 @@ public class uRegistrado {
 		super();
 	}
 	public uRegistrado(String nick, String nombre, String apellido1,
+			String apellido2, String correo, String fechaNc) {
+		super();
+		this.nick = nick;
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+		this.apellido2 = apellido2;
+		this.correo = correo;
+		this.fechaNc = fechaNc;
+	}
+	public uRegistrado(String nick, String nombre, String apellido1,
 			String apellido2, String correo, String clave, String fechaNc) {
 		super();
 		this.nick = nick;

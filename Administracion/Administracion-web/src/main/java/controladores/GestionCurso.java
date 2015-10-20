@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dominio.crearCurso;
+import dominio.uMarculado;
 
 /**
  * Servlet implementation class GestionCurso
@@ -82,7 +83,79 @@ public class GestionCurso extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		int idCEdit = Integer.parseInt(request.getParameter("idC"));
+		String tituloCEdit= request.getParameter("tituloC");
+        String descripcionCEdit = request.getParameter("descripcionC");
+        String nHorasCEdit= request.getParameter("nHorasC");
+        String temariosCEdit= request.getParameter("temariosC");
+        String profesorCEdit= request.getParameter("profesorC");
+        String certificadoCEdit= request.getParameter("certificadoC");        
+        String seccionesCEdit = request.getParameter("seccionesC");
+        String leccionesCEdit= request.getParameter("leccionesC");
+        String materialCEdit= request.getParameter("materialC");
+        String notificacionesCEdit = request.getParameter("notificacionesC");
+        String calificacionesCEdit= request.getParameter("calificacionesC");
+        String categoriaCEdit= request.getParameter("categoriaC");
+        String destacadoCEdit= request.getParameter("destacadoC");
+        String validadoCEdit = request.getParameter("validadoC");
+        String precioCEdit= request.getParameter("precioC");
+        String tOfertaCEdit= request.getParameter("tOfertaC");
+        String imgCEdit= request.getParameter("imgC");
+        String dificultadCEdit= request.getParameter("dificultadC");
+        String fechaIniCEdit = request.getParameter("fechaIniC");
+        String fechaFinCEdit= request.getParameter("fechaFinC");
+        String asociadoCEdit= request.getParameter("asociadoC");
+        String cierreCursoCEdit= request.getParameter("cierreCursoC");
+        String peticionECEdit= request.getParameter("peticionEC");
+        String pagina = indexJSP;
+        try {
+		    	editarCC(idCEdit,tituloCEdit,descripcionCEdit,nHorasCEdit,temariosCEdit,profesorCEdit,certificadoCEdit,seccionesCEdit,leccionesCEdit,
+		    			materialCEdit,notificacionesCEdit,calificacionesCEdit,categoriaCEdit,destacadoCEdit,validadoCEdit,precioCEdit,tOfertaCEdit,
+		    			imgCEdit,dificultadCEdit,fechaIniCEdit,fechaFinCEdit,asociadoCEdit,cierreCursoCEdit,peticionECEdit);
+		    	request.setAttribute("cursos", cursos);
+		        pagina = cursosJSP;
+		    } catch (Exception e) {
+		        // TODO: handle exception
+		        e.printStackTrace();
+		        System.out.println("**Editar Registrado** Error al actualizar el registrado***");
+		    }		
+			response.setContentType("text/html");
+			this.getServletContext().getRequestDispatcher(pagina).forward(request, response);
+		}
+
+
+	private void  editarCC(int id,String titulo,String des,String nH,String temario,String profesor, String cert,String secc,
+			String lecc, String mat,String not,String cal,String cate,String desta,String val,String precio,String tOf,
+			String img,String dific,String fIni,String fFin,String asoc,String cierreC,String peticionE) {
+		for (crearCurso cc : cursos) {
+			if (titulo.equals(cc.getTitulo())){
+				cc.setId(id);
+				cc.setTitulo(titulo);
+				cc.setDescripcion(des);
+				cc.setnHoras(nH);
+				cc.setTemario(temario);
+				cc.setProfesor(profesor);
+				cc.setCertificado(cert);
+				cc.setSecciones(secc);
+				cc.setLecciones(lecc);
+				cc.setMaterial(mat);
+				cc.setNotificaciones(not);
+				cc.setCalificaciones(cal);
+				cc.setCategoria(cate);
+				cc.setDestacado(desta);
+				cc.setValidado(val);
+				cc.setPrecio(precio);
+				cc.settOferta(tOf);
+				cc.setImg(img);
+				cc.setDificultad(dific);
+				cc.setFechaIni(fIni);
+				cc.setFechaFIn(fFin);
+				cc.setAsociado(asoc);
+				cc.setCierreCurso(cierreC);
+				cc.setPeticionE(peticionE);
+				break;
+			}
+		}
 	}
 
 }

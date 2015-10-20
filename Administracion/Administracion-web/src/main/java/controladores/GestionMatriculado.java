@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dominio.uMarculado;
+import dominio.uRegistrado;
 
 /**
  * Servlet implementation class GestionMatriculado
@@ -76,7 +77,67 @@ public class GestionMatriculado extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
+		 	String nickMEdit= request.getParameter("nickM");
+	        String nombreMEdit = request.getParameter("nombreM");
+	        String apellido1MEdit= request.getParameter("apellido1M");
+	        String apellido2MEdit= request.getParameter("apellido2M");
+	        String correoMEdit= request.getParameter("correoM");
+	        String fechaNcMEdit= request.getParameter("fechaNcM");
+	        int telefonoMEdit = Integer.parseInt(request.getParameter("telefonoM"));
+	        String generoMEdit = request.getParameter("generoM");
+	        String calleMEdit= request.getParameter("calleM");
+	        String localidadMEdit= request.getParameter("localidadM");
+	        int cpMEdit = Integer.parseInt(request.getParameter("cpM"));
+	        String provinciaMEdit = request.getParameter("provinciaM");
+	        String paisMEdit= request.getParameter("paisM");
+	        String imgMEdit= request.getParameter("imgM");
+	        String dniMEdit= request.getParameter("dniM");
+	        String cuponMEdit = request.getParameter("cuponM");
+	        String precioMEdit= request.getParameter("precioM");
+	        String logroMEdit= request.getParameter("logroM");
+	        String cursosMEdit= request.getParameter("cursosM");
+	        String pagina = indexJSP;
+	        try {
+			    	editarUM(nickMEdit,nombreMEdit,apellido1MEdit,apellido2MEdit,correoMEdit,fechaNcMEdit,telefonoMEdit,generoMEdit,calleMEdit
+			    			,localidadMEdit,cpMEdit,provinciaMEdit,paisMEdit,imgMEdit,dniMEdit,cuponMEdit,precioMEdit,logroMEdit,cursosMEdit);   
+			        request.setAttribute("matriculados", matriculados);
+			        pagina = matriculadoJSP;
+			    } catch (Exception e) {
+			        // TODO: handle exception
+			        e.printStackTrace();
+			        System.out.println("**Editar Registrado** Error al actualizar el registrado***");
+			    }		
+				response.setContentType("text/html");
+				this.getServletContext().getRequestDispatcher(pagina).forward(request, response);
+			}
+
+
+		private void  editarUM(String nick,String nombre,String ape1,String ape2,String correo,String fechaNac, int tel,String genero,
+				String calle, String localidad,int cp,String provincia,String pais,String img,String dni,String cupon,String precio,String logro,String cursos) {
+			for (uMarculado um : matriculados) {
+				if (correo.equals(um.getCorreo())){
+					um.setNick(nick);
+					um.setNick(nombre);
+					um.setApellido1(ape1);
+					um.setApellido2(ape2);
+					um.setCorreo(correo);
+					um.setFechaNc(fechaNac);
+					um.setTelefono(tel);
+					um.setGenero(genero);
+					um.setCalle(calle);
+					um.setLocalidad(localidad);
+					um.setCp(cp);
+					um.setProvincia(provincia);
+					um.setPais(pais);
+					um.setImg(img);
+					um.setDni(dni);
+					um.setCupon(cupon);
+					um.setPrecio(precio);
+					um.setLogro(logro);
+					um.setCursos(cursos);
+					break;
+				}
+			}
+		}
 
 }

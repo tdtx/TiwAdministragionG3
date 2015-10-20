@@ -75,7 +75,39 @@ public class GestionRegistrado extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String nickREdit= request.getParameter("nickR");
+        String nombreREdit = request.getParameter("nombreR");
+        String apellido1REdit= request.getParameter("apellido1R");
+        String apellido2REdit= request.getParameter("apellido2R");
+        String correoREdit= request.getParameter("correoR");
+        String fechaNcREdit= request.getParameter("fechaNcR");
+        String pagina = indexJSP;
+           try {
+		        editarUR(nickREdit,nombreREdit,apellido1REdit,apellido2REdit,correoREdit,fechaNcREdit);   
+		        request.setAttribute("registrados", registrados);
+		        pagina = requistradoJSP;
+		    } catch (Exception e) {
+		        // TODO: handle exception
+		        e.printStackTrace();
+		        System.out.println("**Editar Registrado** Error al actualizar el registrado***");
+		    }		
+			response.setContentType("text/html");
+			this.getServletContext().getRequestDispatcher(pagina).forward(request, response);
+		}
 
-    }
 
+	private void  editarUR(String nick,String nombre,String ape1,String ape2,String correo,String fechaNac) {
+		for (uRegistrado ur : registrados) {
+			if (correo.equals(ur.getCorreo())){
+				ur.setNick(nick);
+				ur.setNick(nombre);
+				ur.setApellido1(ape1);
+				ur.setApellido2(ape2);
+				ur.setCorreo(correo);
+				ur.setFechaNc(fechaNac);
+				break;
+			}
+		}
+	}
+	
 }

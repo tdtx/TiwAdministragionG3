@@ -61,13 +61,13 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	<label for="nick">Nick </label> <input type="text"
-																		class="form-control" id="nick" name="nick"
+																	<label for="nickM">Nick </label> <input type="text"
+																		class="form-control" id="nickM" name="nickM"
 																		value="${matriculado.nick}">
 														<div>  &nbsp</div>
-																	<label for="nombreR">Nombre</label> <input
-																		type="text" class="form-control" id="nombreR"
-																		name="nombreR" 
+																	<label for="nombreM">Nombre</label> <input
+																		type="text" class="form-control" id="nombreM"
+																		name="nombreM" 
 																		value="${matriculado.nombre}">
 																</div>
 												
@@ -79,14 +79,14 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	<label for="apellido1R">Apellido 1 </label> <input type="text"
-																		class="form-control" id="apellido1R" name="apellido1R"
+																	<label for="apellido1M">Apellido 1 </label> <input type="text"
+																		class="form-control" id="apellido1M" name="apellido1M"
 																		value="${matriculado.apellido1}">
 																</div>
 																<div class="form-group col-md-5">
-																	<label for="apellido2R">Apellido 2</label> <input
-																		type="text" class="form-control" id="apellido2R"
-																		name="apellido2R" 
+																	<label for="apellido2M">Apellido 2</label> <input
+																		type="text" class="form-control" id="apellido2M"
+																		name="apellido2M" 
 																		value="${matriculado.apellido2}">
 																</div>
 															</div>
@@ -94,14 +94,14 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	<label for="correoR">Correo </label> <input type="text"
-																		class="form-control" id="correoR" name="correoR"
+																	<label for="correoM">Correo </label> <input type="text"
+																		class="form-control" id="correoM" name="correoM"
 																		value="${matriculado.correo}">
 																</div>
 																<div class="form-group col-md-5">
-																	<label for="fechaNcR">Fecha de nacimiento</label> <input
-																		type="text" class="form-control" id="fechaNcR"
-																		name="fechaNcR" 
+																	<label for="fechaNcM">Fecha de nacimiento</label> <input
+																		type="text" class="form-control" id="fechaNcM"
+																		name="fechaNcM" 
 																		value="${matriculado.fechaNc}">
 																</div>
 															</div>
@@ -201,7 +201,7 @@
 												</div>
 												<div class="modal-footer">
 													<div>
-																<button type="submit" class="btn btn-primary">Guardar
+																<button type="submit" class="btn btn-primary" data-dismiss="modal">Guardar
 																	Cambios</button>
 																<button type="button" class="btn btn-primary"
 																	data-dismiss="modal">Cerrar</button>
