@@ -33,8 +33,8 @@ public class GestionMatriculado extends HttpServlet {
 		// TODO Auto-generated method stub
 		super.init();
 
-		uMarculado um1 = new uMarculado("TDTX", "Tomas", "Tee", "Xia", "tomas@tomas.es", "clave", "23/09/1990", 777777777, "M", "calle", "localidad", 11111, "provincia", "pais", "fonts/users_folder_128.png", "dni", "cupon", "precio", "logro", "cursos");
-		uMarculado um2 = new uMarculado("JSTX", "Juan", "Tee", "Xia", "juan@juan.es", "clave", "23/12/1991", 666666666, "M", "calle", "localidad", 22222, "provincia", "pais", "fonts/users_folder_128.png", "dni", "cupon", "precio", "logro", "cursos");
+		uMarculado um1 = new uMarculado("TDTX", "Tomas", "Tee", "Xia", "tomas@tomas.es", "clave", "23/09/1990", 777777777, "H", "calle", "localidad", 11111, "provincia", "pais", "fonts/users_folder_128.png", "78614836p", "Si", "30", "logro", "cursos");
+		uMarculado um2 = new uMarculado("JSTX", "Juan", "Tee", "Xia", "juan@juan.es", "clave", "23/11/1991", 666666666, "M", "calle", "localidad", 22222, "provincia", "pais", "fonts/users_folder_128.png", "12345678p", "Si", "50", "logro", "cursos");
 		
 		matriculados = new ArrayList<uMarculado>();
 		matriculados.add(um1);
@@ -90,7 +90,6 @@ public class GestionMatriculado extends HttpServlet {
 	        int cpMEdit = Integer.parseInt(request.getParameter("cpM"));
 	        String provinciaMEdit = request.getParameter("provinciaM");
 	        String paisMEdit= request.getParameter("paisM");
-	        String imgMEdit= request.getParameter("imgM");
 	        String dniMEdit= request.getParameter("dniM");
 	        String cuponMEdit = request.getParameter("cuponM");
 	        String precioMEdit= request.getParameter("precioM");
@@ -99,7 +98,7 @@ public class GestionMatriculado extends HttpServlet {
 	        String pagina = indexJSP;
 	        try {
 			    	editarUM(nickMEdit,nombreMEdit,apellido1MEdit,apellido2MEdit,correoMEdit,fechaNcMEdit,telefonoMEdit,generoMEdit,calleMEdit
-			    			,localidadMEdit,cpMEdit,provinciaMEdit,paisMEdit,imgMEdit,dniMEdit,cuponMEdit,precioMEdit,logroMEdit,cursosMEdit);   
+			    			,localidadMEdit,cpMEdit,provinciaMEdit,paisMEdit,dniMEdit,cuponMEdit,precioMEdit,logroMEdit,cursosMEdit);   
 			        request.setAttribute("matriculados", matriculados);
 			        pagina = matriculadoJSP;
 			    } catch (Exception e) {
@@ -113,11 +112,11 @@ public class GestionMatriculado extends HttpServlet {
 
 
 		private void  editarUM(String nick,String nombre,String ape1,String ape2,String correo,String fechaNac, int tel,String genero,
-				String calle, String localidad,int cp,String provincia,String pais,String img,String dni,String cupon,String precio,String logro,String cursos) {
+				String calle, String localidad,int cp,String provincia,String pais,String dni,String cupon,String precio,String logro,String cursos) {
 			for (uMarculado um : matriculados) {
 				if (correo.equals(um.getCorreo())){
 					um.setNick(nick);
-					um.setNick(nombre);
+					um.setNombre(nombre);
 					um.setApellido1(ape1);
 					um.setApellido2(ape2);
 					um.setCorreo(correo);
@@ -129,7 +128,6 @@ public class GestionMatriculado extends HttpServlet {
 					um.setCp(cp);
 					um.setProvincia(provincia);
 					um.setPais(pais);
-					um.setImg(img);
 					um.setDni(dni);
 					um.setCupon(cupon);
 					um.setPrecio(precio);

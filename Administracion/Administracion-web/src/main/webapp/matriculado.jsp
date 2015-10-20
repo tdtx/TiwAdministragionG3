@@ -5,6 +5,7 @@
 
 <html>
 <head>
+<script src="js/validarMatriculado.js"></script>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -54,7 +55,7 @@
 												</div>
 												<div class="modal-body">
 													<div class="">
-														<form action="gestionMatriculado" method="post"
+														<form onSubmit="return validarM(this)" action="gestionMatriculado" method="post"
 															class="form-horizontal" role="form">
 															<input type="text" name="id" value="${matriculado.correo}"
 																style="display: none">																	
@@ -195,18 +196,18 @@
 																		value="${matriculado.cursos}">
 																</div>
 															</div>
-													
-														</form>
-													</div>
-												</div>
-												<div class="modal-footer">
+													<div class="modal-footer">
 													<div>
-																<button type="submit" class="btn btn-primary" data-dismiss="modal">Guardar
+																<button type="submit" class="btn btn-primary">Guardar
 																	Cambios</button>
 																<button type="button" class="btn btn-primary"
 																	data-dismiss="modal">Cerrar</button>
 															</div>								
 												</div>
+														</form>
+													</div>
+												</div>
+												
 											</div>
 										</div>
 									</div>

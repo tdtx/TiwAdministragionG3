@@ -95,12 +95,11 @@ public class GestionRegistrado extends HttpServlet {
 			this.getServletContext().getRequestDispatcher(pagina).forward(request, response);
 		}
 
-
 	private void  editarUR(String nick,String nombre,String ape1,String ape2,String correo,String fechaNac) {
 		for (uRegistrado ur : registrados) {
 			if (correo.equals(ur.getCorreo())){
 				ur.setNick(nick);
-				ur.setNick(nombre);
+				ur.setNombre(nombre);
 				ur.setApellido1(ape1);
 				ur.setApellido2(ape2);
 				ur.setCorreo(correo);

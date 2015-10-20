@@ -233,17 +233,18 @@
 																		value="${curso.peticionE}">
 																</div>
 																</div>
-														</form>
-													</div>
-												</div>
-												<div class="modal-footer">
+																<div class="modal-footer">
 													<div>
-																<button type="submit" class="btn btn-primary" data-dismiss="modal">Guardar
+																<button type="submit" class="btn btn-primary" >Guardar
 																	Cambios</button>
 																<button type="button" class="btn btn-primary"
 																	data-dismiss="modal">Cerrar</button>
 															</div>								
 												</div>
+														</form>
+													</div>
+												</div>
+												
 											</div>
 										</div>
 									</div>

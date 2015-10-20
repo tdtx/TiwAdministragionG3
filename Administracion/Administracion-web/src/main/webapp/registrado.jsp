@@ -7,7 +7,7 @@
 
 <head>
 
-
+<script src="js/validarRegistrado.js"></script>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -62,7 +62,7 @@
 												</div>
 												<div class="modal-body">
 													<div class="">
-														<form action="gestionRegistrado" method="post"
+	<!---Form Registrado --------------------------><form  onSubmit="return validarR(this)" action="gestionRegistrado" method="post"
 															class="form-horizontal" role="form">
 															<input type="text" name="id" value="${registrado.correo}"
 																style="display: none">
@@ -111,18 +111,18 @@
 																</div>
 															</div>
 															<br>
-															
-														</form>
-													</div>
-												</div>
-												<div class="modal-footer">
+															<div class="modal-footer">
 													<div>
-																<button type="submit" class="btn btn-primary" data-dismiss="modal">Guardar
+																<button type="submit" class="btn btn-primary">Guardar
 																	Cambios</button>
 																<button type="button" class="btn btn-primary"
 																	data-dismiss="modal">Cerrar</button>
 															</div>								
 												</div>
+														</form>
+													</div>
+												</div>
+												
 											</div>
 										</div>
 									</div>

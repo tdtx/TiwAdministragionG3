@@ -25,6 +25,57 @@ public class uMarculado {
 		super();
 	}
 	public uMarculado(String nick, String nombre, String apellido1,
+			String apellido2, String correo, String fechaNc, int telefono,
+			String genero, String calle, String localidad, int cp,
+			String provincia, String pais, String img, String dni,
+			String cupon, String precio, String logro, String cursos) {
+		super();
+		this.nick = nick;
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+		this.apellido2 = apellido2;
+		this.correo = correo;
+		this.fechaNc = fechaNc;
+		this.telefono = telefono;
+		this.genero = genero;
+		this.calle = calle;
+		this.localidad = localidad;
+		this.cp = cp;
+		this.provincia = provincia;
+		this.pais = pais;
+		this.img = img;
+		this.dni = dni;
+		this.cupon = cupon;
+		this.precio = precio;
+		this.logro = logro;
+		this.cursos = cursos;
+	}
+	public uMarculado(String nick, String nombre, String apellido1,
+			String apellido2, String correo, String fechaNc, int telefono,
+			String genero, String calle, String localidad, int cp,
+			String provincia, String pais, String dni, String cupon,
+			String precio, String logro, String cursos) {
+		super();
+		this.nick = nick;
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+		this.apellido2 = apellido2;
+		this.correo = correo;
+		this.fechaNc = fechaNc;
+		this.telefono = telefono;
+		this.genero = genero;
+		this.calle = calle;
+		this.localidad = localidad;
+		this.cp = cp;
+		this.provincia = provincia;
+		this.pais = pais;
+		this.dni = dni;
+		this.cupon = cupon;
+		this.precio = precio;
+		this.logro = logro;
+		this.cursos = cursos;
+	}
+	public uMarculado(String nick, String nombre, String apellido1,
 			String apellido2, String correo, String clave, String fechaNc,
 			int telefono, String genero, String calle, String localidad,
 			int cp, String provincia, String pais, String img, String dni,
