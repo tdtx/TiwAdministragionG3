@@ -1,9 +1,7 @@
 package controladores;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-import javax.ejb.Remove;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,9 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dominio.crearCurso;
-import dominio.uMarculado;
-import dominio.uRegistrado;
 
 /**
  * Servlet de ejemplo que muestra distintos aspectos dentro de los ambitos

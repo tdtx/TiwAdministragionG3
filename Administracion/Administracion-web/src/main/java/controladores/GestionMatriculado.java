@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dominio.uMarculado;
-import dominio.uRegistrado;
 
 /**
  * Servlet implementation class GestionMatriculado

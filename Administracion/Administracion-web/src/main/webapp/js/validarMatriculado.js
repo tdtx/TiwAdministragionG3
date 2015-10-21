@@ -135,17 +135,17 @@ function validarM(formulario){
 		var telefonoM = telefonoMatriculado.toString();
 		var telfLong = telefonoM.length;
 		if (telefonoM == null || telefonoM == "") {
-			resultado = resultado.concat("El campo telefono  debe rellenarse" + '\n');
+			mensaje = mensaje.concat("El campo telefono  debe rellenarse" + '\n');
 			document.getElementById("telefonoM").style.borderColor="red";
 			document.getElementById("telefonoM").style.borderStyle="dotted";
 		} else if (telefonoM.match(/[\D]/gi)){
 			document.getElementById("telefonoM").style.borderColor="red";
 			document.getElementById("telefonoM").style.borderStyle="dotted";
-			resultado = resultado.concat("El campo telefono no puede contener letras ni estar en blanco" + '\n');
+			mensaje = mensaje.concat("El campo telefono no puede contener letras ni estar en blanco" + '\n');
 		} else if (telfLong < 9){
 			document.getElementById("telefonoM").style.borderColor="red";
 			document.getElementById("telefonoM").style.borderStyle="dotted";
-			resultado = resultado.concat("El campo telefono debe tener al menos 9 dígitos" + '\n');
+			mensaje = mensaje.concat("El campo telefono debe tener al menos 9 dígitos" + '\n');
 		} else{	
 			document.getElementById("telefonoM").style.borderColor="green";
 			document.getElementById("telefonoM").style.borderStyle="dotted";
@@ -173,7 +173,7 @@ function validarM(formulario){
 		if (calleM.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| calleM == null || calleM == ""){
 			document.getElementById("calleM").style.borderColor="red";
 			document.getElementById("calleM").style.borderStyle="dotted";
-			resultado = resultado.concat("El campo calle no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+			mensaje = mensaje.concat("El campo calle no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 		} else {
 			document.getElementById("calleM").style.borderColor="green";
 			document.getElementById("calleM").style.borderStyle="dotted";
@@ -185,13 +185,13 @@ function validarM(formulario){
 		var localidadM = localidadMatriculado.toString();
 
 		if (localidadM == null || localidadM == "") {
-			resultado = resultado.concat("El campo localidad debe rellenarse" + '\n');
+			mensaje = mensaje.concat("El campo localidad debe rellenarse" + '\n');
 			document.getElementById("localidadM").style.borderColor="red";
 			document.getElementById("localidadM").style.borderStyle="dotted";
 		} else if (localidadM.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)){
 			document.getElementById("localidadM").style.borderColor="red";
 			document.getElementById("localidadM").style.borderStyle="dotted";
-			resultado = resultado.concat("El campo localidad no puede contener números ni símbolos ni estar en blanco" + '\n');
+			mensaje = mensaje.concat("El campo localidad no puede contener números ni símbolos ni estar en blanco" + '\n');
 		} else {
 			document.getElementById("localidadM").style.borderColor="green";
 			document.getElementById("localidadM").style.borderStyle="dotted";
@@ -205,11 +205,11 @@ function validarM(formulario){
 		if (cpM.match(/[\D]/g)|| cpM == null || cpM == ""){
 			document.getElementById("cpM").style.borderColor="red";
 			document.getElementById("cpM").style.borderStyle="dotted";
-			resultado = resultado.concat("El campo Codigo postal no puede permanecer vacío y sólo puede estar formado por números" + '\n');
+			mensaje = mensaje.concat("El campo Codigo postal no puede permanecer vacío y sólo puede estar formado por números" + '\n');
 		} else if(cpLong != 5){
 			document.getElementById("cpM").style.borderColor="red";
 			document.getElementById("cpM").style.borderStyle="dotted";
-			resultado = resultado.concat("El campo Codigo postal debe estar formado por 5 dígitos" + '\n');
+			mensaje = mensaje.concat("El campo Codigo postal debe estar formado por 5 dígitos" + '\n');
 		} else {
 			document.getElementById("cpM").style.borderColor="green";
 			document.getElementById("cpM").style.borderStyle="dotted";
@@ -220,13 +220,13 @@ function validarM(formulario){
 		var provinciaMatriculado = document.getElementById("provinciaM").value;
 		var provinciaM = provinciaMatriculado.toString();
 		if (provinciaM == null || provinciaM == "") {
-			resultado = resultado.concat("El campo Provincia debe rellenarse" + '\n');
+			mensaje = mensaje.concat("El campo Provincia debe rellenarse" + '\n');
 			document.getElementById("provinciaM").style.borderColor="red";
 			document.getElementById("provinciaM").style.borderStyle="dotted";
 		} else if (provinciaM.match(/[^\sa-zA-Z-ñÑáéíóúüÁÉÍÓÚÇÜç]/gi)){
 			document.getElementById("provinciaM").style.borderColor="red";
 			document.getElementById("provinciaM").style.borderStyle="dotted";
-			resultado = resultado.concat("El campo Provincia no puede contener números ni símbolos ni estar en blanco" + '\n');
+			mensaje = mensaje.concat("El campo Provincia no puede contener números ni símbolos ni estar en blanco" + '\n');
 		} else {
 			document.getElementById("provinciaM").style.borderColor="green";
 			document.getElementById("provinciaM").style.borderStyle="dotted";
@@ -236,13 +236,13 @@ function validarM(formulario){
 		var paisMatriculado = document.getElementById("paisM").value;
 		var paisM = paisMatriculado.toString();
 		if (paisM == null || paisM == "") {
-			resultado = resultado.concat("El campo País debe rellenarse" + '\n');
+			mensaje = mensaje.concat("El campo País debe rellenarse" + '\n');
 			document.getElementById("paisM").style.borderColor="red";
 			document.getElementById("paisM").style.borderStyle="dotted";
 		} else if (paisM.match(/[^\sa-zA-Z-ñÑáéíóúüÁÉÍÓÚÇÜç]/gi)){
 			document.getElementById("paisM").style.borderColor="red";
 			document.getElementById("paisM").style.borderStyle="dotted";
-			resultado = resultado.concat("El campo País no puede contener números ni símbolos ni estar en blanco" + '\n');
+			mensaje = mensaje.concat("El campo País no puede contener números ni símbolos ni estar en blanco" + '\n');
 		} else {
 			document.getElementById("paisM").style.borderColor="green";
 			document.getElementById("paisM").style.borderStyle="dotted";
@@ -263,7 +263,7 @@ function validarM(formulario){
 		  }else{
 			  document.getElementById("dniM").style.borderColor="red";
 				document.getElementById("dniM").style.borderStyle="dotted";
-				resultado = resultado.concat("El formato del DNI es incorrecto, el formato es 8 digito +1 letra sin espacio" + '\n');
+				mensaje = mensaje.concat("El formato del DNI es incorrecto, el formato es 8 digito +1 letra sin espacio" + '\n');
 		   }
 		   //Validado el campo cupon
 		    var cuponMatriculado = document.getElementById("cuponM").value;
@@ -285,13 +285,13 @@ function validarM(formulario){
 		    var precioMatriculado = document.getElementById("precioM").value;
 		    var precioM = precioMatriculado.toString();
 		    if (precioM == null || precioM == "") {
-		        resultado = resultado.concat("El campo precio  debe rellenarse." + '\n');
+		        mensaje = mensaje.concat("El campo precio  debe rellenarse." + '\n');
 		        document.getElementById("precioM").style.borderColor="red";
 		        document.getElementById("precioM").style.borderStyle="dotted";
 		    } else if (precioM.match(/[^\d.]/gi)){
 		        document.getElementById("precioM").style.borderColor="red";
 		        document.getElementById("precioM").style.borderStyle="dotted";
-		        resultado = resultado.concat("El campo precio  no puede contener letras ni estar en blanco." + '\n');
+		        mensaje = mensaje.concat("El campo precio  no puede contener letras ni estar en blanco." + '\n');
 		    } else {
 		        document.getElementById("precioM").style.borderColor="green";
 		        document.getElementById("precioM").style.borderStyle="dotted";

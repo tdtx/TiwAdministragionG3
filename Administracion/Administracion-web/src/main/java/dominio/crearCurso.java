@@ -34,6 +34,39 @@ public class crearCurso {
 			String secciones, String lecciones, String material,
 			String notificaciones, String calificaciones, String categoria,
 			String destacado, String validado, String precio, String tOferta,
+			String dificultad, String fechaIni, String fechaFIn,
+			String asociado, String cierreCurso, String peticionE) {
+		super();
+		this.id = id;
+		this.titulo = titulo;
+		this.descripcion = descripcion;
+		this.nHoras = nHoras;
+		this.temario = temario;
+		this.profesor = profesor;
+		this.certificado = certificado;
+		this.secciones = secciones;
+		this.lecciones = lecciones;
+		this.material = material;
+		this.notificaciones = notificaciones;
+		this.calificaciones = calificaciones;
+		this.categoria = categoria;
+		this.destacado = destacado;
+		this.validado = validado;
+		this.precio = precio;
+		this.tOferta = tOferta;
+		this.dificultad = dificultad;
+		this.fechaIni = fechaIni;
+		this.fechaFIn = fechaFIn;
+		this.asociado = asociado;
+		this.cierreCurso = cierreCurso;
+		this.peticionE = peticionE;
+	}
+
+	public crearCurso(int id, String titulo, String descripcion, String nHoras,
+			String temario, String profesor, String certificado,
+			String secciones, String lecciones, String material,
+			String notificaciones, String calificaciones, String categoria,
+			String destacado, String validado, String precio, String tOferta,
 			String img, String dificultad, String fechaIni, String fechaFIn,
 			String asociado, String cierreCurso, String peticionE) {
 		super();
