@@ -30,6 +30,7 @@
 
 									</tr>
 								</thead>
+									<tbody>
 								<c:forEach items="${registrados }" var="registrado">
 									<tr>
 										<td>${registrado.nick}</td>
@@ -39,7 +40,7 @@
 										<td class="text-center">
 											<button class="btn btn-info btn-xs" data-toggle="modal"
 												data-toggle="tooltip" data-placement="left"
-												title="Editar Registrado" data-target="#myModal">							
+												title="Editar Registrado" data-target="#myModal${registrado.nick}">							
 												<span class="glyphicon glyphicon-pencil"></span>
 											</button> <a class="btn btn-danger btn-xs" data-toggle="modal tooltip"
 											data-placement="left" title="Eliminar Registrado"  href="gestionRegistrado?accion=eliminarR&correo=${registrado.correo}">
@@ -47,7 +48,7 @@
 										</a>
 										</td>
 									</tr>
-									<div class="modal fade" id="myModal" tabindex="-1"
+									<div class="modal fade" id="myModal${registrado.nick}" tabindex="-1"
 										role="dialog" aria-labelledby="myModalLabel"
 										aria-hidden="true">
 										<div class="modal-dialog">
@@ -127,6 +128,7 @@
 										</div>
 									</div>
 								</c:forEach>
+									</tbody>
 							</table>
 						</div>
 					</div>

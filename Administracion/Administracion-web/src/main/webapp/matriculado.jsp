@@ -28,6 +28,7 @@
 										
 									</tr>
 								</thead>
+								<tbody>
                                <c:forEach items="${matriculados }" var="matriculado">
                                     <tr>
                                         <td>${matriculado.nombre}</td>
@@ -35,12 +36,12 @@
                                         <td>${matriculado.dni}</td>
                                         <td>${matriculado.correo}</td>  
                                           <td class="text-center">
-                                         <button class="btn btn-info btn-xs" data-toggle="modal" data-toggle="tooltip" data-placement="left" title="Editar Matriculado" data-target="#miDialog">
+                                         <button class="btn btn-info btn-xs" data-toggle="modal" data-toggle="tooltip" data-placement="left" title="Editar Matriculado" data-target="#miDialog${matriculado.dni}">
                                                 <span class="glyphicon glyphicon-pencil"></span>
                                         </button>
                                         <a class="btn btn-danger btn-xs" data-toggle="modal tooltip" data-placement="left" title="Eliminar Matriculado" href="gestionMatriculado?accion=eliminarM&correo=${matriculado.correo}"> <span class="glyphicon glyphicon-trash"></span></a></td>
                                     </tr>
-                                    <div class="modal fade" id="miDialog" tabindex="-1"
+                                    <div class="modal fade" id="miDialog${matriculado.dni}" tabindex="-1"
 										role="dialog" aria-labelledby="myModalLabel"
 										aria-hidden="true">
 										<div class="modal-dialog">
@@ -212,6 +213,7 @@
 										</div>
 									</div>
                                     </c:forEach>
+                                   <tbody>
 							</table>
 						</div>
 					</div>
