@@ -384,8 +384,8 @@ function validarC(formulario){
 		        document.getElementById("asociadoC").style.borderStyle="dotted";
 		        mensaje = mensaje.concat("El asociado del curso no puede contener símbolos, ni estar en blanco" + '\n');
 		    } else {
-		        document.getElementById("profesorC").style.borderColor="green";
-		        document.getElementById("profesorC").style.borderStyle="dotted";
+		        document.getElementById("asociadoC").style.borderColor="green";
+		        document.getElementById("asociadoC").style.borderStyle="dotted";
 		        contador = contador + 1;
 		    }
 	
@@ -414,8 +414,8 @@ function validarC(formulario){
 		        document.getElementById("peticionEC").style.borderColor="red";
 		        document.getElementById("peticionEC").style.borderStyle="dotted";
 		    } else if (peticionEC=="Si" || peticionEC=="No" ){
-		        document.getElementById("dificultadC").style.borderColor="green";
-		        document.getElementById("dificultadC").style.borderStyle="dotted";
+		        document.getElementById("peticionEC").style.borderColor="green";
+		        document.getElementById("peticionEC").style.borderStyle="dotted";
 		        contador = contador + 1;    
 		    } else {
 		        mensaje = mensaje.concat("El campo peticion eliminacion de curso debe rellenarse con Si o NO)" + '\n');

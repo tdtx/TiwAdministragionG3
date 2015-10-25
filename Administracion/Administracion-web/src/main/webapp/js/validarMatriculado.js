@@ -156,16 +156,16 @@ function validarM(formulario){
 	    var generoM = generoMatriculado.toString();
 	    if (generoM == null || generoM == "") {
 	        mensaje = mensaje.concat("El campo genero debe rellenarse" + '\n');
-	        document.getElementById("nickM").style.borderColor="red";
-	        document.getElementById("nickM").style.borderStyle="dotted";
+	        document.getElementById("generoM").style.borderColor="red";
+	        document.getElementById("generoM").style.borderStyle="dotted";
 	    } else if (generoM=="H" || generoM=="M" ){
-	        document.getElementById("nickM").style.borderColor="green";
-	        document.getElementById("nickM").style.borderStyle="dotted";
+	        document.getElementById("generoM").style.borderColor="green";
+	        document.getElementById("generoM").style.borderStyle="dotted";
 	        contador = contador + 1;    
 	    } else {
 	        mensaje = mensaje.concat("El campo genero debe rellenarse con H(Hombre) o M(Mujer)" + '\n');
-	        document.getElementById("nickM").style.borderColor="red";
-	        document.getElementById("nickM").style.borderStyle="dotted";
+	        document.getElementById("generoM").style.borderColor="red";
+	        document.getElementById("generoM").style.borderStyle="dotted";
 	    }
 	  //Validado el campo calle
 		var calleMatriculado = document.getElementById("calleM").value;
@@ -270,16 +270,16 @@ function validarM(formulario){
 		    var cuponM = cuponMatriculado.toString();
 		    if (cuponM == null || cuponM == "") {
 		        mensaje = mensaje.concat("El campo cupon debe rellenarse" + '\n');
-		        document.getElementById("nickM").style.borderColor="red";
-		        document.getElementById("nickM").style.borderStyle="dotted";
+		        document.getElementById("cuponM").style.borderColor="red";
+		        document.getElementById("cuponM").style.borderStyle="dotted";
 		    } else if (cuponM=="Si" || cuponM=="No" ){
-		        document.getElementById("nickM").style.borderColor="green";
-		        document.getElementById("nickM").style.borderStyle="dotted";
+		        document.getElementById("cuponM").style.borderColor="green";
+		        document.getElementById("cuponM").style.borderStyle="dotted";
 		        contador = contador + 1;    
 		    } else {
 		        mensaje = mensaje.concat("El campo cupon debe rellenarse con Si o No)" + '\n');
-		        document.getElementById("nickM").style.borderColor="red";
-		        document.getElementById("nickM").style.borderStyle="dotted";
+		        document.getElementById("cuponM").style.borderColor="red";
+		        document.getElementById("cuponM").style.borderStyle="dotted";
 		    }
 		    //Validado el campo precio
 		    var precioMatriculado = document.getElementById("precioM").value;

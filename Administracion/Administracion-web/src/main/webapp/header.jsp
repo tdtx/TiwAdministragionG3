@@ -5,6 +5,7 @@
 
 <html lang="en">
 <head>
+<link rel="shotcut icon" href="fonts/Captura_de_pantallaico_2015-10-08_a_las_17.ico" type="image/x-icon">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,8 +21,6 @@
 <!-- Custom Fonts icono-->
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
 	type="text/css">
-
-
 
 <!-- jQuery desplejable-->
 <script src="js/jquery.js"></script>

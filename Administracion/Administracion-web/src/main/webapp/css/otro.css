@@ -1,0 +1,21 @@
+.indexbody{
+	height: 750px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+.centrado p{
+	text-align: center;
+	font-size: 20px;
+}
+.centrado h2{
+	text-align: center;
+	font-size: 60px;
+}
+.centro{
+	text-align: center;
+	margin-top: 2cm;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

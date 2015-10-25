@@ -64,8 +64,8 @@ function validarR(formulario){
         document.getElementById("apellido2R").style.borderStyle="dotted";
         mensaje = mensaje.concat("El apellido 2 del registrado no puede contener símbolos, ni estar en blanco" + '\n');
     } else {
-        document.getElementById("apellido1R").style.borderColor="green";
-        document.getElementById("apellido1R").style.borderStyle="dotted";
+        document.getElementById("apellido2R").style.borderColor="green";
+        document.getElementById("apellido2R").style.borderStyle="dotted";
         contador = contador + 1;
     }
 
@@ -115,14 +115,14 @@ function validarR(formulario){
 	    	 document.getElementById("fechaNcR").style.borderColor="red";
 	         document.getElementById("fechaNcR").style.borderStyle="dotted";
 	         mensaje = mensaje.concat("Eres menor de edad" + '\n');
-	    }else if (hoy.getUTCDate() - dia >= 0) {
-		   	 document.getElementById("fechaNcR").style.borderColor="red";
-	         document.getElementById("fechaNcR").style.borderStyle="dotted";
-	         mensaje = mensaje.concat("Eres menor de edad" + '\n');
 	    }else if (hoy.getMonth() + 1 - mes > 0) {
 	    	 document.getElementById("fechaNcR").style.borderColor="green";
 	         document.getElementById("fechaNcR").style.borderStyle="dotted";
 	         contador = contador + 1;
+	    }else if (hoy.getUTCDate() - dia >= 0) {
+		   	 document.getElementById("fechaNcR").style.borderColor="red";
+	         document.getElementById("fechaNcR").style.borderStyle="dotted";
+	         mensaje = mensaje.concat("Eres menor de edad por dia" + '\n');
 	    }else{
 	    	document.getElementById("fechaNcR").style.borderColor="red";
 	         document.getElementById("fechaNcR").style.borderStyle="dotted";

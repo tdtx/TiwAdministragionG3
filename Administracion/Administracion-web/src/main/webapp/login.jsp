@@ -4,9 +4,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shotcut icon" href="fonts/Captura_de_pantallaico_2015-10-08_a_las_17.ico" type="image/x-icon">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="css/miStyle.css" rel="stylesheet" type="text/css">
-<title>Login</title>
+<title>iLexion</title>
 </head>
 <body>
 	<!-- El siguiente ejemplo de JSTL muestra como usar un if-else mediante la libreria cor: si hay atributo mensaje se muestra en color rojo dicho mensaje, en caso contrario un texto par el formulario  -->
