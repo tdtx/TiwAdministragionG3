@@ -273,7 +273,7 @@ function validarC(formulario){
     }
 
     //Validado el campo fecha de inicio
-/*	var fechaIniCursos = document.getElementById("fechaIniC").value;
+	var fechaIniCursos = document.getElementById("fechaIniC").value;
 	var fechaIniC = fechaIniCursos.toString();
 	    hoy=new Date() 
 	    var array_fecha = fechaIniC.split("/") 
@@ -308,7 +308,7 @@ function validarC(formulario){
 				}else {
 				   	 document.getElementById("fechaIniC").style.borderColor="red";
 			         document.getElementById("fechaIniC").style.borderStyle="dotted";
-			         mensaje = mensaje.concat("dia menor" + '\n');
+			         mensaje = mensaje.concat("dia menor, el plazo de inicio de matriculacion tiene que ser mayor al dñia actual" + '\n');
 				
 				}
 	    	}else{
@@ -321,9 +321,8 @@ function validarC(formulario){
 	         document.getElementById("fechaIniC").style.borderStyle="dotted";
 	         mensaje = mensaje.concat("año menor" + '\n');
 	    }
-	    alert("19");*/
 	    //Validado el campo fecha de fin
-	/*	var fechaFInCursos = document.getElementById("fechaFInC").value;
+		var fechaFInCursos = document.getElementById("fechaFInC").value;
 		var fechaFInC = fechaFInCursos.toString();
 		    hoy=new Date() 
 		    var array_fechaF = fechaFInC.split("/") 
@@ -334,44 +333,44 @@ function validarC(formulario){
 		    var diaF 
 		    diaF = parseInt(array_fechaF[0]); 
 		    if (array_fechaF.length!=3) {
-		    	 document.getElementById("fechaIniC").style.borderColor="red";
-		         document.getElementById("fechaIniC").style.borderStyle="dotted";
+		    	 document.getElementById("fechaFInC").style.borderColor="red";
+		         document.getElementById("fechaFInC").style.borderStyle="dotted";
 		         mensaje = mensaje.concat("La fecha de fin no tiene el formato dd/mm/aaaa" + '\n');
 		    }else if (isNaN(anoF)) {
-		    	 document.getElementById("fechaIniC").style.borderColor="red";
-		         document.getElementById("fechaIniC").style.borderStyle="dotted";
+		    	 document.getElementById("fechaFInC").style.borderColor="red";
+		         document.getElementById("fechaFInC").style.borderStyle="dotted";
 		         mensaje = mensaje.concat("El año es incorrecto" + '\n');
 		    }else if (isNaN(mesF)) {
-		    	 document.getElementById("fechaIniC").style.borderColor="red";
-		         document.getElementById("fechaIniC").style.borderStyle="dotted";
+		    	 document.getElementById("fechaFInC").style.borderColor="red";
+		         document.getElementById("fechaFInC").style.borderStyle="dotted";
 		         mensaje = mensaje.concat("El mes es incorrecto" + '\n');
 		    }else if (isNaN(diaF)) {
-		    	 document.getElementById("fechaIniC").style.borderColor="red";
-		         document.getElementById("fechaIniC").style.borderStyle="dotted";
+		    	 document.getElementById("fechaFInC").style.borderColor="red";
+		         document.getElementById("fechaFInC").style.borderStyle="dotted";
 		         mensaje = mensaje.concat("El dia es incorrecto" + '\n');
 		    }else if (anoF - ano >= 0) {
 		    	if (mesF - mes >= 0) {
-		    		if (diaF - dia >= 0) {
-		    		 	 document.getElementById("fechaIniC").style.borderColor="green";
-		    	         document.getElementById("fechaIniC").style.borderStyle="dotted";
+		    		if (diaF - dia >= 7) {
+		    		 	 document.getElementById("fechaFInC").style.borderColor="green";
+		    	         document.getElementById("fechaFInC").style.borderStyle="dotted";
 		    	         contador = contador + 1;
 					}else {
-					   	 document.getElementById("fechaIniC").style.borderColor="red";
-				         document.getElementById("fechaIniC").style.borderStyle="dotted";
-				         mensaje = mensaje.concat("dia menor" + '\n');
+					   	 document.getElementById("fechaFInC").style.borderColor="red";
+				         document.getElementById("fechaFInC").style.borderStyle="dotted";
+				         mensaje = mensaje.concat("dia menor, almenos tiene que tener 7 para matricularse" + '\n');
 					
 					}
 		    	}else{
-			    	 document.getElementById("fechaIniC").style.borderColor="red";
-			         document.getElementById("fechaIniC").style.borderStyle="dotted";
+			    	 document.getElementById("fechaFInC").style.borderColor="red";
+			         document.getElementById("fechaFInC").style.borderStyle="dotted";
 			         mensaje = mensaje.concat("mes menor" + '\n');
 					}
 		    }else{
-		    	document.getElementById("fechaIniC").style.borderColor="red";
-		         document.getElementById("fechaIniC").style.borderStyle="dotted";
+		    	document.getElementById("fechaFInC").style.borderColor="red";
+		         document.getElementById("fechaFInC").style.borderStyle="dotted";
 		         mensaje = mensaje.concat("año menor" + '\n');
 		    }
-		    alert("20");*/
+
 		  //Validado el campo nombre del asociado
 		    var asociadoCursos = document.getElementById("asociadoC").value;
 		    var asociadoC = asociadoCursos.toString();
@@ -390,21 +389,54 @@ function validarC(formulario){
 		    }
 	
 		  //Validado el campo nombre del cierre curso
-		/*    var cierreCursoCursos = document.getElementById("cierreCursoC").value;
-		    var cierreCursoC = cierreCursoCursos.toString();
-		    if (cierreCursoC == null || cierreCursoC == "") {
-		        mensaje = mensaje.concat("El campo cierre Curso de cursp debe rellenarse" + '\n');
-		        document.getElementById("cierreCursoC").style.borderColor="red";
-		        document.getElementById("cierreCursoC").style.borderStyle="dotted";
-		    } else if (cierreCursoC.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
-		        document.getElementById("cierreCursoC").style.borderColor="red";
-		        document.getElementById("cierreCursoC").style.borderStyle="dotted";
-		        mensaje = mensaje.concat("El cierre del curso no puede contener símbolos, ni estar en blanco" + '\n');
-		    } else {
-		        document.getElementById("cierreCursoC").style.borderColor="green";
-		        document.getElementById("cierreCursoC").style.borderStyle="dotted";
-		        contador = contador + 1;
-		    }*/
+		    var cierreCursoCursos = document.getElementById("cierreCursoC").value;
+			var cierreCursoC = cierreCursoCursos.toString();
+			    hoy=new Date() 
+			    var array_fechaF = cierreCursoC.split("/") 
+			    var anoC 
+			    anoC = parseInt(array_fechaF[2]); 
+			    var mesC 
+			    mesC = parseInt(array_fechaF[1]); 
+			    var diaC 
+			    diaC = parseInt(array_fechaF[0]); 
+			    if (array_fechaF.length!=3) {
+			    	 document.getElementById("fechaIniC").style.borderColor="red";
+			         document.getElementById("fechaIniC").style.borderStyle="dotted";
+			         mensaje = mensaje.concat("La fecha de fin no tiene el formato dd/mm/aaaa" + '\n');
+			    }else if (isNaN(anoC)) {
+			    	 document.getElementById("fechaIniC").style.borderColor="red";
+			         document.getElementById("fechaIniC").style.borderStyle="dotted";
+			         mensaje = mensaje.concat("El año es incorrecto" + '\n');
+			    }else if (isNaN(mesC)) {
+			    	 document.getElementById("fechaIniC").style.borderColor="red";
+			         document.getElementById("fechaIniC").style.borderStyle="dotted";
+			         mensaje = mensaje.concat("El mes es incorrecto" + '\n');
+			    }else if (isNaN(diaC)) {
+			    	 document.getElementById("fechaIniC").style.borderColor="red";
+			         document.getElementById("fechaIniC").style.borderStyle="dotted";
+			         mensaje = mensaje.concat("El dia es incorrecto" + '\n');
+			    }else if (anoC - ano >= 0) {
+			    	if (mesC - mes >= 0) {
+			    		if (diaC - dia >= 30) {
+			    		 	 document.getElementById("fechaIniC").style.borderColor="green";
+			    	         document.getElementById("fechaIniC").style.borderStyle="dotted";
+			    	         contador = contador + 1;
+						}else {
+						   	 document.getElementById("fechaIniC").style.borderColor="red";
+					         document.getElementById("fechaIniC").style.borderStyle="dotted";
+					         mensaje = mensaje.concat("dia menor, almenos tiene que tener 30 de curso para poder cerrarlo" + '\n');
+						
+						}
+			    	}else{
+				    	 document.getElementById("fechaIniC").style.borderColor="red";
+				         document.getElementById("fechaIniC").style.borderStyle="dotted";
+				         mensaje = mensaje.concat("mes menor" + '\n');
+						}
+			    }else{
+			    	document.getElementById("fechaIniC").style.borderColor="red";
+			         document.getElementById("fechaIniC").style.borderStyle="dotted";
+			         mensaje = mensaje.concat("año menor" + '\n');
+			    }
 
 			   //Validado el campo peticion eliminar
 		    var peticionECursos = document.getElementById("peticionEC").value;
@@ -423,7 +455,7 @@ function validarC(formulario){
 		        document.getElementById("peticionEC").style.borderStyle="dotted";
 		    }
 
-    if(contador == 20){
+    if(contador == 23){
         alert("Usuario matriculado con éxito");
     } else{
         alert(mensaje);
