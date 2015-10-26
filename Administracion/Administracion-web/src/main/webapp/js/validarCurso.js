@@ -324,7 +324,7 @@ function validarC(formulario){
 	    //Validado el campo fecha de fin
 		var fechaFInCursos = document.getElementById("fechaFInC").value;
 		var fechaFInC = fechaFInCursos.toString();
-		    hoy=new Date() 
+		    hoyF=new Date() 
 		    var array_fechaF = fechaFInC.split("/") 
 		    var anoF 
 		    anoF = parseInt(array_fechaF[2]); 
@@ -350,15 +350,19 @@ function validarC(formulario){
 		         mensaje = mensaje.concat("El dia es incorrecto" + '\n');
 		    }else if (anoF - ano >= 0) {
 		    	if (mesF - mes >= 0) {
-		    		if (diaF - dia >= 7) {
+		    		if (diaF - hoyF.getUTCDate() >= 0) {
 		    		 	 document.getElementById("fechaFInC").style.borderColor="green";
 		    	         document.getElementById("fechaFInC").style.borderStyle="dotted";
 		    	         contador = contador + 1;
-					}else {
+					}else if  (mesF - mes >= 1 || anoF - ano >= 1) {
+						 document.getElementById("fechaFInC").style.borderColor="green";
+		    	         document.getElementById("fechaFInC").style.borderStyle="dotted";
+		    	         contador = contador + 1;
+					}
+						else {
 					   	 document.getElementById("fechaFInC").style.borderColor="red";
 				         document.getElementById("fechaFInC").style.borderStyle="dotted";
-				         mensaje = mensaje.concat("dia menor, almenos tiene que tener 7 para matricularse" + '\n');
-					
+				         mensaje = mensaje.concat("dia menor" + '\n');	
 					}
 		    	}else{
 			    	 document.getElementById("fechaFInC").style.borderColor="red";
@@ -391,7 +395,7 @@ function validarC(formulario){
 		  //Validado el campo nombre del cierre curso
 		    var cierreCursoCursos = document.getElementById("cierreCursoC").value;
 			var cierreCursoC = cierreCursoCursos.toString();
-			    hoy=new Date() 
+			    hoyC=new Date() 
 			    var array_fechaF = cierreCursoC.split("/") 
 			    var anoC 
 			    anoC = parseInt(array_fechaF[2]); 
@@ -400,41 +404,45 @@ function validarC(formulario){
 			    var diaC 
 			    diaC = parseInt(array_fechaF[0]); 
 			    if (array_fechaF.length!=3) {
-			    	 document.getElementById("fechaIniC").style.borderColor="red";
-			         document.getElementById("fechaIniC").style.borderStyle="dotted";
+			    	 document.getElementById("cierreCursoC").style.borderColor="red";
+			         document.getElementById("cierreCursoC").style.borderStyle="dotted";
 			         mensaje = mensaje.concat("La fecha de fin no tiene el formato dd/mm/aaaa" + '\n');
 			    }else if (isNaN(anoC)) {
-			    	 document.getElementById("fechaIniC").style.borderColor="red";
-			         document.getElementById("fechaIniC").style.borderStyle="dotted";
+			    	 document.getElementById("cierreCursoC").style.borderColor="red";
+			         document.getElementById("cierreCursoC").style.borderStyle="dotted";
 			         mensaje = mensaje.concat("El año es incorrecto" + '\n');
 			    }else if (isNaN(mesC)) {
-			    	 document.getElementById("fechaIniC").style.borderColor="red";
-			         document.getElementById("fechaIniC").style.borderStyle="dotted";
+			    	 document.getElementById("cierreCursoC").style.borderColor="red";
+			         document.getElementById("cierreCursoC").style.borderStyle="dotted";
 			         mensaje = mensaje.concat("El mes es incorrecto" + '\n');
 			    }else if (isNaN(diaC)) {
-			    	 document.getElementById("fechaIniC").style.borderColor="red";
-			         document.getElementById("fechaIniC").style.borderStyle="dotted";
+			    	 document.getElementById("cierreCursoC").style.borderColor="red";
+			         document.getElementById("cierreCursoC").style.borderStyle="dotted";
 			         mensaje = mensaje.concat("El dia es incorrecto" + '\n');
 			    }else if (anoC - ano >= 0) {
 			    	if (mesC - mes >= 0) {
-			    		if (diaC - dia >= 30) {
-			    		 	 document.getElementById("fechaIniC").style.borderColor="green";
-			    	         document.getElementById("fechaIniC").style.borderStyle="dotted";
+			    		if (diaC - dia >= 0) {
+			    		 	 document.getElementById("cierreCursoC").style.borderColor="green";
+			    	         document.getElementById("cierreCursoC").style.borderStyle="dotted";
 			    	         contador = contador + 1;
-						}else {
-						   	 document.getElementById("fechaIniC").style.borderColor="red";
-					         document.getElementById("fechaIniC").style.borderStyle="dotted";
-					         mensaje = mensaje.concat("dia menor, almenos tiene que tener 30 de curso para poder cerrarlo" + '\n');
-						
+						}else if  (mesC - mes >= 1 || anoC - ano >= 1) {
+							 document.getElementById("cierreCursoC").style.borderColor="green";
+			    	         document.getElementById("cierreCursoC").style.borderStyle="dotted";
+			    	         contador = contador + 1;
+						}
+							else {
+						   	 document.getElementById("cierreCursoC").style.borderColor="red";
+					         document.getElementById("cierreCursoC").style.borderStyle="dotted";
+					         mensaje = mensaje.concat("dia menor" + '\n');	
 						}
 			    	}else{
-				    	 document.getElementById("fechaIniC").style.borderColor="red";
-				         document.getElementById("fechaIniC").style.borderStyle="dotted";
+				    	 document.getElementById("cierreCursoC").style.borderColor="red";
+				         document.getElementById("cierreCursoC").style.borderStyle="dotted";
 				         mensaje = mensaje.concat("mes menor" + '\n');
 						}
 			    }else{
-			    	document.getElementById("fechaIniC").style.borderColor="red";
-			         document.getElementById("fechaIniC").style.borderStyle="dotted";
+			    	document.getElementById("cierreCursoC").style.borderColor="red";
+			         document.getElementById("cierreCursoC").style.borderStyle="dotted";
 			         mensaje = mensaje.concat("año menor" + '\n');
 			    }
 
@@ -455,8 +463,8 @@ function validarC(formulario){
 		        document.getElementById("peticionEC").style.borderStyle="dotted";
 		    }
 
-    if(contador == 23){
-        alert("Usuario matriculado con éxito");
+    if(contador >= 23){
+        alert("Se ha creado el Curso con éxito");
     } else{
         alert(mensaje);
         return false;

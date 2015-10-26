@@ -55,14 +55,10 @@ function validarR(formulario){
     //Validado el campo apellido 2 de registrado
     var apellido2Registrado = document.getElementById("apellido2R").value;
     var apellido2R = apellido2Registrado.toString();
-    if (apellido2R == null || apellido2R == "") {
-        mensaje = mensaje.concat("El campo Apellido 2 de registrado debe rellenarse" + '\n');
+    if (apellido2R.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
         document.getElementById("apellido2R").style.borderColor="red";
         document.getElementById("apellido2R").style.borderStyle="dotted";
-    } else if (apellido2R.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
-        document.getElementById("apellido2R").style.borderColor="red";
-        document.getElementById("apellido2R").style.borderStyle="dotted";
-        mensaje = mensaje.concat("El apellido 2 del registrado no puede contener símbolos, ni estar en blanco" + '\n');
+        mensaje = mensaje.concat("El apellido 2 del registrado no puede contener símbolos" + '\n');
     } else {
         document.getElementById("apellido2R").style.borderColor="green";
         document.getElementById("apellido2R").style.borderStyle="dotted";
