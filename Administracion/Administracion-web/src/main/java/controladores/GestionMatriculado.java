@@ -32,8 +32,8 @@ public class GestionMatriculado extends HttpServlet {
 		// TODO Auto-generated method stub
 		super.init();
 
-		uMarculado um1 = new uMarculado("TDTX", "Tomas", "Tee", "Xia", "tomas@tomas.es", "clave", "23/09/1990", 777777777, "H", "calle", "localidad", 11111, "provincia", "pais", "fonts/users_folder_128.png", "78614836p", "Si", "30", "logro", "cursos");
-		uMarculado um2 = new uMarculado("JSTX", "Juan", "Tee", "Xia", "juan@juan.es", "clave", "23/11/1991", 666666666, "M", "calle", "localidad", 22222, "provincia", "pais", "fonts/users_folder_128.png", "12345678p", "Si", "50", "logro", "cursos");
+		uMarculado um1 = new uMarculado("TDTX", "Tomas", "Tee", "Xia", "tomas@tomas.es", "clave", "23/09/1990", 777777777, "Hombre", "calle", "localidad", 11111, "provincia", "Spain", "fonts/users_folder_128.png", "78614836p", "No", "30", "logro", "cursos");
+		uMarculado um2 = new uMarculado("JSTX", "Juan", "Tee", "Xia", "juan@juan.es", "clave", "23/11/1991", 666666666, "Mujer", "calle", "localidad", 22222, "provincia", "Spain", "fonts/users_folder_128.png", "12345678p", "No", "50", "logro", "cursos");
 		
 		matriculados = new ArrayList<uMarculado>();
 		matriculados.add(um1);

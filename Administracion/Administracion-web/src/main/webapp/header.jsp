@@ -21,7 +21,7 @@
 <!-- Custom Fonts icono-->
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"
 	type="text/css">
-
+<link href="css/otro.css" rel="stylesheet">
 <!-- jQuery desplejable-->
 <script src="js/jquery.js"></script>
 <!-- Bootstrap Core JavaScript -->

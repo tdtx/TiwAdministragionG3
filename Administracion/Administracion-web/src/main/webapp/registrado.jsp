@@ -70,12 +70,12 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	<label for="nickR">Nick </label> <input type="text"
+																	<label for="nickR">Nick </label> <span class="red">*</span> <input type="text"
 																		class="form-control" id="nickR" name="nickR"
 																		value="${registrado.nick}">
 																</div>
 																<div class="form-group col-md-5">
-																	<label for="nombreR">Nombre</label> <input
+																	<label for="nombreR">Nombre</label> <span class="red">*</span><input
 																		type="text" class="form-control" id="nombreR"
 																		name="nombreR" 
 																		value="${registrado.nombre}">
@@ -85,7 +85,7 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	<label for="apellido1R">Apellido 1 </label> <input type="text"
+																	<label for="apellido1R">Apellido 1 </label> <span class="red">*</span><input type="text"
 																		class="form-control" id="apellido1R" name="apellido1R"
 																		value="${registrado.apellido1}">
 																</div>
@@ -100,12 +100,12 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	<label for="correoR">Correo </label> <input type="text"
+																	<label for="correoR">Correo </label> <span class="red">*</span><input type="text"
 																		class="form-control" id="correoR" name="correoR"
 																		value="${registrado.correo}">
 																</div>
 																<div class="form-group col-md-5">
-																	<label for="fechaNcR">Fecha de nacimiento</label> <input
+																	<label for="fechaNcR">Fecha de nacimiento</label> <span class="red">*</span><input
 																		type="text" class="form-control" id="fechaNcR"
 																		name="fechaNcR" 
 																		value="${registrado.fechaNc}">

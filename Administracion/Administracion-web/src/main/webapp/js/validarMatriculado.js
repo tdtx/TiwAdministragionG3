@@ -56,14 +56,10 @@ function validarM(formulario){
     //Validado el campo apellido 2 de matriculado
     var apellido2Matriculado = document.getElementById("apellido2M").value;
     var apellido2M = apellido2Matriculado.toString();
-    if (apellido2M == null || apellido2M == "") {
-        mensaje = mensaje.concat("El campo Apellido 2 de matriculado debe rellenarse" + '\n');
+    if (apellido2M.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
         document.getElementById("apellido2M").style.borderColor="red";
         document.getElementById("apellido2M").style.borderStyle="dotted";
-    } else if (apellido2M.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
-        document.getElementById("apellido2M").style.borderColor="red";
-        document.getElementById("apellido2M").style.borderStyle="dotted";
-        mensaje = mensaje.concat("El apellido 2 del matriculado no puede contener símbolos, ni estar en blanco" + '\n');
+        mensaje = mensaje.concat("El apellido 2 del matriculado no puede contener símbolos" + '\n');
     } else {
         document.getElementById("apellido2M").style.borderColor="green";
         document.getElementById("apellido2M").style.borderStyle="dotted";
@@ -158,12 +154,12 @@ function validarM(formulario){
 	        mensaje = mensaje.concat("El campo genero debe rellenarse" + '\n');
 	        document.getElementById("generoM").style.borderColor="red";
 	        document.getElementById("generoM").style.borderStyle="dotted";
-	    } else if (generoM=="H" || generoM=="M" ){
+	    } else if (generoM=="Hombre" || generoM=="Mujer" ){
 	        document.getElementById("generoM").style.borderColor="green";
 	        document.getElementById("generoM").style.borderStyle="dotted";
 	        contador = contador + 1;    
 	    } else {
-	        mensaje = mensaje.concat("El campo genero debe rellenarse con H(Hombre) o M(Mujer)" + '\n');
+	        mensaje = mensaje.concat("El campo genero debe rellenarse con Hombre o Mujer" + '\n');
 	        document.getElementById("generoM").style.borderColor="red";
 	        document.getElementById("generoM").style.borderStyle="dotted";
 	    }

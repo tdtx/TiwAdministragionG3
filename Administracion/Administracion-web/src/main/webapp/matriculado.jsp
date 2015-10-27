@@ -63,11 +63,11 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	<label for="nickM">Nick </label> <input type="text"
+																	<label for="nickM">Nick </label> <span class="red">*</span><input type="text"
 																		class="form-control" id="nickM" name="nickM"
 																		value="${matriculado.nick}">
 														<div>  &nbsp</div>
-																	<label for="nombreM">Nombre</label> <input
+																	<label for="nombreM">Nombre</label> <span class="red">*</span><input
 																		type="text" class="form-control" id="nombreM"
 																		name="nombreM" 
 																		value="${matriculado.nombre}">
@@ -81,14 +81,14 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	<label for="apellido1M">Apellido 1 </label> <input type="text"
-																		class="form-control" id="apellido1M" name="apellido1M"
+																	<label for="apellido1M">Apellido 1 </label> <span class="red">*</span><input type="text"
+																		class="form-control" id="apellido1M" name="apellido1M" 
 																		value="${matriculado.apellido1}">
 																</div>
 																<div class="form-group col-md-5">
 																	<label for="apellido2M">Apellido 2</label> <input
 																		type="text" class="form-control" id="apellido2M"
-																		name="apellido2M" 
+																		name="apellido2M"  
 																		value="${matriculado.apellido2}">
 																</div>
 															</div>
@@ -96,12 +96,12 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	<label for="correoM">Correo </label> <input type="text"
-																		class="form-control" id="correoM" name="correoM"
-																		value="${matriculado.correo}">
+																	<label for="correoM">Correo </label> <span class="red">*</span><input type="text"
+																		class="form-control" id="correoM" name="correoM" 
+																		value="${matriculado.correo}"> 
 																</div>
 																<div class="form-group col-md-5">
-																	<label for="fechaNcM">Fecha de nacimiento</label> <input
+																	<label for="fechaNcM">Fecha de nacimiento</label> <span class="red">*</span><input
 																		type="text" class="form-control" id="fechaNcM"
 																		name="fechaNcM" 
 																		value="${matriculado.fechaNc}">
@@ -111,27 +111,37 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	<label for="telefonoM">Telefono </label> <input type="text"
+																	<label for="telefonoM">Telefono </label> <span class="red">*</span><input type="text"
 																		class="form-control" id="telefonoM" name="telefonoM"
 																		value="${matriculado.telefono}">
 																</div>
 																<div class="form-group col-md-5">
-																	<label for="generoM">Genero</label> <input
-																		type="text" class="form-control" id="generoM"
-																		name="generoM" 
-																		value="${matriculado.genero}">
+																	    <div class="control-group">
+								                                            <label class="control-label" for="generoM">Genero
+								                                                <span class="red">* </span>
+								                                            </label>
+								                                            <div class="controls">
+								                                                <select name="generoM" id="generoM"
+								                                                    class="form-control" data-unique="newbilling">
+								                                                    <option selected value="${matriculado.genero}">${matriculado.genero}</option>
+								                                                    <option value="Hombre">Hombre</option>
+								                                                    <option value="Mujer">Mujer</option>								                                                
+								                                                </select>
+								                                            </div>
+								                                        </div>
+								                                    </div>
 																</div>
-															</div>
+													
 											
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	<label for="calleM">Calle </label> <input type="text"
+																	<label for="calleM">Calle </label> <span class="red">*</span><input type="text"
 																		class="form-control" id="calleM" name="calleM"
 																		value="${matriculado.calle}">
 																</div>
 																<div class="form-group col-md-5">
-																	<label for="localidadM">Localidad</label> <input
+																	<label for="localidadM">Localidad</label> <span class="red">*</span><input
 																		type="text" class="form-control" id="localidadM"
 																		name="localidadM" 
 																		value="${matriculado.localidad}">
@@ -141,12 +151,12 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	<label for="cpM">Cp </label> <input type="text"
+																	<label for="cpM">Cp </label> <span class="red">*</span><input type="text"
 																		class="form-control" id="cpM" name="cpM"
 																		value="${matriculado.cp}">
 																</div>
 																<div class="form-group col-md-5">
-																	<label for="provinciaM">Provincia</label> <input
+																	<label for="provinciaM">Provincia</label> <span class="red">*</span><input
 																		type="text" class="form-control" id="provinciaM"
 																		name="provinciaM" 
 																		value="${matriculado.provincia}">
@@ -155,13 +165,24 @@
 													
 															<div class="row">
 																<div class="form-group col-md-1"></div>
-																<div class="form-group col-md-5" id="columnas62">
-																	<label for="paisM">Pais </label> <input type="text"
-																		class="form-control" id="paisM" name="paisM"
-																		value="${matriculado.pais}">
-																</div>
+															<div class="form-group col-md-5">
+							                                        <div class="control-group">
+							                                            <label class="control-label" for="paisM">Pais
+							                                                <span class="red">* </span>
+							                                            </label>
+							                                            <div class="controls">
+							                                                <select name="paisM" id="paisM"
+							                                                    class="form-control" data-unique="newbilling">
+							                                                    <option selected value="${matriculado.pais}">${matriculado.pais}</option>
+							                                                    <option value="Spain">Spain</option>
+							                                                    <option value="Portugal">Portugal</option>
+							                                                    <option value="Francia">Francia</option>
+							                                                </select>
+							                                            </div>
+							                                        </div>
+							                                    </div>
 																<div class="form-group col-md-5">
-																	<label for="dniM">DNI</label> <input
+																	<label for="dniM">DNI</label> <span class="red">*</span><input
 																		type="text" class="form-control" id="dniM"
 																		name="dniM" 
 																		value="${matriculado.dni}">
@@ -170,15 +191,25 @@
 													
 															<div class="row">
 																<div class="form-group col-md-1"></div>
-																<div class="form-group col-md-5" id="columnas62">
-																	<label for="cuponM ">Cupon </label> <input type="text"
-																		class="form-control" id="cuponM" name="cuponM"
-																		value="${matriculado.cupon}">
-																</div>
 																<div class="form-group col-md-5">
-																	<label for="precioM">Precio</label> <input
+																	    <div class="control-group">
+								                                            <label class="control-label" for="cuponM">Cupon
+								                                                <span class="red">* </span>
+								                                            </label>
+								                                            <div class="controls">
+								                                                <select name="cuponM" id="cuponM"
+								                                                    class="form-control" data-unique="newbilling">
+								                                                    <option selected value="${matriculado.cupon}">${matriculado.cupon}</option>
+								                                                    <option value="Si">Si</option>
+								                                                    <option value="No">No</option>								                                                
+								                                                </select>
+								                                            </div>
+								                                        </div>
+								                                    </div>
+																<div class="form-group col-md-5">
+																	<label for="precioM">Precio</label> <span class="red">*</span><input
 																		type="text" class="form-control" id="precioM"
-																		name="precioM" 
+																		name="precioM" readonly
 																		value="${matriculado.precio}">
 																</div>
 															</div>
@@ -186,12 +217,12 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	<label for="logroM">Logro </label> <input type="text"
+																	<label for="logroM">Logro </label> <span class="red">*</span><input type="text"
 																		class="form-control" id="logroM" name="logroM"
 																		value="${matriculado.logro}">
 																</div>
 																<div class="form-group col-md-5">
-																	<label for="cursosM">Cursos</label> <input
+																	<label for="cursosM">Cursos</label> <span class="red">*</span><input
 																		type="text" class="form-control" id="cursosM"
 																		name="cursosM" 
 																		value="${matriculado.cursos}">
