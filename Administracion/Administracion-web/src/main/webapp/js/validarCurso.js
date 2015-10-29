@@ -301,14 +301,14 @@ function validarC(formulario){
 	         mensaje = mensaje.concat("El dia es incorrecto" + '\n');
 	    }else if (ano - hoy.getYear()+1 >= 0) {
 	    	if (mes - hoy.getMonth()+1 >= 0) {
-	    		if (dia - hoy.getUTCDate() >= 0) {
+	    		if (dia - hoy.getUTCDate() >= 0 || mes - hoy.getMonth()+1 >= 1 || ano - hoy.getYear()+1 >= 1) {
 	    		 	 document.getElementById("fechaIniC").style.borderColor="green";
 	    	         document.getElementById("fechaIniC").style.borderStyle="dotted";
 	    	         contador = contador + 1;
 				}else {
 				   	 document.getElementById("fechaIniC").style.borderColor="red";
 			         document.getElementById("fechaIniC").style.borderStyle="dotted";
-			         mensaje = mensaje.concat("dia menor, el plazo de inicio de matriculacion tiene que ser mayor al dñia actual" + '\n');
+			         mensaje = mensaje.concat("dia menor, el plazo de inicio de matriculacion tiene que ser mayor al dia actual" + '\n');
 				
 				}
 	    	}else{
@@ -350,16 +350,11 @@ function validarC(formulario){
 		         mensaje = mensaje.concat("El dia es incorrecto" + '\n');
 		    }else if (anoF - ano >= 0) {
 		    	if (mesF - mes >= 0) {
-		    		if (diaF - hoyF.getUTCDate() >= 0) {
+		    		if (diaF - hoyF.getUTCDate() >= 0 || mesF - mes >= 1 || anoF - ano >= 1) {
 		    		 	 document.getElementById("fechaFInC").style.borderColor="green";
 		    	         document.getElementById("fechaFInC").style.borderStyle="dotted";
 		    	         contador = contador + 1;
-					}else if  (mesF - mes >= 1 || anoF - ano >= 1) {
-						 document.getElementById("fechaFInC").style.borderColor="green";
-		    	         document.getElementById("fechaFInC").style.borderStyle="dotted";
-		    	         contador = contador + 1;
-					}
-						else {
+					}else {
 					   	 document.getElementById("fechaFInC").style.borderColor="red";
 				         document.getElementById("fechaFInC").style.borderStyle="dotted";
 				         mensaje = mensaje.concat("dia menor" + '\n');	
@@ -421,16 +416,11 @@ function validarC(formulario){
 			         mensaje = mensaje.concat("El dia es incorrecto" + '\n');
 			    }else if (anoC - ano >= 0) {
 			    	if (mesC - mes >= 0) {
-			    		if (diaC - dia >= 0) {
+			    		if (diaC - dia >= 0 || mesC - mes >= 1 || anoC - ano >= 1) {
 			    		 	 document.getElementById("cierreCursoC").style.borderColor="green";
 			    	         document.getElementById("cierreCursoC").style.borderStyle="dotted";
 			    	         contador = contador + 1;
-						}else if  (mesC - mes >= 1 || anoC - ano >= 1) {
-							 document.getElementById("cierreCursoC").style.borderColor="green";
-			    	         document.getElementById("cierreCursoC").style.borderStyle="dotted";
-			    	         contador = contador + 1;
-						}
-							else {
+						} else {
 						   	 document.getElementById("cierreCursoC").style.borderColor="red";
 					         document.getElementById("cierreCursoC").style.borderStyle="dotted";
 					         mensaje = mensaje.concat("dia menor" + '\n');	
@@ -463,7 +453,7 @@ function validarC(formulario){
 		        document.getElementById("peticionEC").style.borderStyle="dotted";
 		    }
 
-    if(contador >= 23){
+    if(contador = 23){
         alert("Se ha creado el Curso con éxito");
     } else{
         alert(mensaje);
