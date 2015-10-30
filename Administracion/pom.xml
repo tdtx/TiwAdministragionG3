@@ -16,8 +16,44 @@
 	</organization>
 	<developers>
 		<developer>
-			<name>Your name</name>
-			<email>your@email</email>
+			<name>Antonio Martinez</name>
+			<email>100293126@alumnos.uc3m.es</email>
+			<organization>TIW</organization>
+			<organizationUrl>http://www.dei.inf.uc3m.es</organizationUrl>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</developer>
+				<developer>
+			<name>Maria Cañizares</name>
+			<email>100292463@alumnos.uc3m.es</email>
+			<organization>TIW</organization>
+			<organizationUrl>http://www.dei.inf.uc3m.es</organizationUrl>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</developer>
+				<developer>
+			<name>Tomas Domingo Tee</name>
+			<email>100277658@alumnos.uc3m.es</email>
+			<organization>TIW</organization>
+			<organizationUrl>http://www.dei.inf.uc3m.es</organizationUrl>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</developer>
+				<developer>
+			<name>Carolina Arredondo</name>
+			<email>100290941@alumnos.uc3m.es</email>
+			<organization>TIW</organization>
+			<organizationUrl>http://www.dei.inf.uc3m.es</organizationUrl>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</developer>
+				<developer>
+			<name>Roberto Sanchez</name>
+			<email>100346093@alumnos.uc3m.es</email>
 			<organization>TIW</organization>
 			<organizationUrl>http://www.dei.inf.uc3m.es</organizationUrl>
 			<roles>

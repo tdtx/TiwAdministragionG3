@@ -68,7 +68,7 @@
 																	<label for="idC">ID </label> <span class="red">*</span><input type="text"
 																		class="form-control" id="idC" name="idC"
 																		value="${curso.id}">
-																	<div>  &nbsp</div>
+																<div>  &nbsp</div>
 																	<label for="tituloC">Titulo</label> <span class="red">*</span><input
 																		type="text" class="form-control" id="tituloC"
 																		name="tituloC"
