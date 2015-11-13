@@ -272,7 +272,7 @@ function validarC(formulario){
         document.getElementById("dificultadC").style.borderStyle="dotted";
     }
 
-    //Validado el campo fecha de inicio
+    /*Validado el campo fecha de inicio
 	var fechaIniCursos = document.getElementById("fechaIniC").value;
 	var fechaIniC = fechaIniCursos.toString();
 	    hoy=new Date() 
@@ -320,8 +320,8 @@ function validarC(formulario){
 	    	document.getElementById("fechaIniC").style.borderColor="red";
 	         document.getElementById("fechaIniC").style.borderStyle="dotted";
 	         mensaje = mensaje.concat("año menor" + '\n');
-	    }
-	    //Validado el campo fecha de fin
+	    }*/
+	    /*Validado el campo fecha de fin
 		var fechaFInCursos = document.getElementById("fechaFInC").value;
 		var fechaFInC = fechaFInCursos.toString();
 		    hoyF=new Date() 
@@ -369,7 +369,7 @@ function validarC(formulario){
 		         document.getElementById("fechaFInC").style.borderStyle="dotted";
 		         mensaje = mensaje.concat("año menor" + '\n');
 		    }
-
+*/
 		  //Validado el campo nombre del asociado
 		    var asociadoCursos = document.getElementById("asociadoC").value;
 		    var asociadoC = asociadoCursos.toString();
@@ -387,7 +387,7 @@ function validarC(formulario){
 		        contador = contador + 1;
 		    }
 	
-		  //Validado el campo nombre del cierre curso
+		  /*Validado el campo nombre del cierre curso
 		    var cierreCursoCursos = document.getElementById("cierreCursoC").value;
 			var cierreCursoC = cierreCursoCursos.toString();
 			    hoyC=new Date() 
@@ -434,7 +434,7 @@ function validarC(formulario){
 			    	document.getElementById("cierreCursoC").style.borderColor="red";
 			         document.getElementById("cierreCursoC").style.borderStyle="dotted";
 			         mensaje = mensaje.concat("año menor" + '\n');
-			    }
+			    }*/
 
 			   //Validado el campo peticion eliminar
 		    var peticionECursos = document.getElementById("peticionEC").value;
@@ -453,7 +453,7 @@ function validarC(formulario){
 		        document.getElementById("peticionEC").style.borderStyle="dotted";
 		    }
 
-    if(contador = 23){
+    if(contador = 20){
         alert("Se ha creado el Curso con éxito");
     } else{
         alert(mensaje);

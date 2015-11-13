@@ -135,9 +135,9 @@
 		<!-- @OVERRIDE this property per each project -->
 		<repository.domain>github.com</repository.domain>
 		<!-- @OVERRIDE this property per each project -->
-		<repository.user>changeme</repository.user>
+		<repository.user>tdtx</repository.user>
 		<!-- @OVERRIDE this property per each project -->
-		<repository.name>changeme</repository.name>
+		<repository.name>TiwAdministragionG3</repository.name>
 		
 		<!-- @OVERRIDE [This is the branch that the web "pages" are located in. 
 			For GitHub, gh-pages; ] -->
