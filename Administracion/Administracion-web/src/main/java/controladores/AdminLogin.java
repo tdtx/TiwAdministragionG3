@@ -2,13 +2,16 @@ package controladores;
 
 import java.io.IOException;
 
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+import javax.transaction.UserTransaction;
 
 /**
  * Servlet de ejemplo que muestra distintos aspectos dentro de los ambitos
@@ -25,12 +28,20 @@ public class AdminLogin extends HttpServlet {
 	private static final String indexJSP = "/index.jsp";
 	private static final String longinJSP = "/login.jsp";
 	private static final long serialVersionUID = 1L;
+
+	@PersistenceContext(unitName="Administracion-model")
+	EntityManager em;
+	@Resource
+	UserTransaction ut;
+
+	
 	public AdminLogin() {
 		super();
 	}
 
 	@Override
 	public void init() throws ServletException {
+		
 	}
 
 	/**
