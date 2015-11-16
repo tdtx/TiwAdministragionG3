@@ -4,41 +4,41 @@ import javax.persistence.EntityManager;
 //import javax.persistence.NoResultException;
 import javax.transaction.UserTransaction;
 //import javax.persistence.Query;
-import AdministracionG3.model.dominios.imagenes;
+import AdministracionG3.model.dominios.Imagenes;
 
 //import java.util.List;
 
-public class imagenDAO {
+public class ImagenDAO {
     private final EntityManager em;
     private final UserTransaction ut;
 
-    public imagenDAO(EntityManager em, UserTransaction ut) {
+    public ImagenDAO(EntityManager em, UserTransaction ut) {
         super();
         this.em = em;
         this.ut = ut;
     }
 
-    public imagenes guardarImagen(imagenes nuevaImagen) throws Exception{
+    public Imagenes guardarImagen(Imagenes nuevaImagen) throws Exception{
         ut.begin();    
         em.persist(nuevaImagen); 
         ut.commit();   
         return nuevaImagen;
     }
-    public imagenes actualizarImagen(imagenes clienteImagen) throws Exception{
+    public Imagenes actualizarImagen(Imagenes imagen) throws Exception{
         ut.begin();
-        em.merge(clienteImagen);
+        em.merge(imagen);
         ut.commit();
-        return clienteImagen;
+        return imagen;
     }
     
-    public void borrarImagen(imagenes imagen)throws Exception{
+    public void borrarImagen(Imagenes imagen)throws Exception{
         ut.begin();
         em.remove(em.merge(imagen));
         ut.commit();
     }
     
      
-    public imagenes buscarImagen(Long id) {
-        return em.find(imagenes.class, id);
+    public Imagenes buscarImagen(Long id) {
+        return em.find(Imagenes.class, id);
     } 
 }

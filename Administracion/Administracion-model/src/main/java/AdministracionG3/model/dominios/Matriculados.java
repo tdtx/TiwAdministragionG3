@@ -6,11 +6,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.AUTO;
 
 @Entity
-public class matriculados implements Serializable{
+public class Matriculados implements Serializable{
 	
 private static final long serialVersionUID = 1L;
 	
@@ -26,13 +29,16 @@ private static final long serialVersionUID = 1L;
 	double precio_final;
 	double nota;
 	
+	 @OneToMany(fetch = LAZY, cascade = ALL)
+	    private  ResultadosPruebas rescultadosPruebas;
 	
-	public matriculados() {
+	
+	public Matriculados() {
 		super();
 	}
 	
 	
-	public matriculados(Long id, String id_curso, String id_usuario,
+	public Matriculados(Long id, String id_curso, String id_usuario,
 			String cupon, double precio_final, double nota) {
 		super();
 		this.id = id;

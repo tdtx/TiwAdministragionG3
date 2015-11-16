@@ -1,5 +1,4 @@
 package AdministracionG3.model.dominios;
-
 import static javax.persistence.GenerationType.AUTO;
 
 import java.io.Serializable;
@@ -10,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class material implements Serializable {		
+public class Material implements Serializable {		
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = AUTO)
@@ -20,10 +19,10 @@ public class material implements Serializable {
 	String nombre;
 	String documento;
 	
-	public material() {
+	public Material() {
 		super();
 	}
-	public material(Long id, String idLeccion, String nombre, String documento) {
+	public Material(Long id, String idLeccion, String nombre, String documento) {
 		super();
 		this.id = id;
 		this.idLeccion = idLeccion;

@@ -1,37 +1,36 @@
 package AdministracionG3.model.daos;
-
 import javax.persistence.EntityManager;
 //import javax.persistence.NoResultException;
 import javax.transaction.UserTransaction;
 //import javax.persistence.Query;
-import AdministracionG3.model.dominios.pruebas;
+import AdministracionG3.model.dominios.Pruebas;
 
 //import java.util.List;
 
-public class pruebaDAO {
+public class PruebaDAO {
     private final EntityManager em;
     private final UserTransaction ut;
 
-    public pruebaDAO(EntityManager em, UserTransaction ut) {
+    public PruebaDAO(EntityManager em, UserTransaction ut) {
         super();
         this.em = em;
         this.ut = ut;
     }
 
-    public pruebas guardarPrueba(pruebas nuevaPrueba) throws Exception{
+    public Pruebas guardarPrueba(Pruebas nuevaPrueba) throws Exception{
         ut.begin();    
         em.persist(nuevaPrueba); 
         ut.commit();   
         return nuevaPrueba;
     }
-    public pruebas actualizarPrueba(pruebas clientePrueba) throws Exception{
+    public Pruebas actualizarPrueba(Pruebas prueba) throws Exception{
         ut.begin();
-        em.merge(clientePrueba);
+        em.merge(prueba);
         ut.commit();
-        return clientePrueba;
+        return prueba;
     }
     
-    public void borrarPrueba(pruebas prueba)throws Exception{
+    public void borrarPrueba(Pruebas prueba)throws Exception{
         ut.begin();
         em.remove(em.merge(prueba));
         ut.commit();
@@ -39,8 +38,8 @@ public class pruebaDAO {
     
    
      
-    public pruebas buscarPrueba(Long id) {
-        return em.find(pruebas.class, id);
+    public Pruebas buscarPrueba(Long id) {
+        return em.find(Pruebas.class, id);
     } 
 }
 

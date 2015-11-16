@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import static javax.persistence.GenerationType.AUTO;
 
 @Entity
-public class resultadosPruebas implements Serializable{
+public class ResultadosPruebas implements Serializable{
 	
 private static final long serialVersionUID = 1L;
 	
@@ -27,12 +27,12 @@ private static final long serialVersionUID = 1L;
 	String comentario;
 	
 	
-	public resultadosPruebas() {
+	public ResultadosPruebas() {
 		super();
 	}
 	
 	
-	public resultadosPruebas(Long id, long id_prueba, String id_matricula,
+	public ResultadosPruebas(Long id, long id_prueba, String id_matricula,
 			double nota, String comentario) {
 		super();
 		this.id = id;

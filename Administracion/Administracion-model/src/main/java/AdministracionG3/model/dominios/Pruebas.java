@@ -6,11 +6,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.AUTO;
 
 @Entity
-public class pruebas implements Serializable {
+public class Pruebas implements Serializable {
 	
 private static final long serialVersionUID = 1L;
 	
@@ -23,12 +26,20 @@ private static final long serialVersionUID = 1L;
 	String descripcion;
 	
 	
-	public pruebas() {
+	
+	 @OneToMany(fetch = LAZY, cascade = ALL)
+	    private  ResultadosPruebas rescultadosPruebas;
+	
+	
+	
+	
+	
+	public Pruebas() {
 		super();
 	}
 	
 	
-	public pruebas(Long id, String id_curso, String descripcion) {
+	public Pruebas(Long id, String id_curso, String descripcion) {
 		super();
 		this.id = id;
 		this.id_curso = id_curso;

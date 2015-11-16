@@ -8,9 +8,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import static javax.persistence.FetchType.LAZY;
+import static javax.persistence.CascadeType.ALL;
+
+
 
 @Entity
-public class curso implements Serializable {		
+public class Curso implements Serializable {		
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = AUTO)
@@ -33,10 +39,24 @@ public class curso implements Serializable {
 	String tipo;
 	String valor;
 	
-	public curso() {
+	
+	
+	 @OneToMany(fetch = LAZY, cascade = ALL)
+	    private  Pruebas pruebas;
+	 
+	 @OneToMany(fetch = LAZY, cascade = ALL)
+	    private Leccion leccion;
+	 
+	 @OneToMany(fetch = LAZY, cascade = ALL)
+	    private Matriculados matriculados;
+	
+	
+	
+	
+	public Curso() {
 		super();
 	}
-	public curso(Long id, String titulo, String descripcion, String horas,
+	public Curso(Long id, String titulo, String descripcion, String horas,
 			String temario, String idProfesor, String nivel,
 			String certificado, String categoria, String destacado,
 			String estado, double precio, String tipoOferta, String idImagen,

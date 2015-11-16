@@ -5,11 +5,16 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.OneToMany;
+
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.AUTO;
+
 import javax.persistence.Id;
 
 @Entity
-public class usuarios implements Serializable {		
+public class Usuarios implements Serializable {		
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = AUTO)
@@ -30,12 +35,22 @@ public class usuarios implements Serializable {
 	String fechaNacimiento;
 	String descripcion;
 	String aficiones;
+	String calle;
+	String localidad;
+	int codigoPostal;
+	String provincia;
+	String Pais;
 	
-	public usuarios() {
+	@OneToMany(fetch = LAZY, cascade = ALL)
+    private  Matriculados matriculados;
+	
+	
+	
+	public Usuarios() {
 		super();
 	}
 //para el registro	
-	public usuarios(String nick, String clave, String nombre, String apellido1,
+	public Usuarios(String nick, String clave, String nombre, String apellido1,
 			String apellido2, String email, String fechaNacimiento) {
 		super();
 		this.nick = nick;
@@ -47,20 +62,18 @@ public class usuarios implements Serializable {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 //para login	
-	public usuarios(String clave, String email) {
+	public Usuarios(String clave, String email) {
 		super();
 		this.clave = clave;
 		this.email = email;
 	}
-//para perfil	
-	public Long getId() {
-		return id;
-	}
-	public usuarios(Long id, String rol, String nick, String clave, String nombre,
-		String apellido1, String apellido2, int telefono, String email,
-		String cuentaBancaria, String idImagen, String fechaNacimiento,
-		String descripcion, String aficiones) {
-	super();
+//para perfil
+	public Usuarios(Long id, String rol, String nick, String clave, String nombre,
+			String apellido1, String apellido2, int telefono, String email,
+			String cuentaBancaria, String idImagen, String fechaNacimiento,
+			String descripcion, String aficiones, String calle, String localidad,
+			int codigoPostal, String provincia, String pais) {
+		super();
 		this.id = id;
 		this.rol = rol;
 		this.nick = nick;
@@ -75,6 +88,14 @@ public class usuarios implements Serializable {
 		this.fechaNacimiento = fechaNacimiento;
 		this.descripcion = descripcion;
 		this.aficiones = aficiones;
+		this.calle = calle;
+		this.localidad = localidad;
+		this.codigoPostal = codigoPostal;
+		this.provincia = provincia;
+		Pais = pais;
+	}
+	public Long getId() {
+		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
@@ -157,8 +178,44 @@ public class usuarios implements Serializable {
 	public void setAficiones(String aficiones) {
 		this.aficiones = aficiones;
 	}
+	public String getCalle() {
+		return calle;
+	}
+	public void setCalle(String calle) {
+		this.calle = calle;
+	}
+	public String getLocalidad() {
+		return localidad;
+	}
+	public void setLocalidad(String localidad) {
+		this.localidad = localidad;
+	}
+	public int getCodigoPostal() {
+		return codigoPostal;
+	}
+	public void setCodigoPostal(int codigoPostal) {
+		this.codigoPostal = codigoPostal;
+	}
+	public String getProvincia() {
+		return provincia;
+	}
+	public void setProvincia(String provincia) {
+		this.provincia = provincia;
+	}
+	public String getPais() {
+		return Pais;
+	}
+	public void setPais(String pais) {
+		Pais = pais;
+	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
+	
+	
+	
+	
+	
 	
 }
