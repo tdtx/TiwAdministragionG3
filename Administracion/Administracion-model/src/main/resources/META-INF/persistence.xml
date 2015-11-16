@@ -4,7 +4,15 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="Administracion-model">
 		<jta-data-source>jdbc/tiw</jta-data-source>
-		<class>AdministracionG3.model.dominios.usuarios</class>
+		<class>AdministracionG3.model.dominios.Curso</class>
+		<class>AdministracionG3.model.dominios.Imagenes</class>
+		<class>AdministracionG3.model.dominios.Leccion</class>
+		<class>AdministracionG3.model.dominios.Material</class>
+		<class>AdministracionG3.model.dominios.Matriculados</class>
+		<class>AdministracionG3.model.dominios.Pruebas</class>
+		<class>AdministracionG3.model.dominios.ResultadosPruebas</class>
+		<class>AdministracionG3.model.dominios.Seccion</class>
+		<class>AdministracionG3.model.dominios.Usuarios</class>
 		<properties>
 			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
 		</properties>
