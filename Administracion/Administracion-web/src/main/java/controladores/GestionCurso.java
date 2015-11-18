@@ -26,12 +26,12 @@ public class GestionCurso extends HttpServlet {
 	private static final String indexJSP = "/index.jsp";
 	private static final String cursosJSP = "/cursos.jsp";   
 	private ArrayList<crearCurso> cursos;
-	@PersistenceContext(unitName="Administracion-model")
+	  /**	@PersistenceContext(unitName="Administracion-model")
 	EntityManager em;
 	@Resource
 	UserTransaction ut;
 	CursoDAO cdao;
-    /**
+  
      * @see HttpServlet#HttpServlet()
      */
     public GestionCurso() {
@@ -57,7 +57,7 @@ public class GestionCurso extends HttpServlet {
 		cursos.add(cc4);
 		cursos.add(cc5);
 		cursos.add(cc6);
-		cdao = new CursoDAO(em, ut);
+		//cdao = new CursoDAO(em, ut);
     }
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
