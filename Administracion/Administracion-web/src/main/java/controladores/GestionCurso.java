@@ -3,14 +3,19 @@ package controladores;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.transaction.UserTransaction;
 
+import AdministracionG3.model.daos.CursoDAO;
 import dominio.crearCurso;
-import dominio.uMarculado;
+
 
 /**
  * Servlet implementation class GestionCurso
@@ -21,6 +26,11 @@ public class GestionCurso extends HttpServlet {
 	private static final String indexJSP = "/index.jsp";
 	private static final String cursosJSP = "/cursos.jsp";   
 	private ArrayList<crearCurso> cursos;
+	@PersistenceContext(unitName="Administracion-model")
+	EntityManager em;
+	@Resource
+	UserTransaction ut;
+	CursoDAO cdao;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -47,6 +57,7 @@ public class GestionCurso extends HttpServlet {
 		cursos.add(cc4);
 		cursos.add(cc5);
 		cursos.add(cc6);
+		cdao = new CursoDAO(em, ut);
     }
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

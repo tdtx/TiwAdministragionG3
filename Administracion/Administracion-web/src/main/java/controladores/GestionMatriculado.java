@@ -3,12 +3,17 @@ package controladores;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.transaction.UserTransaction;
 
+import AdministracionG3.model.daos.UsuarioDAO;
 import dominio.uMarculado;
 
 /**
@@ -23,6 +28,11 @@ public class GestionMatriculado extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	@PersistenceContext(unitName="Administracion-model")
+	EntityManager em;
+	@Resource
+	UserTransaction ut;
+	UsuarioDAO udao;
     public GestionMatriculado() {
         super();
         // TODO Auto-generated constructor stub
@@ -38,6 +48,7 @@ public class GestionMatriculado extends HttpServlet {
 		matriculados = new ArrayList<uMarculado>();
 		matriculados.add(um1);
 		matriculados.add(um2);
+		udao = new UsuarioDAO(em, ut);
 	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
