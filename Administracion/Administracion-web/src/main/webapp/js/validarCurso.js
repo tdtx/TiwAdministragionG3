@@ -1,6 +1,6 @@
 function validarC(formulario){
     var contador = 0;
-    var mensaje = "";
+ //   var mensaje = "";
 	//Validado el campo id
 	var idCurso = document.getElementById("idC").value;
 	var idC = idCurso.toString();
@@ -8,11 +8,11 @@ function validarC(formulario){
 	if (idC.match(/[\D]/g)|| idC == null || idC == ""){
 		document.getElementById("idC").style.borderColor="red";
 		document.getElementById("idC").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo id no puede permanecer vacío y sólo puede estar formado por números" + '\n');
+//		mensaje = mensaje.concat("El campo id no puede permanecer vacío y sólo puede estar formado por números" + '\n');
 	} else if(cpLong != 4){
 		document.getElementById("idC").style.borderColor="red";
 		document.getElementById("idC").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo id debe estar formado por 4 dígitos" + '\n');
+//		mensaje = mensaje.concat("El campo id debe estar formado por 4 dígitos" + '\n');
 	} else {
 		document.getElementById("idC").style.borderColor="green";
 		document.getElementById("idC").style.borderStyle="dotted";
@@ -22,13 +22,13 @@ function validarC(formulario){
     var tituloCurso = document.getElementById("tituloC").value;
     var tituloC = tituloCurso.toString();
     if (tituloC == null || tituloC == "") {
-        mensaje = mensaje.concat("El campo titulo de curso debe rellenarse" + '\n');
+//        mensaje = mensaje.concat("El campo titulo de curso debe rellenarse" + '\n');
         document.getElementById("tituloC").style.borderColor="red";
         document.getElementById("tituloC").style.borderStyle="dotted";
     } else if (tituloC.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
         document.getElementById("tituloC").style.borderColor="red";
         document.getElementById("tituloC").style.borderStyle="dotted";
-        mensaje = mensaje.concat("El titulo de curso no puede contener símbolos, ni estar en blanco" + '\n');
+  //      mensaje = mensaje.concat("El titulo de curso no puede contener símbolos, ni estar en blanco" + '\n');
     } else {
         document.getElementById("tituloC").style.borderColor="green";
         document.getElementById("tituloC").style.borderStyle="dotted";
@@ -40,7 +40,7 @@ function validarC(formulario){
 	if (descripcionC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| descripcionC == null || descripcionC == ""){
 		document.getElementById("descripcionC").style.borderColor="red";
 		document.getElementById("descripcionC").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo descripcion no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+//		mensaje = mensaje.concat("El campo descripcion no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 	} else {
 		document.getElementById("descripcionC").style.borderColor="green";
 		document.getElementById("descripcionC").style.borderStyle="dotted";
@@ -53,11 +53,11 @@ function validarC(formulario){
 	if (nHorasC.match(/[\D]/g)|| nHorasC == null || nHorasC == ""){
 		document.getElementById("nHorasC").style.borderColor="red";
 		document.getElementById("nHorasC").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo id no puede permanecer vacío y sólo puede estar formado por números" + '\n');
+//		mensaje = mensaje.concat("El campo id no puede permanecer vacío y sólo puede estar formado por números" + '\n');
 	} else if(cpLong != 4){
 		document.getElementById("nHorasC").style.borderColor="red";
 		document.getElementById("nHorasC").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo numero de horas debe estar formado por 4 dígitos" + '\n');
+//		mensaje = mensaje.concat("El campo numero de horas debe estar formado por 4 dígitos" + '\n');
 	} else {
 		document.getElementById("nHorasC").style.borderColor="green";
 		document.getElementById("nHorasC").style.borderStyle="dotted";
@@ -69,7 +69,7 @@ function validarC(formulario){
 	if (temarioC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| temarioC == null || temarioC == ""){
 		document.getElementById("temarioC").style.borderColor="red";
 		document.getElementById("temarioC").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo temario no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+//		mensaje = mensaje.concat("El campo temario no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 	} else {
 		document.getElementById("temarioC").style.borderColor="green";
 		document.getElementById("temarioC").style.borderStyle="dotted";
@@ -79,13 +79,13 @@ function validarC(formulario){
     var profesorCurso = document.getElementById("profesorC").value;
     var profesorC = profesorCurso.toString();
     if (profesorC == null || profesorC == "") {
-        mensaje = mensaje.concat("El campo profesor de cursp debe rellenarse" + '\n');
+//        mensaje = mensaje.concat("El campo profesor de cursp debe rellenarse" + '\n');
         document.getElementById("profesorC").style.borderColor="red";
         document.getElementById("profesorC").style.borderStyle="dotted";
     } else if (profesorC.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
         document.getElementById("profesorC").style.borderColor="red";
         document.getElementById("profesorC").style.borderStyle="dotted";
-        mensaje = mensaje.concat("El profesor del curso no puede contener símbolos, ni estar en blanco" + '\n');
+//        mensaje = mensaje.concat("El profesor del curso no puede contener símbolos, ni estar en blanco" + '\n');
     } else {
         document.getElementById("profesorC").style.borderColor="green";
         document.getElementById("profesorC").style.borderStyle="dotted";
@@ -95,7 +95,7 @@ function validarC(formulario){
     var certificadoCurso = document.getElementById("certificadoC").value;
     var certificadoC = certificadoCurso.toString();
     if (certificadoC == null || certificadoC == "") {
-        mensaje = mensaje.concat("El campo certificado debe rellenarse" + '\n');
+//        mensaje = mensaje.concat("El campo certificado debe rellenarse" + '\n');
         document.getElementById("certificadoC").style.borderColor="red";
         document.getElementById("certificadoC").style.borderStyle="dotted";
     } else if (certificadoC=="Si" || certificadoC=="No" ){
@@ -103,7 +103,7 @@ function validarC(formulario){
         document.getElementById("certificadoC").style.borderStyle="dotted";
         contador = contador + 1;    
     } else {
-        mensaje = mensaje.concat("El campo certificado debe rellenarse con Si o No)" + '\n');
+//        mensaje = mensaje.concat("El campo certificado debe rellenarse con Si o No)" + '\n');
         document.getElementById("certificadoC").style.borderColor="red";
         document.getElementById("certificadoC").style.borderStyle="dotted";
     }
@@ -113,7 +113,7 @@ function validarC(formulario){
 	if (seccionesC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| seccionesC == null || seccionesC == ""){
 		document.getElementById("seccionesC").style.borderColor="red";
 		document.getElementById("seccionesC").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo secciones no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+//		mensaje = mensaje.concat("El campo secciones no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 	} else {
 		document.getElementById("seccionesC").style.borderColor="green";
 		document.getElementById("seccionesC").style.borderStyle="dotted";
@@ -125,7 +125,7 @@ function validarC(formulario){
 	if (leccionesC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| leccionesC == null || leccionesC == ""){
 		document.getElementById("leccionesC").style.borderColor="red";
 		document.getElementById("leccionesC").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo lecciones no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+//		mensaje = mensaje.concat("El campo lecciones no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 	} else {
 		document.getElementById("leccionesC").style.borderColor="green";
 		document.getElementById("leccionesC").style.borderStyle="dotted";
@@ -137,7 +137,7 @@ function validarC(formulario){
 	if (materialC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| materialC == null || materialC == ""){
 		document.getElementById("materialC").style.borderColor="red";
 		document.getElementById("materialC").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo material no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+//		mensaje = mensaje.concat("El campo material no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 	} else {
 		document.getElementById("materialC").style.borderColor="green";
 		document.getElementById("materialC").style.borderStyle="dotted";
@@ -148,7 +148,7 @@ function validarC(formulario){
     var notificacionesCurso = document.getElementById("notificacionesC").value;
     var notificacionesC = notificacionesCurso.toString();
     if (notificacionesC == null || notificacionesC == "") {
-        mensaje = mensaje.concat("El campo notificaciones debe rellenarse" + '\n');
+ //       mensaje = mensaje.concat("El campo notificaciones debe rellenarse" + '\n');
         document.getElementById("notificacionesC").style.borderColor="red";
         document.getElementById("notificacionesC").style.borderStyle="dotted";
     } else if (notificacionesC=="Si" || notificacionesC=="No" ){
@@ -156,7 +156,7 @@ function validarC(formulario){
         document.getElementById("notificacionesC").style.borderStyle="dotted";
         contador = contador + 1;    
     } else {
-        mensaje = mensaje.concat("El campo notificaciones debe rellenarse con Si o No)" + '\n');
+//        mensaje = mensaje.concat("El campo notificaciones debe rellenarse con Si o No)" + '\n');
         document.getElementById("notificacionesC").style.borderColor="red";
         document.getElementById("notificacionesC").style.borderStyle="dotted";
     }
@@ -165,7 +165,7 @@ function validarC(formulario){
     var calificacionesCurso = document.getElementById("calificacionesC").value;
     var calificacionesC = calificacionesCurso.toString();
     if (calificacionesC == null || calificacionesC == "") {
-        mensaje = mensaje.concat("El campo calificaciones debe rellenarse" + '\n');
+ //       mensaje = mensaje.concat("El campo calificaciones debe rellenarse" + '\n');
         document.getElementById("calificacionesC").style.borderColor="red";
         document.getElementById("calificacionesC").style.borderStyle="dotted";
     } else if (calificacionesC=="Si" || calificacionesC=="No" ){
@@ -173,7 +173,7 @@ function validarC(formulario){
         document.getElementById("calificacionesC").style.borderStyle="dotted";
         contador = contador + 1;    
     } else {
-        mensaje = mensaje.concat("El campo calificaciones debe rellenarse con Si o No)" + '\n');
+ //       mensaje = mensaje.concat("El campo calificaciones debe rellenarse con Si o No)" + '\n');
         document.getElementById("calificacionesC").style.borderColor="red";
         document.getElementById("calificacionesC").style.borderStyle="dotted";
     }
@@ -184,7 +184,7 @@ function validarC(formulario){
 	if (categoriaC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| categoriaC == null || categoriaC == ""){
 		document.getElementById("categoriaC").style.borderColor="red";
 		document.getElementById("categoriaC").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo categoria no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+//		mensaje = mensaje.concat("El campo categoria no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 	} else {
 		document.getElementById("categoriaC").style.borderColor="green";
 		document.getElementById("categoriaC").style.borderStyle="dotted";
@@ -195,7 +195,7 @@ function validarC(formulario){
     var destacadoCursos = document.getElementById("destacadoC").value;
     var destacadoC = destacadoCursos.toString();
     if (destacadoC == null || destacadoC == "") {
-        mensaje = mensaje.concat("El campo destacado debe rellenarse" + '\n');
+ //       mensaje = mensaje.concat("El campo destacado debe rellenarse" + '\n');
         document.getElementById("destacadoC").style.borderColor="red";
         document.getElementById("destacadoC").style.borderStyle="dotted";
     } else if (destacadoC=="Si" || destacadoC=="No" ){
@@ -203,7 +203,7 @@ function validarC(formulario){
         document.getElementById("destacadoC").style.borderStyle="dotted";
         contador = contador + 1;    
     } else {
-        mensaje = mensaje.concat("El campo destacado debe rellenarse con Si o No)" + '\n');
+  //      mensaje = mensaje.concat("El campo destacado debe rellenarse con Si o No)" + '\n');
         document.getElementById("destacadoC").style.borderColor="red";
         document.getElementById("destacadoC").style.borderStyle="dotted";
     }
@@ -212,7 +212,7 @@ function validarC(formulario){
     var validadoCursos = document.getElementById("validadoC").value;
     var validadoC = validadoCursos.toString();
     if (validadoC == null || validadoC == "") {
-        mensaje = mensaje.concat("El campo validado debe rellenarse" + '\n');
+ //       mensaje = mensaje.concat("El campo validado debe rellenarse" + '\n');
         document.getElementById("validadoC").style.borderColor="red";
         document.getElementById("validadoC").style.borderStyle="dotted";
     } else if (validadoC=="Si" || validadoC=="No" ){
@@ -220,7 +220,7 @@ function validarC(formulario){
         document.getElementById("validadoC").style.borderStyle="dotted";
         contador = contador + 1;    
     } else {
-        mensaje = mensaje.concat("El campo validado debe rellenarse con Si o No)" + '\n');
+ //       mensaje = mensaje.concat("El campo validado debe rellenarse con Si o No)" + '\n');
         document.getElementById("validadoC").style.borderColor="red";
         document.getElementById("validadoC").style.borderStyle="dotted";
     }
@@ -229,13 +229,13 @@ function validarC(formulario){
     var precioCursos = document.getElementById("precioC").value;
     var precioC = precioCursos.toString();
     if (precioC == null || precioC == "") {
-        mensaje = mensaje.concat("El campo precio  debe rellenarse." + '\n');
+  //      mensaje = mensaje.concat("El campo precio  debe rellenarse." + '\n');
         document.getElementById("precioC").style.borderColor="red";
         document.getElementById("precioC").style.borderStyle="dotted";
     } else if (precioC.match(/[^\d.]/gi)){
         document.getElementById("precioC").style.borderColor="red";
         document.getElementById("precioC").style.borderStyle="dotted";
-        mensaje = mensaje.concat("El campo precio  no puede contener letras ni estar en blanco." + '\n');
+  //      mensaje = mensaje.concat("El campo precio  no puede contener letras ni estar en blanco." + '\n');
     } else {
         document.getElementById("precioC").style.borderColor="green";
         document.getElementById("precioC").style.borderStyle="dotted";
@@ -248,7 +248,7 @@ function validarC(formulario){
 	if (tOfertaC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| tOfertaC == null || tOfertaC == ""){
 		document.getElementById("tOfertaC").style.borderColor="red";
 		document.getElementById("tOfertaC").style.borderStyle="dotted";
-		mensaje = mensaje.concat("El campo de tipo de oferta no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
+//		mensaje = mensaje.concat("El campo de tipo de oferta no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 	} else {
 		document.getElementById("tOfertaC").style.borderColor="green";
 		document.getElementById("tOfertaC").style.borderStyle="dotted";
@@ -259,7 +259,7 @@ function validarC(formulario){
     var dificultadCursos = document.getElementById("dificultadC").value;
     var dificultadC = dificultadCursos.toString();
     if (dificultadC == null || dificultadC == "") {
-        mensaje = mensaje.concat("El campo dificultad debe rellenarse" + '\n');
+//        mensaje = mensaje.concat("El campo dificultad debe rellenarse" + '\n');
         document.getElementById("dificultadC").style.borderColor="red";
         document.getElementById("dificultadC").style.borderStyle="dotted";
     } else if (dificultadC=="Alta" || dificultadC=="Media" || dificultadC=="Baja"){
@@ -267,7 +267,7 @@ function validarC(formulario){
         document.getElementById("dificultadC").style.borderStyle="dotted";
         contador = contador + 1;    
     } else {
-        mensaje = mensaje.concat("El campo dificultad debe rellenarse con Alta, Media y Baja)" + '\n');
+//        mensaje = mensaje.concat("El campo dificultad debe rellenarse con Alta, Media y Baja)" + '\n');
         document.getElementById("dificultadC").style.borderColor="red";
         document.getElementById("dificultadC").style.borderStyle="dotted";
     }
@@ -374,13 +374,13 @@ function validarC(formulario){
 		    var asociadoCursos = document.getElementById("asociadoC").value;
 		    var asociadoC = asociadoCursos.toString();
 		    if (asociadoC == null || asociadoC == "") {
-		        mensaje = mensaje.concat("El campo profesor de cursp debe rellenarse" + '\n');
+//		        mensaje = mensaje.concat("El campo profesor de cursp debe rellenarse" + '\n');
 		        document.getElementById("asociadoC").style.borderColor="red";
 		        document.getElementById("asociadoC").style.borderStyle="dotted";
 		    } else if (asociadoC.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
 		        document.getElementById("asociadoC").style.borderColor="red";
 		        document.getElementById("asociadoC").style.borderStyle="dotted";
-		        mensaje = mensaje.concat("El asociado del curso no puede contener símbolos, ni estar en blanco" + '\n');
+//		        mensaje = mensaje.concat("El asociado del curso no puede contener símbolos, ni estar en blanco" + '\n');
 		    } else {
 		        document.getElementById("asociadoC").style.borderColor="green";
 		        document.getElementById("asociadoC").style.borderStyle="dotted";
@@ -440,7 +440,7 @@ function validarC(formulario){
 		    var peticionECursos = document.getElementById("peticionEC").value;
 		    var peticionEC = peticionECursos.toString();
 		    if (peticionEC == null || peticionEC == "") {
-		        mensaje = mensaje.concat("El campo peticion de eliminacion de curso debe rellenarse" + '\n');
+//		        mensaje = mensaje.concat("El campo peticion de eliminacion de curso debe rellenarse" + '\n');
 		        document.getElementById("peticionEC").style.borderColor="red";
 		        document.getElementById("peticionEC").style.borderStyle="dotted";
 		    } else if (peticionEC=="Si" || peticionEC=="No" ){
@@ -448,7 +448,7 @@ function validarC(formulario){
 		        document.getElementById("peticionEC").style.borderStyle="dotted";
 		        contador = contador + 1;    
 		    } else {
-		        mensaje = mensaje.concat("El campo peticion eliminacion de curso debe rellenarse con Si o NO)" + '\n');
+//		        mensaje = mensaje.concat("El campo peticion eliminacion de curso debe rellenarse con Si o NO)" + '\n');
 		        document.getElementById("peticionEC").style.borderColor="red";
 		        document.getElementById("peticionEC").style.borderStyle="dotted";
 		    }
@@ -456,7 +456,7 @@ function validarC(formulario){
     if(contador = 20){
         alert("Se ha creado el Curso con éxito");
     } else{
-        alert(mensaje);
+//        alert(mensaje);
         return false;
     }
 }

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.transaction.UserTransaction;
 
-import AdministracionG3.model.daos.UsuarioDAO;
+//import AdministracionG3.model.daos.UsuarioDAO;
 import dominio.uMarculado;
 
 /**
