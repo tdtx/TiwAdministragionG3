@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.transaction.UserTransaction;
 
-import AdministracionG3.model.daos.UsuarioDAO;
+//import AdministracionG3.model.daos.UsuarioDAO;
 import dominio.uMarculado;
 
 /**
@@ -27,12 +27,12 @@ public class GestionMatriculado extends HttpServlet {
 	private static final String matriculadoJSP = "/matriculado.jsp";
     /**
      * @see HttpServlet#HttpServlet()
-     */
+ 
 	@PersistenceContext(unitName="Administracion-model")
 	EntityManager em;
 	@Resource
 	UserTransaction ut;
-	UsuarioDAO udao;
+	UsuarioDAO udao;    */
     public GestionMatriculado() {
         super();
         // TODO Auto-generated constructor stub
@@ -48,7 +48,7 @@ public class GestionMatriculado extends HttpServlet {
 		matriculados = new ArrayList<uMarculado>();
 		matriculados.add(um1);
 		matriculados.add(um2);
-		udao = new UsuarioDAO(em, ut);
+	//	udao = new UsuarioDAO(em, ut);
 	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
