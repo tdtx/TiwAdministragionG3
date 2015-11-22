@@ -40,11 +40,11 @@ public class Usuarios implements Serializable {
 	int codigoPostal;
 	String provincia;
 	String Pais;
-	
+	/*
 	@OneToMany(fetch = LAZY, cascade = ALL)
     private  Matriculados matriculados;
 	
-	
+	*/
 	
 	public Usuarios() {
 		super();

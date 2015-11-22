@@ -23,7 +23,7 @@ public class Imagenes  implements Serializable{
 	private Long id;
 	String imagen;
 	
-	
+	/*
 
 	 @OneToMany(fetch = LAZY, cascade = ALL)
 	    private  Usuarios usuarios;
@@ -31,7 +31,7 @@ public class Imagenes  implements Serializable{
 	 @OneToMany(fetch = LAZY, cascade = ALL)
 	    private Curso curso;
 	
-	
+	*/
 	public Imagenes() {
 		super();
 	}

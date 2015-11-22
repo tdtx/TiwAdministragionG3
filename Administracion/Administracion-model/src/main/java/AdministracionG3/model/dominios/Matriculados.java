@@ -28,11 +28,11 @@ private static final long serialVersionUID = 1L;
 	String cupon;
 	double precio_final;
 	double nota;
-	
+	/*
 	 @OneToMany(fetch = LAZY, cascade = ALL)
 	    private  ResultadosPruebas rescultadosPruebas;
 	
-	
+	*/
 	public Matriculados() {
 		super();
 	}
