@@ -34,6 +34,10 @@
             <groupId>es.uc3m.tiw.util</groupId>
           <artifactId>Administracion-util</artifactId>
            </jarModule> -->
+           <jarModule>
+            <groupId>es.uc3m.tiw.model</groupId>
+          <artifactId>Administracion-model</artifactId>
+           </jarModule>
             <!-- 4.5.2. Include EJB Module. -->
         <!--     <ejbModule>
           <groupId>es.uc3m.tiw.ejb</groupId>
@@ -64,6 +68,12 @@
   		<version>1.0</version>
   		<type>jar</type>
   	</dependency> -->
+  	<dependency>
+  		<groupId>es.uc3m.tiw.model</groupId>
+  		<artifactId>Administracion-model</artifactId>
+  		<version>${project.parent.version}</version>
+  		<type>jar</type>
+  	</dependency>
   <!-- 	<dependency>
   		<groupId>es.uc3m.tiw.ejb</groupId>
   		<artifactId>Administracion-ejb</artifactId>
@@ -73,7 +83,7 @@
   	<dependency>
   		<groupId>es.uc3m.tiw.web</groupId>
   		<artifactId>Administracion-web</artifactId>
-  		<version>1.0</version>
+  		<version>${project.parent.version}</version>
   		<type>war</type>
   	</dependency>
   </dependencies>

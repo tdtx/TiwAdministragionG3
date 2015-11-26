@@ -13,8 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.transaction.UserTransaction;
 
+import AdministracionG3.model.daos.UsuarioDAO;
 //import AdministracionG3.model.daos.UsuarioDAO;
 import dominio.uRegistrado;
+import AdministracionG3.model.dominios.Usuarios;
 
 /**
  * Servlet implementation class GestionRegistrado
@@ -25,12 +27,12 @@ public class GestionRegistrado extends HttpServlet {
 	private ArrayList<uRegistrado> registrados;  
 	private static final String requistradoJSP = "/registrado.jsp";
 	private static final String indexJSP = "/index.jsp";
-	   /**	@PersistenceContext(unitName="Administracion-model")
+	@PersistenceContext(unitName="Administracion-model")
 	EntityManager em;
 	@Resource
 	UserTransaction ut;
 	UsuarioDAO udao;
- 
+	   /**
      * @see HttpServlet#HttpServlet()
      */
     public GestionRegistrado() {
@@ -47,7 +49,14 @@ public class GestionRegistrado extends HttpServlet {
 		registrados = new ArrayList<uRegistrado>();
 		registrados.add(ur1);
 		registrados.add(ur2);
-	//	udao = new UsuarioDAO(em, ut);
+		udao = new UsuarioDAO(em, ut);
+		Usuarios usuario=new Usuarios("1111","t@t.t");
+		try {
+			udao.guardarUsuario(usuario);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
