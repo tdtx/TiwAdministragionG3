@@ -6,7 +6,7 @@
 <head>
 <link rel="shotcut icon" href="fonts/Captura_de_pantallaico_2015-10-08_a_las_17.ico" type="image/x-icon">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="css/miStyle.css" rel="stylesheet" type="text/css">
+<link href="css/logincss.css" rel="stylesheet" type="text/css">
 <title>iLexion</title>
 </head>
 <body>
