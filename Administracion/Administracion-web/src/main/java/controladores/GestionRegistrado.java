@@ -1,6 +1,7 @@
 package controladores;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.annotation.Resource;
@@ -18,13 +19,14 @@ import AdministracionG3.model.daos.UsuarioDAO;
 import dominio.uRegistrado;
 import AdministracionG3.model.dominios.Usuarios;
 
+import java.util.List;
 /**
  * Servlet implementation class GestionRegistrado
  */
 @WebServlet("/gestionRegistrado")
 public class GestionRegistrado extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private ArrayList<uRegistrado> registrados;  
+	private List<Usuarios> registrados;
 	private static final String requistradoJSP = "/registrado.jsp";
 	private static final String indexJSP = "/index.jsp";
 	@PersistenceContext(unitName="Administracion-model")
@@ -41,7 +43,7 @@ public class GestionRegistrado extends HttpServlet {
     }
 	@Override
 	public void init() throws ServletException {
-		// TODO Auto-generated method stub
+		/* TODO Auto-generated method stub
 		super.init();
 		uRegistrado ur1 = new uRegistrado("TDTX", "Tomas", "Tee", "Xia", "tomas@tomas.es", "clave", "23/09/1990");
 		uRegistrado ur2 = new uRegistrado("JSTX", "Juan", "Tee", "Xia", "juan@juan.es", "clave", "23/12/1991");
@@ -56,7 +58,7 @@ public class GestionRegistrado extends HttpServlet {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -66,12 +68,22 @@ public class GestionRegistrado extends HttpServlet {
 		String accion = request.getParameter("accion");
 		String pagina = indexJSP;
 		if (accion != null && accion.equals("ur")) {
+
+				try {
+					registrados = udao.buscarUsuarios();
+				} catch (InstantiationException | IllegalAccessException
+						| ClassNotFoundException | SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			request.setAttribute("registrados", registrados);
 			pagina = requistradoJSP;
 		}
+		
+	
 		if(accion!=null && accion.equals("eliminarR")){
 			String correo = request.getParameter("correo");
-			eliminarRegistrado(correo);
+		//	eliminarRegistrado(correo);
 			request.setAttribute("registrados", registrados);
 			pagina = requistradoJSP;
 	}
@@ -79,7 +91,7 @@ public class GestionRegistrado extends HttpServlet {
 		this.getServletContext().getRequestDispatcher(pagina)
 				.forward(request, response);
 	}
-	
+	/*
 	private void  eliminarRegistrado(String correo) {
 		int x = 0;
 		for (uRegistrado ur : registrados) {
@@ -89,7 +101,7 @@ public class GestionRegistrado extends HttpServlet {
 			}
 			x++;
 		}
-	}
+	}*/
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -102,7 +114,7 @@ public class GestionRegistrado extends HttpServlet {
         String fechaNcREdit= request.getParameter("fechaNcR");
         String pagina = indexJSP;
            try {
-		        editarUR(nickREdit,nombreREdit,apellido1REdit,apellido2REdit,correoREdit,fechaNcREdit);   
+		    //    editarUR(nickREdit,nombreREdit,apellido1REdit,apellido2REdit,correoREdit,fechaNcREdit);   
 		        request.setAttribute("registrados", registrados);
 		        pagina = requistradoJSP;
 		    } catch (Exception e) {
@@ -113,7 +125,7 @@ public class GestionRegistrado extends HttpServlet {
 			response.setContentType("text/html");
 			this.getServletContext().getRequestDispatcher(pagina).forward(request, response);
 		}
-
+/*
 	private void  editarUR(String nick,String nombre,String ape1,String ape2,String correo,String fechaNac) {
 		for (uRegistrado ur : registrados) {
 			if (correo.equals(ur.getCorreo())){
@@ -126,6 +138,6 @@ public class GestionRegistrado extends HttpServlet {
 				break;
 			}
 		}
-	}
+	}*/
 	
 }
