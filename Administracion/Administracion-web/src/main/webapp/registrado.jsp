@@ -43,7 +43,7 @@
 												title="Editar Registrado" data-target="#myModal${registrado.nick}">							
 												<span class="glyphicon glyphicon-pencil"></span>
 											</button> <a class="btn btn-danger btn-xs" data-toggle="modal tooltip"
-											data-placement="left" title="Eliminar Registrado"  href="gestionRegistrado?accion=eliminarR&correo=${registrado.correo}">
+											data-placement="left" title="Eliminar Registrado"  href="gestionRegistrado?accion=eliminarR&nick=${registrado.nick}">
 												<span class="glyphicon glyphicon-trash"></span>
 										</a>
 										</td>

@@ -47,14 +47,7 @@ public class GestionRegistrado extends HttpServlet {
 		super.init();
 
 		udao =  new UsuarioDAO(em, ut);
-		/*
-		Usuarios usuario1=new Usuarios("tdtx", "clavemch", "Maria", "Canizares", "Holgado", "tdtx@tdtx.tdtx", "01/04/1992","Alumno");
-		try {
-			udao.guardarUsuario(usuario1);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
+
 	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -63,49 +56,38 @@ public class GestionRegistrado extends HttpServlet {
 		// TODO Auto-generated method stub
 		String accion = request.getParameter("accion");
 		String pagina = indexJSP;
-	//	ArrayList<Usuarios> listaR = new ArrayList<Usuarios>();
+		List registrados = null;	
 		if (accion != null && accion.equals("ur")) {
-			  List registrados = null;			
+					
 			 try {
 				registrados = udao.buscarUsuarios();
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			/*	for (Usuarios usuario : registrados) {
-					listaR.add(usuario);
-				}*/
-			try {
-				request.setAttribute("registrados", registrados);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			request.setAttribute("registrados", registrados);
 			pagina = requistradoJSP;
 		}
 		
 	
 		if(accion!=null && accion.equals("eliminarR")){
-			String correo = request.getParameter("correo");
-		//	eliminarRegistrado(correo);
-			//request.setAttribute("registrados", registrados);
+			String nick = request.getParameter("nick");
+			Usuarios u = udao.buscarNick(nick);		
+			 try {
+				 	udao.borrarUsuario(u);
+					registrados = udao.buscarUsuarios();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			request.setAttribute("registrados", registrados);
 			pagina = requistradoJSP;
 	}
 		response.setContentType("text/html");
 		this.getServletContext().getRequestDispatcher(pagina)
 				.forward(request, response);
 	}
-	/*
-	private void  eliminarRegistrado(String correo) {
-		int x = 0;
-		for (uRegistrado ur : registrados) {
-			if (correo.equals(ur.getCorreo())){
-				registrados.remove(x);
-				break;
-			}
-			x++;
-		}
-	}*/
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
