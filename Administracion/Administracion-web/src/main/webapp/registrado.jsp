@@ -70,6 +70,17 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
+																	<label for="idR">ID </label> <input type="text"
+																		class="form-control" id="idR" name="idR"
+																		value="${registrado.id}" readonly>
+																</div>
+																<div class="form-group col-md-5">
+																	
+																</div>
+															</div>
+															<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
 																	<label for="nickR">Nick </label> <span class="red">*</span> <input type="text"
 																		class="form-control" id="nickR" name="nickR"
 																		value="${registrado.nick}">

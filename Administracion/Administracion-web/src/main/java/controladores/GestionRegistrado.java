@@ -92,6 +92,8 @@ public class GestionRegistrado extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		List registrados = null;	
+		long idR= Integer.parseInt(request.getParameter("idR"));
         String nickREdit= request.getParameter("nickR");
         String nombreREdit = request.getParameter("nombreR");
         String apellido1REdit= request.getParameter("apellido1R");
@@ -100,8 +102,18 @@ public class GestionRegistrado extends HttpServlet {
         String fechaNcREdit= request.getParameter("fechaNcR");
         String pagina = indexJSP;
            try {
-		    //    editarUR(nickREdit,nombreREdit,apellido1REdit,apellido2REdit,correoREdit,fechaNcREdit);   
-		    //    request.setAttribute("registrados", registrados);
+        	    Usuarios u = udao.buscarId(idR);
+        	    if (u!= null) {
+        	    	u.setNick(nickREdit);
+    		        u.setNombre(nombreREdit);
+    		        u.setApellido1(apellido1REdit);
+    		        u.setApellido2(apellido2REdit);
+    		        u.setCorreo(correoREdit);
+    		        u.setFechanac(fechaNcREdit);
+    		    	udao.actualizarUsuario(u);
+				}		        
+		        registrados = udao.buscarUsuarios();
+		        request.setAttribute("registrados", registrados);
 		        pagina = requistradoJSP;
 		    } catch (Exception e) {
 		        // TODO: handle exception
@@ -111,19 +123,5 @@ public class GestionRegistrado extends HttpServlet {
 			response.setContentType("text/html");
 			this.getServletContext().getRequestDispatcher(pagina).forward(request, response);
 		}
-/*
-	private void  editarUR(String nick,String nombre,String ape1,String ape2,String correo,String fechaNac) {
-		for (uRegistrado ur : registrados) {
-			if (correo.equals(ur.getCorreo())){
-				ur.setNick(nick);
-				ur.setNombre(nombre);
-				ur.setApellido1(ape1);
-				ur.setApellido2(ape2);
-				ur.setCorreo(correo);
-				ur.setFechaNc(fechaNac);
-				break;
-			}
-		}
-	}*/
 	
 }
