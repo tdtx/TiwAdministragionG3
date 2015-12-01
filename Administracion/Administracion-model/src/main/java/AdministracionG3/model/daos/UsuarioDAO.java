@@ -4,10 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.transaction.UserTransaction;
 import javax.persistence.Query;
-
 import AdministracionG3.model.dominios.Usuarios;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public class UsuarioDAO {
@@ -89,11 +87,25 @@ public class UsuarioDAO {
 			}
 			
 		}
-
-	public List<Usuarios> buscarUsuarios() throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException{
-		List<Usuarios> listaUsuarios = em.createQuery("SELECT u from Usuarios u",Usuarios.class).getResultList();		
-		return listaUsuarios;
+    
+	public Usuarios buscarCorreo(String correo) {
+		
+		Query query =  em.createQuery("SELECT u FROM Usuarios u where u.correo=:correo", Usuarios.class);
+		query.setParameter("correo",correo );
+		List resultList = query.getResultList();
+		if (resultList.isEmpty()) {
+			return null;
+		}else{
+		
+			return (Usuarios) query.getSingleResult();
+		}
+		
 	}
-     
-
+	public List<Usuarios> buscarUsuarios()throws Exception{
+        return em.createQuery("SELECT u FROM Usuarios u",Usuarios.class).getResultList();
+	 }
+	
+    public Usuarios buscarId(Long id) {
+        return em.find(Usuarios.class, id);
+    } 
 }

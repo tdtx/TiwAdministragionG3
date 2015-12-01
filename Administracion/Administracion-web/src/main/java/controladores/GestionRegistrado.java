@@ -3,6 +3,7 @@ package controladores;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
 
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
@@ -16,17 +17,16 @@ import javax.transaction.UserTransaction;
 
 import AdministracionG3.model.daos.UsuarioDAO;
 //import AdministracionG3.model.daos.UsuarioDAO;
-import dominio.uRegistrado;
 import AdministracionG3.model.dominios.Usuarios;
 
 import java.util.List;
 /**
  * Servlet implementation class GestionRegistrado
  */
-@WebServlet("/gestionRegistrado")
+@WebServlet(value="/gestionRegistrado",loadOnStartup=1)
 public class GestionRegistrado extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private List<Usuarios> registrados;
+	
 	private static final String requistradoJSP = "/registrado.jsp";
 	private static final String indexJSP = "/index.jsp";
 	@PersistenceContext(unitName="Administracion-model")
@@ -43,18 +43,14 @@ public class GestionRegistrado extends HttpServlet {
     }
 	@Override
 	public void init() throws ServletException {
-		/* TODO Auto-generated method stub
+		// TODO Auto-generated method stub
 		super.init();
-		uRegistrado ur1 = new uRegistrado("TDTX", "Tomas", "Tee", "Xia", "tomas@tomas.es", "clave", "23/09/1990");
-		uRegistrado ur2 = new uRegistrado("JSTX", "Juan", "Tee", "Xia", "juan@juan.es", "clave", "23/12/1991");
-		
-		registrados = new ArrayList<uRegistrado>();
-		registrados.add(ur1);
-		registrados.add(ur2);
-		udao = new UsuarioDAO(em, ut);
-		Usuarios usuario=new Usuarios("1111","t@t.t");
+
+		udao =  new UsuarioDAO(em, ut);
+		/*
+		Usuarios usuario1=new Usuarios("tdtx", "clavemch", "Maria", "Canizares", "Holgado", "tdtx@tdtx.tdtx", "01/04/1992","Alumno");
 		try {
-			udao.guardarUsuario(usuario);
+			udao.guardarUsuario(usuario1);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -67,16 +63,24 @@ public class GestionRegistrado extends HttpServlet {
 		// TODO Auto-generated method stub
 		String accion = request.getParameter("accion");
 		String pagina = indexJSP;
+	//	ArrayList<Usuarios> listaR = new ArrayList<Usuarios>();
 		if (accion != null && accion.equals("ur")) {
-
-				try {
-					registrados = udao.buscarUsuarios();
-				} catch (InstantiationException | IllegalAccessException
-						| ClassNotFoundException | SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			request.setAttribute("registrados", registrados);
+			  List registrados = null;			
+			 try {
+				registrados = udao.buscarUsuarios();
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			/*	for (Usuarios usuario : registrados) {
+					listaR.add(usuario);
+				}*/
+			try {
+				request.setAttribute("registrados", registrados);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			pagina = requistradoJSP;
 		}
 		
@@ -84,7 +88,7 @@ public class GestionRegistrado extends HttpServlet {
 		if(accion!=null && accion.equals("eliminarR")){
 			String correo = request.getParameter("correo");
 		//	eliminarRegistrado(correo);
-			request.setAttribute("registrados", registrados);
+			//request.setAttribute("registrados", registrados);
 			pagina = requistradoJSP;
 	}
 		response.setContentType("text/html");
@@ -115,7 +119,7 @@ public class GestionRegistrado extends HttpServlet {
         String pagina = indexJSP;
            try {
 		    //    editarUR(nickREdit,nombreREdit,apellido1REdit,apellido2REdit,correoREdit,fechaNcREdit);   
-		        request.setAttribute("registrados", registrados);
+		    //    request.setAttribute("registrados", registrados);
 		        pagina = requistradoJSP;
 		    } catch (Exception e) {
 		        // TODO: handle exception

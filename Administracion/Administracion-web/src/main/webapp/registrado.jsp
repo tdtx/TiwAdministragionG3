@@ -108,7 +108,7 @@
 																	<label for="fechaNcR">Fecha de nacimiento</label> <span class="red">*</span><input
 																		type="text" class="form-control" id="fechaNcR"
 																		name="fechaNcR" 
-																		value="${registrado.fechaNc}">
+																		value="${registrado.fechanac}">
 																</div>
 															</div>
 															<br>

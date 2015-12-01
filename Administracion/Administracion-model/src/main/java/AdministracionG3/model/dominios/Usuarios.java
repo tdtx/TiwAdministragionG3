@@ -145,6 +145,20 @@ public class Usuarios implements Serializable {
 			this.genero = genero;
 		}
 		
+		//para editar perfil
+		
+		public Usuarios(String nick, String nombre, String apellido1,
+				String apellido2, String correo, String descripcion,
+				String aficiones) {
+			super();
+			this.nick = nick;
+			this.nombre = nombre;
+			this.apellido1 = apellido1;
+			this.apellido2 = apellido2;
+			this.correo = correo;
+			this.descripcion = descripcion;
+			this.aficiones = aficiones;
+		}
 		
 		public Long getId() {
 			return id;
@@ -270,4 +284,6 @@ public class Usuarios implements Serializable {
 			return serialVersionUID;
 		}
 
+
+	
 }
