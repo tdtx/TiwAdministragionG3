@@ -1,12 +1,15 @@
 package AdministracionG3.model.daos;
 
 
-import javax.persistence.EntityManager;
+import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.transaction.UserTransaction;
 
-
 import AdministracionG3.model.dominios.Curso;
+
+
 
 public class CursoDAO{	
 	  private final EntityManager em;
@@ -37,28 +40,25 @@ public class CursoDAO{
 		 ut.commit();
 		 
 	 }
-	 /*
-	  * public usuarios comprobarLogin(String email, String password)throws NoResultException{
-        return em.createQuery("select u from Cliente u where u.email='"+email+"' and u.password='"+password+"'",usuarios.class).getSingleResult();
-     }
-	  */
-	    public Curso buscarCurso(Long id) {
-	        return em.find(Curso.class, id);
-	    } 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-
-
-
+    //buscar por titulo
+	public Curso buscarTitulo(String titulo) {
+			
+			Query query =  em.createQuery("SELECT u FROM Curso u where u.titulo=:titulo", Curso.class);
+			query.setParameter("titulo", titulo);
+			List resultList = query.getResultList();
+			if (resultList.isEmpty()) {
+				return null;
+			}else{
+			
+				return (Curso) query.getSingleResult();
+			}
+			
+		}
+	 public List<Curso> buscarCursos()throws Exception{
+	        return em.createQuery("SELECT u FROM Curso u",Curso.class).getResultList();
+		 }
+    public Curso buscarCurso(Long id) {
+        return em.find(Curso.class, id);
+    } 
 
 }

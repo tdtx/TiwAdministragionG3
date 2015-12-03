@@ -36,7 +36,6 @@ public class Curso implements Serializable {
 	String tipoOferta;
 	String idImagen;
 	String fechaCaducidad;
-	String tipo;
 	String valor;
 	
 	/*
@@ -50,19 +49,19 @@ public class Curso implements Serializable {
 	 @OneToMany(fetch = LAZY, cascade = ALL)
 	    private Matriculados matriculados;
 	
-	
 	*/
+	
 	
 	public Curso() {
 		super();
 	}
-	public Curso(Long id, String titulo, String descripcion, String horas,
+	public Curso(String titulo, String descripcion, String horas,
 			String temario, String idProfesor, String nivel,
 			String certificado, String categoria, String destacado,
 			String estado, double precio, String tipoOferta, String idImagen,
-			String fechaCaducidad, String tipo, String valor) {
+			String fechaCaducidad, String valor) {
 		super();
-		this.id = id;
+		
 		this.titulo = titulo;
 		this.descripcion = descripcion;
 		this.horas = horas;
@@ -77,7 +76,6 @@ public class Curso implements Serializable {
 		this.tipoOferta = tipoOferta;
 		this.idImagen = idImagen;
 		this.fechaCaducidad = fechaCaducidad;
-		this.tipo = tipo;
 		this.valor = valor;
 	}
 	public Long getId() {
@@ -170,12 +168,7 @@ public class Curso implements Serializable {
 	public void setFechaCaducidad(String fechaCaducidad) {
 		this.fechaCaducidad = fechaCaducidad;
 	}
-	public String getTipo() {
-		return tipo;
-	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
+
 	public String getValor() {
 		return valor;
 	}
