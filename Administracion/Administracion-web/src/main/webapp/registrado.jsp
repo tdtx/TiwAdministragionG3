@@ -123,6 +123,101 @@
 																</div>
 															</div>
 															<br>
+															<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
+																	 <label for="dniR">DNI </label> <input type="text"
+																		class="form-control" id="dniR" name="dniR"
+																		value="${registrado.dni}"> 
+																<div>  &nbsp</div>
+																	<label id="txtDif" for="rolR">Rol de usuario</label>
+																		<select id="rolR" name="rolR" class="form-control">
+																			<option value="${registrado.rol}">${registrado.rol}</option>
+																			<option value="Alumno">Alumno</option>
+																			<option value="estudiante">Estudiante</option>
+																			<option value="profesor">Profesor</option>
+											
+																		</select>
+																</div>
+												
+																<div class="text-center">
+																<img alt="fotoUsuario" src="${registrado.idImagen}">
+																	</div>
+															</div>
+															<br>
+															<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
+																	<label for="descripcionR">Descripcion </label> <input type="text"
+																		class="form-control" id="descripcionR" name="descripcionR"
+																		value="${registrado.descripcion}">
+																</div>
+																<div class="form-group col-md-5">
+																	<label for="aficionesR">Aficiones</label><input
+																		type="text" class="form-control" id="aficionesR"
+																		name="aficionesR" 
+																		value="${registrado.aficiones}">
+																</div>
+															</div>
+															<br>
+															<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
+																	<label id="txtDif" for="generoR">Genero</label>
+																		<select id="generoR" name="generoR" class="form-control">
+																			<option value="${registrado.genero}">${registrado.genero}</option>
+																			<option value="hombre">Hombre</option>
+																			<option value="mujer">Mujer</option>							
+																		</select>
+																</div>
+																<div class="form-group col-md-5">
+																	<label for="tarjetaR">Trajeta de credito</label><input
+																		type="text" class="form-control" id="tarjetaR"
+																		name="tarjetaR" 
+																		value="${registrado.tarjeta}">
+																</div>
+															</div>
+															<br>
+															<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
+																	<label for="calleR">Calle </label> <input type="text"
+																		class="form-control" id="calleR" name="calleR"
+																		value="${registrado.calle}">
+																</div>
+																<div class="form-group col-md-5">
+																	<label for="localidadR">Localidad</label><input
+																		type="text" class="form-control" id="localidadR"
+																		name="localidadR" 
+																		value="${registrado.localidad}">
+																</div>
+															</div>
+															<br>
+															<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
+																	<label for="codigoPostalR">Codigo postal </label> <input type="text"
+																		class="form-control" id="codigoPostalR" name="codigoPostalR"
+																		value="${registrado.codigoPostal}">
+																</div>
+																<div class="form-group col-md-5">
+																	<label for="provinciaR">Provincia</label><input
+																		type="text" class="form-control" id="provinciaR"
+																		name="provinciaR" 
+																		value="${registrado.provincia}">
+																</div>
+															</div>
+															<br>
+															<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
+																	<label for="telefonoR">Telefono de contacto</label> <input type="text"
+																		class="form-control" id="telefonoR" name="telefonoR"
+																		value="${registrado.telefono}">
+																</div>
+															
+															</div>
+															<br>
 															<div class="modal-footer">
 													<div>
 																<button type="submit" class="btn btn-primary">Guardar

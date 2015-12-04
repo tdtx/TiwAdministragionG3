@@ -100,6 +100,18 @@ public class GestionRegistrado extends HttpServlet {
         String apellido2REdit= request.getParameter("apellido2R");
         String correoREdit= request.getParameter("correoR");
         String fechaNcREdit= request.getParameter("fechaNcR");
+        String tarjetaREdit= request.getParameter("tarjetaR");
+        String idImagenREdit = "fonts/users_folder_128.png";
+        String descripcionREdit= request.getParameter("descripcionR");
+        String aficionesREdit= request.getParameter("aficionesR");
+        String calleREdit= request.getParameter("calleR");
+        String localidadREdit= request.getParameter("localidadR");
+        int codigoPostalREdit= Integer.parseInt(request.getParameter("codigoPostalR"));
+        String provinciaREdit= request.getParameter("provinciaR");
+        String rolREdit= request.getParameter("rolR");
+        String dniREdit= request.getParameter("dniR");
+        String generoREdit= request.getParameter("generoR");
+        int telefonoREdit= Integer.parseInt(request.getParameter("telefonoR"));
         String pagina = indexJSP;
            try {
         	    Usuarios u = udao.buscarId(idR);
@@ -110,6 +122,18 @@ public class GestionRegistrado extends HttpServlet {
     		        u.setApellido2(apellido2REdit);
     		        u.setCorreo(correoREdit);
     		        u.setFechanac(fechaNcREdit);
+    		        u.setTarjeta(tarjetaREdit);
+    		        u.setIdImagen(idImagenREdit);
+    		        u.setDescripcion(descripcionREdit);
+    		        u.setAficiones(aficionesREdit);
+    		        u.setCalle(calleREdit);
+    		        u.setLocalidad(localidadREdit);
+    		        u.setCodigoPostal(codigoPostalREdit);
+    		        u.setProvincia(provinciaREdit);
+    		        u.setRol(rolREdit);
+    		        u.setDni(dniREdit);
+    		        u.setGenero(generoREdit);
+    		        u.setTelefono(telefonoREdit);
     		    	udao.actualizarUsuario(u);
 				}		        
 		        registrados = udao.buscarUsuarios();
