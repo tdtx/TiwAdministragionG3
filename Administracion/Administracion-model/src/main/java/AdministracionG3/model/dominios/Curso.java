@@ -14,7 +14,6 @@ import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.CascadeType.ALL;
 
 
-
 @Entity
 public class Curso implements Serializable {		
 	private static final long serialVersionUID = 1L;
@@ -31,26 +30,14 @@ public class Curso implements Serializable {
 	String certificado;
 	String categoria;
 	String destacado;
-	String estado;
+	String validacion;
 	double precio;
 	String tipoOferta;
 	String idImagen;
 	String fechaCaducidad;
-	String valor;
-	
-	/*
-	
-	 @OneToMany(fetch = LAZY, cascade = ALL)
-	    private  Pruebas pruebas;
-	 
-	 @OneToMany(fetch = LAZY, cascade = ALL)
-	    private Leccion leccion;
-	 
-	 @OneToMany(fetch = LAZY, cascade = ALL)
-	    private Matriculados matriculados;
-	
-	*/
-	
+	int descuentoCupon;
+	String fechaInicio;
+
 	
 	public Curso() {
 		super();
@@ -58,8 +45,8 @@ public class Curso implements Serializable {
 	public Curso(String titulo, String descripcion, String horas,
 			String temario, String idProfesor, String nivel,
 			String certificado, String categoria, String destacado,
-			String estado, double precio, String tipoOferta, String idImagen,
-			String fechaCaducidad, String valor) {
+			String validacion, double precio, String tipoOferta, String idImagen,
+			String fechaCaducidad, int descuentoCupon, String fechaInicio ) {
 		super();
 		
 		this.titulo = titulo;
@@ -71,12 +58,14 @@ public class Curso implements Serializable {
 		this.certificado = certificado;
 		this.categoria = categoria;
 		this.destacado = destacado;
-		this.estado = estado;
+		this.validacion = validacion;
 		this.precio = precio;
 		this.tipoOferta = tipoOferta;
 		this.idImagen = idImagen;
 		this.fechaCaducidad = fechaCaducidad;
-		this.valor = valor;
+		this.descuentoCupon = descuentoCupon;
+		this.fechaInicio = fechaInicio;
+		
 	}
 	public Long getId() {
 		return id;
@@ -138,11 +127,12 @@ public class Curso implements Serializable {
 	public void setDestacado(String destacado) {
 		this.destacado = destacado;
 	}
-	public String getEstado() {
-		return estado;
+	
+	public String getValidacion() {
+		return validacion;
 	}
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public void setValidacion(String validacion) {
+		this.validacion = validacion;
 	}
 	public double getPrecio() {
 		return precio;
@@ -169,14 +159,21 @@ public class Curso implements Serializable {
 		this.fechaCaducidad = fechaCaducidad;
 	}
 
-	public String getValor() {
-		return valor;
+	
+	public int getDescuentoCupon() {
+		return descuentoCupon;
 	}
-	public void setValor(String valor) {
-		this.valor = valor;
+	public void setDescuentoCupon(int descuentoCupon) {
+		this.descuentoCupon = descuentoCupon;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+	public String getFechaInicio() {
+		return fechaInicio;
+	}
+	public void setFechaInicio(String fechaInicio) {
+		this.fechaInicio = fechaInicio;
 	}
 	
 }

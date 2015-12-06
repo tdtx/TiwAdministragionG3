@@ -97,11 +97,13 @@ public class GestionCurso extends HttpServlet {
         String certificadoCEdit= request.getParameter("certificadoC");   
         String categoriaCEdit= request.getParameter("categoriaC");
         String destacadoCEdit= request.getParameter("destacadoC");      
-        String estadoCEdit = request.getParameter("estadoC");
-        double precioCEdit= Integer.parseInt(request.getParameter("precioC"));
+        String validacionCEdit = request.getParameter("validacionC");
+        double precioCEdit= Double.parseDouble(request.getParameter("precioC"));
         String tOfertaCEdit= request.getParameter("tipoOfertaC");
         String fechaFinCEdit= request.getParameter("fechaCaducidadC"); 
-        String valorCEdit= request.getParameter("valorC");       
+        int descuentoCuponCEdit= Integer.parseInt(request.getParameter("descuentoCuponC"));  
+        String fechaInicioCEdit= request.getParameter("fechaInicioC"); 
+        String img = "imagenes/addressbook_add_128.png";
         String pagina = indexJSP;
         try {
 		    	Curso c = cdao.buscarCurso(idCEdit);
@@ -115,11 +117,13 @@ public class GestionCurso extends HttpServlet {
 					c.setCertificado(certificadoCEdit);
 					c.setCategoria(categoriaCEdit);
 					c.setDestacado(destacadoCEdit);
-					c.setEstado(estadoCEdit);
+					c.setValidacion(validacionCEdit);
 					c.setPrecio(precioCEdit);
 					c.setTipoOferta(tOfertaCEdit);
 					c.setFechaCaducidad(fechaFinCEdit);
-					c.setValor(valorCEdit);
+					c.setDescuentoCupon(descuentoCuponCEdit);
+					c.setFechaInicio(fechaInicioCEdit);
+					c.setIdImagen(img);
 					cdao.actualizarCurso(c);
 				}
 		    	cursos = cdao.buscarCursos();
