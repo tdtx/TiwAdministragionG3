@@ -15,7 +15,57 @@
 				<!-- Page Heading -->
 				<div class="row">
 					<div class="col-lg-12 ">
-						<h1 class="page-header">Cursos</h1>
+						<h1 class="page-header">Cursos  <button class="btn btn-info btn-xs" data-toggle="modal" data-toggle="tooltip" data-placement="left" title="Editar Curso" data-target="#miPromocion">
+						Promocion
+                                        </button></h1>
+						 
+						<div class="modal fade" id="miPromocion" tabindex="-1"
+										role="dialog" aria-labelledby="myModalLabel"
+										aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">
+														<span aria-hidden="true">&times;</span><span
+															class="sr-only">Close</span>
+													</button>
+													<h4 class="modal-title" id="myModalLabel">Promocion de todos los cursos</h4>
+												</div>
+												<div class="modal-body">
+													<div class="">
+														<form  action="gestionCurso" method="post"
+															class="form-horizontal" role="form">
+															<input type="text" name="accion" value="promocion"
+																style="display: none">																	
+															<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
+																<!---validar form, maximo 30% en administracion minimo 1 -------------------------->
+																<label for="PromocionC">Porcentaje de Promocion para todos los cursos</label> <input
+																		type="text" class="form-control" id="PromocionC"
+																		name="PromocionC"
+																		value="30">																	
+															
+																
+																</div>
+												
+															</div>
+
+														
+																<div class="modal-footer">
+													<div>
+																<button type="submit" class="btn btn-primary" >Aplicar promocion</button>
+																<button type="button" class="btn btn-primary"
+																	data-dismiss="modal">Cerrar</button>
+															</div>								
+												</div>
+														</form>
+													</div>
+												</div>
+												
+											</div>
+										</div>
+									</div>
 						<div class="table-responsive panel panel-default">
 							<table class="table table-hover">
 								<thead>
@@ -24,6 +74,7 @@
 										<th>Profesor</th>
 										<th>Validacion</th>
 										<th>Eliminar</th>
+										<th>Precio</th>
 										<th class="text-center">Opciones</th>
 
 									</tr>
@@ -35,6 +86,7 @@
                                         <td>${curso.usuario}</td>
                                          <td>${curso.validacion}</td>
                                          <td>${curso.fechaCaducidad}</td>  
+                                          <td>${curso.precio}</td>  
                                           <td class="text-center">
                                          <button class="btn btn-info btn-xs" data-toggle="modal" data-toggle="tooltip" data-placement="left" title="Editar Curso" data-target="#miDialog${curso.id}">
                                                 <span class="glyphicon glyphicon-pencil"></span>
@@ -58,7 +110,7 @@
 													<div class="">
 														<form onSubmit="return validarC(this)" action="gestionCurso" method="post"
 															class="form-horizontal" role="form">
-															<input type="text" name="id" value="${curso.titulo}"
+															<input type="text" name="accion" value="${curso.titulo}"
 																style="display: none">																	
 															<div class="row">
 																<div class="form-group col-md-1"></div>

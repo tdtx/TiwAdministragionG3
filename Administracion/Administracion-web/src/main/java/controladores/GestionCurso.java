@@ -16,7 +16,8 @@ import javax.transaction.UserTransaction;
 
 import AdministracionG3.model.daos.CursoDAO;
 import AdministracionG3.model.dominios.Curso;
-import dominio.crearCurso;
+
+
 
 
 /**
@@ -27,7 +28,7 @@ public class GestionCurso extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String indexJSP = "/index.jsp";
 	private static final String cursosJSP = "/cursos.jsp";   
-	private ArrayList<crearCurso> cursos;
+
 	@PersistenceContext(unitName="Administracion-model")
 	EntityManager em;
 	@Resource
@@ -87,6 +88,42 @@ public class GestionCurso extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List cursos = null;
+        String pagina = indexJSP;
+		String accion = request.getParameter("accion");
+		if (accion.equals("promocion")) {
+			//promocion no puede superar el 30%
+			int promocionC= Integer.parseInt(request.getParameter("PromocionC"));
+			try {
+				cursos = cdao.buscarCursos();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			for (int i = 0; i < cursos.size(); i++) {
+				Curso c = (Curso) cursos.get(i);
+				double precio = c.getPrecio();
+				double promo=(double)promocionC/100;
+				promo=precio*promo;
+				double total=precio-promo;
+				total = Math.round(total);
+				c.setPrecio(total);
+				try {
+					cdao.actualizarCurso(c);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			try {
+				cursos = cdao.buscarCursos();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    		request.setAttribute("cursos", cursos);
+	        pagina = cursosJSP;	
+			
+		}else{
 		long idCEdit = Integer.parseInt(request.getParameter("idC"));
 		String tituloCEdit= request.getParameter("tituloC");
         String descripcionCEdit = request.getParameter("descripcionC");
@@ -104,7 +141,7 @@ public class GestionCurso extends HttpServlet {
         int descuentoCuponCEdit= Integer.parseInt(request.getParameter("descuentoCuponC"));  
         String fechaInicioCEdit= request.getParameter("fechaInicioC"); 
         String img = "imagenes/addressbook_add_128.png";
-        String pagina = indexJSP;
+
         try {
 		    	Curso c = cdao.buscarCurso(idCEdit);
 		    	if (c!= null) {
@@ -134,6 +171,7 @@ public class GestionCurso extends HttpServlet {
 		        e.printStackTrace();
 		        System.out.println("**Editar Registrado** Error al actualizar el registrado***");
 		    }		
+		}
 			response.setContentType("text/html");
 			this.getServletContext().getRequestDispatcher(pagina).forward(request, response);
 		}
