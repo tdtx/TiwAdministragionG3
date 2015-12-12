@@ -32,7 +32,7 @@
                                <c:forEach items="${cursos }" var="curso">
                                     <tr>
                                         <td>${curso.titulo}</td>
-                                        <td>${curso.idProfesor}</td>
+                                        <td>${curso.usuario}</td>
                                          <td>${curso.validacion}</td>
                                          <td>${curso.fechaCaducidad}</td>  
                                           <td class="text-center">
@@ -69,10 +69,10 @@
 																		name="tituloC"
 																		value="${curso.titulo}">																	
 																<div>  &nbsp</div>
-																	<label for="profesorC">Profesor</label> <span class="red">*</span><input
-																		type="text" class="form-control" id="idProfesorC"
-																		name="idProfesorC" 
-																		value="${curso.idProfesor}">
+																	<label for="usuarioC">Profesor</label> <span class="red">*</span><input
+																		type="text" class="form-control" id="usuarioC"
+																		name="usuarioC" 
+																		value="${curso.usuario}">
 																</div>
 												
 																<div class="text-center">

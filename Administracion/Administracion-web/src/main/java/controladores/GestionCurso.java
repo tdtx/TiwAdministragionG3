@@ -92,7 +92,7 @@ public class GestionCurso extends HttpServlet {
         String descripcionCEdit = request.getParameter("descripcionC");
         String nHorasCEdit= request.getParameter("horasC");
         String temariosCEdit= request.getParameter("temarioC");
-        String profesorCEdit= request.getParameter("idProfesorC");
+        String usuarioCEdit= request.getParameter("usuarioC");
         String nivelCEdit= request.getParameter("nivelC");
         String certificadoCEdit= request.getParameter("certificadoC");   
         String categoriaCEdit= request.getParameter("categoriaC");
@@ -112,7 +112,7 @@ public class GestionCurso extends HttpServlet {
 					c.setDescripcion(descripcionCEdit);
 					c.setHoras(nHorasCEdit);
 					c.setTemario(temariosCEdit);
-					c.setIdProfesor(profesorCEdit);
+					c.setUsuario(usuarioCEdit);
 					c.setNivel(nivelCEdit);
 					c.setCertificado(certificadoCEdit);
 					c.setCategoria(categoriaCEdit);
