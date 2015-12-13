@@ -1,101 +1,101 @@
 function validarC(formulario){
     var contador = 0;
- //   var mensaje = "";
-	//Validado el campo id
-	var idCurso = document.getElementById("idC").value;
-	var idC = idCurso.toString();
-	var cpLong = idC.length;
-	if (idC.match(/[\D]/g)|| idC == null || idC == ""){
-		document.getElementById("idC").style.borderColor="red";
-		document.getElementById("idC").style.borderStyle="dotted";
-//		mensaje = mensaje.concat("El campo id no puede permanecer vacío y sólo puede estar formado por números" + '\n');
-	} else if(cpLong != 4){
-		document.getElementById("idC").style.borderColor="red";
-		document.getElementById("idC").style.borderStyle="dotted";
-//		mensaje = mensaje.concat("El campo id debe estar formado por 4 dígitos" + '\n');
-	} else {
-		document.getElementById("idC").style.borderColor="green";
-		document.getElementById("idC").style.borderStyle="dotted";
-		contador = contador + 1;
-	}
-    //Validado el campo titulo de curso
+	
+	
+//Validado el campo titulo de curso
     var tituloCurso = document.getElementById("tituloC").value;
     var tituloC = tituloCurso.toString();
     if (tituloC == null || tituloC == "") {
-//        mensaje = mensaje.concat("El campo titulo de curso debe rellenarse" + '\n');
         document.getElementById("tituloC").style.borderColor="red";
-        document.getElementById("tituloC").style.borderStyle="dotted";
     } else if (tituloC.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
         document.getElementById("tituloC").style.borderColor="red";
         document.getElementById("tituloC").style.borderStyle="dotted";
-  //      mensaje = mensaje.concat("El titulo de curso no puede contener símbolos, ni estar en blanco" + '\n');
     } else {
         document.getElementById("tituloC").style.borderColor="green";
         document.getElementById("tituloC").style.borderStyle="dotted";
         contador = contador + 1;
     }
-	  //Validado el campo descripcion
-	var descripcionCurso = document.getElementById("descripcionC").value;
-	var descripcionC = descripcionCurso.toString();
-	if (descripcionC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| descripcionC == null || descripcionC == ""){
-		document.getElementById("descripcionC").style.borderColor="red";
-		document.getElementById("descripcionC").style.borderStyle="dotted";
-//		mensaje = mensaje.concat("El campo descripcion no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
-	} else {
-		document.getElementById("descripcionC").style.borderColor="green";
-		document.getElementById("descripcionC").style.borderStyle="dotted";
-		contador = contador + 1;
-	}
-	//Validado el campo numeros de horas
-	var nHorasCurso = document.getElementById("nHorasC").value;
-	var nHorasC = nHorasCurso.toString();
-	var cpLong = nHorasC.length;
-	if (nHorasC.match(/[\D]/g)|| nHorasC == null || nHorasC == ""){
-		document.getElementById("nHorasC").style.borderColor="red";
-		document.getElementById("nHorasC").style.borderStyle="dotted";
-//		mensaje = mensaje.concat("El campo id no puede permanecer vacío y sólo puede estar formado por números" + '\n');
-	} else if(cpLong != 4){
-		document.getElementById("nHorasC").style.borderColor="red";
-		document.getElementById("nHorasC").style.borderStyle="dotted";
-//		mensaje = mensaje.concat("El campo numero de horas debe estar formado por 4 dígitos" + '\n');
-	} else {
-		document.getElementById("nHorasC").style.borderColor="green";
-		document.getElementById("nHorasC").style.borderStyle="dotted";
-		contador = contador + 1;
-	}
-	  //Validado el campo temario
-	var temarioCurso = document.getElementById("temarioC").value;
-	var temarioC = temarioCurso.toString();
-	if (temarioC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| temarioC == null || temarioC == ""){
-		document.getElementById("temarioC").style.borderColor="red";
-		document.getElementById("temarioC").style.borderStyle="dotted";
-//		mensaje = mensaje.concat("El campo temario no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
-	} else {
-		document.getElementById("temarioC").style.borderColor="green";
-		document.getElementById("temarioC").style.borderStyle="dotted";
-		contador = contador + 1;
-	}
-	  //Validado el campo nombre del profesor
+	 
+ 
+    
+  /*  
+  //Validado el campo nombre del profesor
     var profesorCurso = document.getElementById("profesorC").value;
     var profesorC = profesorCurso.toString();
     if (profesorC == null || profesorC == "") {
-//        mensaje = mensaje.concat("El campo profesor de cursp debe rellenarse" + '\n');
         document.getElementById("profesorC").style.borderColor="red";
         document.getElementById("profesorC").style.borderStyle="dotted";
     } else if (profesorC.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
         document.getElementById("profesorC").style.borderColor="red";
         document.getElementById("profesorC").style.borderStyle="dotted";
-//        mensaje = mensaje.concat("El profesor del curso no puede contener símbolos, ni estar en blanco" + '\n');
     } else {
         document.getElementById("profesorC").style.borderColor="green";
         document.getElementById("profesorC").style.borderStyle="dotted";
         contador = contador + 1;
     }
-	   //Validado el campo certificado
+	*/   
+    
+ //aqui validariamos la imagen   
+    
+ 
+    
+//Validado el campo descripcion
+	var descripcionCurso = document.getElementById("descripcionC").value;
+	var descripcionC = descripcionCurso.toString();
+	if (descripcionC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| descripcionC == null || descripcionC == ""){
+		document.getElementById("descripcionC").style.borderColor="red";
+		document.getElementById("descripcionC").style.borderStyle="dotted";
+	} else {
+		document.getElementById("descripcionC").style.borderColor="green";
+		document.getElementById("descripcionC").style.borderStyle="dotted";
+		contador = contador + 1;
+	}
+	
+	
+	
+	
+//Validado el campo numeros de horas
+	var nHorasCurso = document.getElementById("horasC").value;
+	var nHorasC = nHorasCurso.toString();
+	var cpLong = nHorasC.length;
+	if (nHorasC.match(/[\D]/g)|| nHorasC == null || nHorasC == ""){
+		document.getElementById("horasC").style.borderColor="red";
+		document.getElementById("horasC").style.borderStyle="dotted";
+	} else if(cpLong > 4){
+		document.getElementById("horasC").style.borderColor="red";
+		document.getElementById("horasC").style.borderStyle="dotted";
+	}else if(cpLong < 2){
+		document.getElementById("horasC").style.borderColor="red";
+		document.getElementById("horasC").style.borderStyle="dotted";
+	} else {
+		document.getElementById("horasC").style.borderColor="green";
+		document.getElementById("horasC").style.borderStyle="dotted";
+		contador = contador + 1;
+	}
+	  
+	
+	
+//Validado el campo temario
+	var temarioCurso = document.getElementById("temarioC").value;
+	var temarioC = temarioCurso.toString();
+	if (temarioC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| temarioC == null || temarioC == ""){
+		document.getElementById("temarioC").style.borderColor="red";
+		document.getElementById("temarioC").style.borderStyle="dotted";
+	} else {
+		document.getElementById("temarioC").style.borderColor="green";
+		document.getElementById("temarioC").style.borderStyle="dotted";
+		contador = contador + 1;
+	}
+	  
+	
+	
+	
+ /*  
+    
+//Validado el campo certificado
     var certificadoCurso = document.getElementById("certificadoC").value;
     var certificadoC = certificadoCurso.toString();
     if (certificadoC == null || certificadoC == "") {
-//        mensaje = mensaje.concat("El campo certificado debe rellenarse" + '\n');
         document.getElementById("certificadoC").style.borderColor="red";
         document.getElementById("certificadoC").style.borderStyle="dotted";
     } else if (certificadoC=="Si" || certificadoC=="No" ){
@@ -103,52 +103,166 @@ function validarC(formulario){
         document.getElementById("certificadoC").style.borderStyle="dotted";
         contador = contador + 1;    
     } else {
-//        mensaje = mensaje.concat("El campo certificado debe rellenarse con Si o No)" + '\n');
         document.getElementById("certificadoC").style.borderColor="red";
         document.getElementById("certificadoC").style.borderStyle="dotted";
     }
-	  //Validado el campo secciones
+	  
+ 
+*/    
+//Validado el campo categoria
+	var categoriaCursos = document.getElementById("categoriaC").value;
+	var categoriaC = categoriaCursos.toString();
+	if (categoriaC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| categoriaC == null || categoriaC == ""){
+		document.getElementById("categoriaC").style.borderColor="red";
+		document.getElementById("categoriaC").style.borderStyle="dotted";
+	} else {
+		document.getElementById("categoriaC").style.borderColor="green";
+		document.getElementById("categoriaC").style.borderStyle="dotted";
+		contador = contador + 1;
+	}
+
+
+ /*
+	
+//Validado el campo destacado
+	    var destacadoCursos = document.getElementById("destacadoC").value;
+	    var destacadoC = destacadoCursos.toString();
+	    if (destacadoC == null || destacadoC == "") {
+	        document.getElementById("destacadoC").style.borderColor="red";
+	        document.getElementById("destacadoC").style.borderStyle="dotted";
+	    } else if (destacadoC=="Si" || destacadoC=="No" ){
+	        document.getElementById("destacadoC").style.borderColor="green";
+	        document.getElementById("destacadoC").style.borderStyle="dotted";
+	        contador = contador + 1;    
+	    } else {
+	        document.getElementById("destacadoC").style.borderColor="red";
+	        document.getElementById("destacadoC").style.borderStyle="dotted";
+	    }
+
+
+
+	    
+	    
+//Validado el campo validado
+	      var validadoCursos = document.getElementById("validadoC").value;
+	      var validadoC = validadoCursos.toString();
+	      if (validadoC == null || validadoC == "") {
+	          document.getElementById("validadoC").style.borderColor="red";
+	          document.getElementById("validadoC").style.borderStyle="dotted";
+	      } else if (validadoC=="Si" || validadoC=="No" ){
+	          document.getElementById("validadoC").style.borderColor="green";
+	          document.getElementById("validadoC").style.borderStyle="dotted";
+	          contador = contador + 1;    
+	      } else {
+	          document.getElementById("validadoC").style.borderColor="red";
+	          document.getElementById("validadoC").style.borderStyle="dotted";
+	      }
+
+*/
+     
+	      
+//Validado el campo precio
+	        var precioCursos = document.getElementById("precioC").value;
+	        var precioC = precioCursos.toString();
+	        alert("precio:  "+precioC);
+	        if (precioC == null || precioC == "") {
+	            document.getElementById("precioC").style.borderColor="red";
+	            document.getElementById("precioC").style.borderStyle="dotted";
+	        } else if (precioC.match(/[^\d.]/gi)){
+	            document.getElementById("precioC").style.borderColor="red";
+	            document.getElementById("precioC").style.borderStyle="dotted";
+	        } else {
+	            document.getElementById("precioC").style.borderColor="green";
+	            document.getElementById("precioC").style.borderStyle="dotted";
+	            contador = contador + 1;
+	        }
+
+
+	        
+	        
+	/*        
+	        
+//Validado el campo tipos de ofertas
+	      	var tOfertaCursos = document.getElementById("tOfertaC").value;
+	      	var tOfertaC = tOfertaCursos.toString();
+	      	if (tOfertaC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| tOfertaC == null || tOfertaC == ""){
+	      		document.getElementById("tOfertaC").style.borderColor="red";
+	      		document.getElementById("tOfertaC").style.borderStyle="dotted";
+	      	} else {
+	      		document.getElementById("tOfertaC").style.borderColor="green";
+	      		document.getElementById("tOfertaC").style.borderStyle="dotted";
+	      		contador = contador + 1;
+	      	}
+
+	      	
+	      	
+	      	
+//Validado el campo dificultad
+	        var dificultadCursos = document.getElementById("nivelC").value;
+	        var dificultadC = dificultadCursos.toString();
+	        if (dificultadC == null || dificultadC == "") {
+	            document.getElementById("nivelC").style.borderColor="red";
+	            document.getElementById("nivelC").style.borderStyle="dotted";
+	        } else if (dificultadC=="Alto" || dificultadC=="Medio" || dificultadC=="Bajo"){
+	            document.getElementById("nivelC").style.borderColor="green";
+	            document.getElementById("nivelC").style.borderStyle="dotted";
+	            contador = contador + 1;    
+	        } else {
+	            document.getElementById("nivelC").style.borderColor="red";
+	            document.getElementById("nivelC").style.borderStyle="dotted";
+	        }
+
+*/	
+    
+/*//Validado el campo secciones
 	var seccionesCursos = document.getElementById("seccionesC").value;
 	var seccionesC = seccionesCursos.toString();
 	if (seccionesC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| seccionesC == null || seccionesC == ""){
 		document.getElementById("seccionesC").style.borderColor="red";
 		document.getElementById("seccionesC").style.borderStyle="dotted";
-//		mensaje = mensaje.concat("El campo secciones no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 	} else {
 		document.getElementById("seccionesC").style.borderColor="green";
 		document.getElementById("seccionesC").style.borderStyle="dotted";
 		contador = contador + 1;
 	}
-	  //Validado el campo lecciones
+	 
+	
+	
+	
+	
+//Validado el campo lecciones
 	var leccionesCursos = document.getElementById("leccionesC").value;
 	var leccionesC = leccionesCursos.toString();
 	if (leccionesC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| leccionesC == null || leccionesC == ""){
 		document.getElementById("leccionesC").style.borderColor="red";
 		document.getElementById("leccionesC").style.borderStyle="dotted";
-//		mensaje = mensaje.concat("El campo lecciones no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 	} else {
 		document.getElementById("leccionesC").style.borderColor="green";
 		document.getElementById("leccionesC").style.borderStyle="dotted";
 		contador = contador + 1;
 	}
-	  //Validado el campo material
+	  
+	
+	
+	
+//Validado el campo material
 	var materialCursos = document.getElementById("materialC").value;
 	var materialC = materialCursos.toString();
 	if (materialC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| materialC == null || materialC == ""){
 		document.getElementById("materialC").style.borderColor="red";
 		document.getElementById("materialC").style.borderStyle="dotted";
-//		mensaje = mensaje.concat("El campo material no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
 	} else {
 		document.getElementById("materialC").style.borderColor="green";
 		document.getElementById("materialC").style.borderStyle="dotted";
 		contador = contador + 1;
 	}
     
-	   //Validado el campo notificaciones
+	   
+	
+//Validado el campo notificaciones
     var notificacionesCurso = document.getElementById("notificacionesC").value;
     var notificacionesC = notificacionesCurso.toString();
     if (notificacionesC == null || notificacionesC == "") {
- //       mensaje = mensaje.concat("El campo notificaciones debe rellenarse" + '\n');
         document.getElementById("notificacionesC").style.borderColor="red";
         document.getElementById("notificacionesC").style.borderStyle="dotted";
     } else if (notificacionesC=="Si" || notificacionesC=="No" ){
@@ -156,16 +270,17 @@ function validarC(formulario){
         document.getElementById("notificacionesC").style.borderStyle="dotted";
         contador = contador + 1;    
     } else {
-//        mensaje = mensaje.concat("El campo notificaciones debe rellenarse con Si o No)" + '\n');
         document.getElementById("notificacionesC").style.borderColor="red";
         document.getElementById("notificacionesC").style.borderStyle="dotted";
     }
 
-    //Validado el campo calificaciones
+    
+    
+    
+//Validado el campo calificaciones
     var calificacionesCurso = document.getElementById("calificacionesC").value;
     var calificacionesC = calificacionesCurso.toString();
     if (calificacionesC == null || calificacionesC == "") {
- //       mensaje = mensaje.concat("El campo calificaciones debe rellenarse" + '\n');
         document.getElementById("calificacionesC").style.borderColor="red";
         document.getElementById("calificacionesC").style.borderStyle="dotted";
     } else if (calificacionesC=="Si" || calificacionesC=="No" ){
@@ -173,104 +288,20 @@ function validarC(formulario){
         document.getElementById("calificacionesC").style.borderStyle="dotted";
         contador = contador + 1;    
     } else {
- //       mensaje = mensaje.concat("El campo calificaciones debe rellenarse con Si o No)" + '\n');
         document.getElementById("calificacionesC").style.borderColor="red";
         document.getElementById("calificacionesC").style.borderStyle="dotted";
     }
 
-	  //Validado el campo categoria
-	var categoriaCursos = document.getElementById("categoriaC").value;
-	var categoriaC = categoriaCursos.toString();
-	if (categoriaC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| categoriaC == null || categoriaC == ""){
-		document.getElementById("categoriaC").style.borderColor="red";
-		document.getElementById("categoriaC").style.borderStyle="dotted";
-//		mensaje = mensaje.concat("El campo categoria no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
-	} else {
-		document.getElementById("categoriaC").style.borderColor="green";
-		document.getElementById("categoriaC").style.borderStyle="dotted";
-		contador = contador + 1;
-	}
+	  
+    
+    */
+    
+	   
 
-	   //Validado el campo destacado
-    var destacadoCursos = document.getElementById("destacadoC").value;
-    var destacadoC = destacadoCursos.toString();
-    if (destacadoC == null || destacadoC == "") {
- //       mensaje = mensaje.concat("El campo destacado debe rellenarse" + '\n');
-        document.getElementById("destacadoC").style.borderColor="red";
-        document.getElementById("destacadoC").style.borderStyle="dotted";
-    } else if (destacadoC=="Si" || destacadoC=="No" ){
-        document.getElementById("destacadoC").style.borderColor="green";
-        document.getElementById("destacadoC").style.borderStyle="dotted";
-        contador = contador + 1;    
-    } else {
-  //      mensaje = mensaje.concat("El campo destacado debe rellenarse con Si o No)" + '\n');
-        document.getElementById("destacadoC").style.borderColor="red";
-        document.getElementById("destacadoC").style.borderStyle="dotted";
-    }
-
-    //Validado el campo validado
-    var validadoCursos = document.getElementById("validadoC").value;
-    var validadoC = validadoCursos.toString();
-    if (validadoC == null || validadoC == "") {
- //       mensaje = mensaje.concat("El campo validado debe rellenarse" + '\n');
-        document.getElementById("validadoC").style.borderColor="red";
-        document.getElementById("validadoC").style.borderStyle="dotted";
-    } else if (validadoC=="Si" || validadoC=="No" ){
-        document.getElementById("validadoC").style.borderColor="green";
-        document.getElementById("validadoC").style.borderStyle="dotted";
-        contador = contador + 1;    
-    } else {
- //       mensaje = mensaje.concat("El campo validado debe rellenarse con Si o No)" + '\n');
-        document.getElementById("validadoC").style.borderColor="red";
-        document.getElementById("validadoC").style.borderStyle="dotted";
-    }
-
-  //Validado el campo precio
-    var precioCursos = document.getElementById("precioC").value;
-    var precioC = precioCursos.toString();
-    if (precioC == null || precioC == "") {
-  //      mensaje = mensaje.concat("El campo precio  debe rellenarse." + '\n');
-        document.getElementById("precioC").style.borderColor="red";
-        document.getElementById("precioC").style.borderStyle="dotted";
-    } else if (precioC.match(/[^\d.]/gi)){
-        document.getElementById("precioC").style.borderColor="red";
-        document.getElementById("precioC").style.borderStyle="dotted";
-  //      mensaje = mensaje.concat("El campo precio  no puede contener letras ni estar en blanco." + '\n');
-    } else {
-        document.getElementById("precioC").style.borderColor="green";
-        document.getElementById("precioC").style.borderStyle="dotted";
-        contador = contador + 1;
-    }
-
-	  //Validado el campo tipos de ofertas
-	var tOfertaCursos = document.getElementById("tOfertaC").value;
-	var tOfertaC = tOfertaCursos.toString();
-	if (tOfertaC.match(/[^\s\da-zA-Z-º/ñÑáéíóúüÁÉÍÓÚÇÜç]/g)|| tOfertaC == null || tOfertaC == ""){
-		document.getElementById("tOfertaC").style.borderColor="red";
-		document.getElementById("tOfertaC").style.borderStyle="dotted";
-//		mensaje = mensaje.concat("El campo de tipo de oferta no puede permanecer vacío, y puede estar formado tanto por letras como por números" + '\n');
-	} else {
-		document.getElementById("tOfertaC").style.borderColor="green";
-		document.getElementById("tOfertaC").style.borderStyle="dotted";
-		contador = contador + 1;
-	}
-
-	   //Validado el campo dificultad
-    var dificultadCursos = document.getElementById("dificultadC").value;
-    var dificultadC = dificultadCursos.toString();
-    if (dificultadC == null || dificultadC == "") {
-//        mensaje = mensaje.concat("El campo dificultad debe rellenarse" + '\n');
-        document.getElementById("dificultadC").style.borderColor="red";
-        document.getElementById("dificultadC").style.borderStyle="dotted";
-    } else if (dificultadC=="Alta" || dificultadC=="Media" || dificultadC=="Baja"){
-        document.getElementById("dificultadC").style.borderColor="green";
-        document.getElementById("dificultadC").style.borderStyle="dotted";
-        contador = contador + 1;    
-    } else {
-//        mensaje = mensaje.concat("El campo dificultad debe rellenarse con Alta, Media y Baja)" + '\n');
-        document.getElementById("dificultadC").style.borderColor="red";
-        document.getElementById("dificultadC").style.borderStyle="dotted";
-    }
+	   
+	
+	
+	
 
     /*Validado el campo fecha de inicio
 	var fechaIniCursos = document.getElementById("fechaIniC").value;
@@ -370,24 +401,30 @@ function validarC(formulario){
 		         mensaje = mensaje.concat("año menor" + '\n');
 		    }
 */
-		  //Validado el campo nombre del asociado
-		    var asociadoCursos = document.getElementById("asociadoC").value;
+
+    
+    
+    
+    
+    
+    
+    
+//Validado el campo nombre del asociado
+	        /*		    var asociadoCursos = document.getElementById("asociadoC").value;
 		    var asociadoC = asociadoCursos.toString();
 		    if (asociadoC == null || asociadoC == "") {
-//		        mensaje = mensaje.concat("El campo profesor de cursp debe rellenarse" + '\n');
 		        document.getElementById("asociadoC").style.borderColor="red";
 		        document.getElementById("asociadoC").style.borderStyle="dotted";
 		    } else if (asociadoC.match(/[^\s\da-zA-ZñáéíóúüçÁÉÍÓÚÇÜÑ&@-]/gi)){
 		        document.getElementById("asociadoC").style.borderColor="red";
 		        document.getElementById("asociadoC").style.borderStyle="dotted";
-//		        mensaje = mensaje.concat("El asociado del curso no puede contener símbolos, ni estar en blanco" + '\n');
 		    } else {
 		        document.getElementById("asociadoC").style.borderColor="green";
 		        document.getElementById("asociadoC").style.borderStyle="dotted";
 		        contador = contador + 1;
 		    }
 	
-		  /*Validado el campo nombre del cierre curso
+		  Validado el campo nombre del cierre curso
 		    var cierreCursoCursos = document.getElementById("cierreCursoC").value;
 			var cierreCursoC = cierreCursoCursos.toString();
 			    hoyC=new Date() 
@@ -436,7 +473,13 @@ function validarC(formulario){
 			         mensaje = mensaje.concat("año menor" + '\n');
 			    }*/
 
-			   //Validado el campo peticion eliminar
+			   
+		    
+		    
+		    
+/*		    
+		    
+//Validado el campo peticion eliminar
 		    var peticionECursos = document.getElementById("peticionEC").value;
 		    var peticionEC = peticionECursos.toString();
 		    if (peticionEC == null || peticionEC == "") {
@@ -453,10 +496,30 @@ function validarC(formulario){
 		        document.getElementById("peticionEC").style.borderStyle="dotted";
 		    }
 
-    if(contador = 20){
-        alert("Se ha creado el Curso con éxito");
+		    
+		    
+//Validado el campo id
+		  	var idCurso = document.getElementById("idC").value;
+		  	var idC = idCurso.toString();
+		  	var cpLong = idC.length;
+		  	if (idC.match(/[\D]/g)|| idC == null || idC == ""){
+		  		document.getElementById("idC").style.borderColor="red";
+		  		document.getElementById("idC").style.borderStyle="dotted";
+		  	} else if(cpLong != 4){
+		  		document.getElementById("idC").style.borderColor="red";
+		  		document.getElementById("idC").style.borderStyle="dotted";
+		  	} else {
+		  		document.getElementById("idC").style.borderColor="green";
+		  		document.getElementById("idC").style.borderStyle="dotted";
+		  		contador = contador + 1;
+		  	}
+		      
+	*/	  			    
+		    
+		alert("contador:    "+contador);    
+    if(contador == 6){
+        alert("Modificado correctamente");
     } else{
-//        alert(mensaje);
         return false;
     }
 }

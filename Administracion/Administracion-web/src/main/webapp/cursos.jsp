@@ -129,7 +129,7 @@
 																		value="${curso.titulo}">																	
 																<div>  &nbsp</div>
 																	<label for="usuarioC">Profesor</label> <span class="red">*</span><input
-																		type="text" class="form-control" id="usuarioC"
+																		type="text" class="form-control" id="usuarioC" readonly
 																		name="usuarioC" 
 																		value="${curso.usuario}">
 																</div>
@@ -148,7 +148,7 @@
 																</div>
 																<div class="form-group col-md-5">
 																	<label for="horasC">Numero de horas</label> <span class="red">*</span><input
-																		type="text" class="form-control" id="horasC"
+																		type="text" class="form-control" id="horasC" maxlength="4"
 																		name="horasC"
 																		value="${curso.horas}">
 																</div>
@@ -161,10 +161,16 @@
 																		class="form-control" id="temarioC" name="temarioC"
 																		value="${curso.temario}">
 																</div>
+																
 																<div class="form-group col-md-5">
-																	<label for="certificadoC">Certificado </label> <span class="red">*</span><input type="text"
-																		class="form-control" id="certificadoC" name="certificadoC"
-																		value="${curso.certificado}">
+																
+																<label id="txtcertif" for="certificadoC">Certificado</label><span class="red">*</span>
+																		<select id="certificadoC" name="certificadoC" class="form-control">
+																			<option value="${curso.certificado}">${curso.certificado}</option>
+																			<option value="Si">Si</option>
+																			<option value="No">No</option>											
+																		</select>
+																
 																</div>
 															</div>
 												
@@ -178,19 +184,30 @@
 																		value="${curso.categoria}">
 																</div>
 																<div class="form-group col-md-5">
-																	<label for="destacadoC">Destacado</label> <span class="red">*</span><input
-																		type="text" class="form-control" id="destacadoC"
-																		name="destacadoC" 
-																		value="${curso.destacado}">
+																
+																
+																	<label id="txtdestacado" for="destacadoC">Destacado</label><span class="red">*</span>
+																		<select id="destacadoC" name="destacadoC" class="form-control">
+																			<option value="${curso.destacado}">${curso.destacado}</option>
+																			<option value="Si">Si</option>
+																			<option value="No">No</option>											
+																		</select>
+																
 																</div>
 															</div>
 													
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	 <label for="validacionC">Validacion </label> <span class="red">*</span><input type="text"
-																		class="form-control" id="validacionC" name="validacionC"
-																		value="${curso.validacion}"> 
+																	 
+																	 <label id="txtValidacion" for="validacionC">Validacion</label><span class="red">*</span>
+																		<select id="validacionC" name="validacionC" class="form-control">
+																			<option value="${curso.validacion}">${curso.validacion}</option>
+																			<option value="A eliminar">A eleminar</option>
+																			<option value="Validado">Validado</option>	
+																			<option value="Pendiente">Pendiente</option>																														
+																		</select>
+
 																</div>
 																<div class="form-group col-md-5">
 																	<label for="precioC">Precio</label> <span class="red">*</span><input
@@ -203,27 +220,39 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	<label for="tipoOfertaC">Tipo de oferta </label> <span class="red">*</span><input type="text"
-																		class="form-control" id="tipoOfertaC" name="tipoOfertaC"
-																		value="${curso.tipoOferta}">
+																	
+																	<label id="txtoferta" for="tipoOfertaC">Tipo de oferta</label><span class="red">*</span>
+																		<select id="tipoOfertaC" name="tipoOfertaC" class="form-control">
+																			<option value="${curso.tipoOferta}">${curso.tipoOferta}</option>
+																			<option value="Si">Si</option>
+																			<option value="No">No</option>											
+																		</select>
+													
 																</div>
 																<div class="form-group col-md-5">
-																	<label for="nivelC">Dificultad</label> <span class="red">*</span><input
-																		type="text" class="form-control" id="nivelC"
-																		name="nivelC" 
-																		value="${curso.nivel}">
+																	
+																	
+																	
+																	 <label id="txtDif" for="nivelC">Nivel</label><span class="red">*</span>
+																		<select id="nivelC" name="nivelC" class="form-control">
+																			<option value="${curso.nivel}">${curso.nivel}</option>
+																			<option value="A eliminar">Medio</option>
+																			<option value="Validado">Bajo</option>	
+																			<option value="Pendiente">Alto</option>																														
+																		</select>
+															
 																</div>
 															</div>
 													<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																 <label for="fechaInicioC">Fecha Inicial </label> <span class="red">*</span><input type="text"
-																		class="form-control" id="fechaInicioC" name="fechaInicioC"
+																 <label for="fechaInicioC">Fecha Inicial </label> <input type="text"
+																		class="form-control" id="fechaInicioC" name="fechaInicioC" readonly
 																		value="${curso.fechaInicio}"> 
 																</div>
 																<div class="form-group col-md-5">
-																	<label for="fechaFInC">Fecha FIn</label> <span class="red">*</span><input
-																		type="text" class="form-control" id="fechaCaducidadC"
+																	<label for="fechaFInC">Fecha FIn</label> <input
+																		type="text" class="form-control" id="fechaCaducidadC" readonly
 																		name="fechaCaducidadC" 
 																		value="${curso.fechaCaducidad}">
 																</div>
@@ -231,26 +260,18 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																 <label for="descuentoCuponC">Fecha Inicial </label> <span class="red">*</span><input type="text"
-																		class="form-control" id="descuentoCuponC" name="descuentoCuponC"
-																		value="${curso.descuentoCupon}"> 
+																 <label for="contadorC">Contador </label><input type="text"
+																		class="form-control" id="contadorC" name="contadorC" readonly
+																		value="${curso.contador}"> 
 																</div>
 															<div class="form-group col-md-5">
-																	<label for="idC">ID</label> <span class="red">*</span><input
+																	<label for="idC">ID</label><input
 																		type="text" class="form-control" id="idC"
 																		name="idC" readonly
 																		value="${curso.id}">
 																</div>
 															</div>
-														<div class="row">
-																<div class="form-group col-md-1"></div>
-																<div class="form-group col-md-5" id="columnas62">
-																 <label for="contadorC">Fecha Inicial </label> <span class="red">*</span><input type="text"
-																		class="form-control" id="contadorC" name="contadorC"
-																		value="${curso.contador}"> 
-																</div>
-															
-															</div>
+													
 													
 														
 																<div class="modal-footer">

@@ -7,7 +7,7 @@
 
 <head>
 
-<script src="js/validarRegistrado.js"></script>
+<script src="js/modifReg.js"></script>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -63,7 +63,7 @@
 												</div>
 												<div class="modal-body">
 													<div class="">
-	<!---Form Registrado --------------------------><form  onSubmit="return validarR(this)" action="gestionRegistrado" method="post"
+	<!---Form Registrado --------------------------><form  onSubmit="return validarRegistrado(this)" action="gestionRegistrado" method="post"
 															class="form-horizontal" role="form">
 															<input type="text" name="id" value="${registrado.correo}"
 																style="display: none">
@@ -118,7 +118,7 @@
 																<div class="form-group col-md-5">
 																	<label for="fechaNcR">Fecha de nacimiento</label> <span class="red">*</span><input
 																		type="text" class="form-control" id="fechaNcR"
-																		name="fechaNcR" 
+																		name="fechaNcR" readonly
 																		value="${registrado.fechanac}">
 																</div>
 															</div>
@@ -126,10 +126,7 @@
 															<div class="row">
 																<div class="form-group col-md-1"></div>
 																<div class="form-group col-md-5" id="columnas62">
-																	 <label for="dniR">DNI </label> <input type="text"
-																		class="form-control" id="dniR" name="dniR"
-																		value="${registrado.dni}"> 
-																<div>  &nbsp</div>
+																	
 																	<label id="txtDif" for="rolR">Rol de usuario</label>
 																		<select id="rolR" name="rolR" class="form-control">
 																			<option value="${registrado.rol}">${registrado.rol}</option>
@@ -138,6 +135,11 @@
 																			<option value="profesor">Profesor</option>
 											
 																		</select>
+														<div>  &nbsp</div>
+			
+																		 <label for="dniR">DNI </label> <input type="text"
+																		class="form-control" id="dniR" name="dniR"
+																		value="${registrado.dni}"> 
 																</div>
 												
 																<div class="text-center">

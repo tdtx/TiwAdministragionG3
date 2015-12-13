@@ -177,7 +177,6 @@ public class GestionCurso extends HttpServlet {
         double precioCEdit= Double.parseDouble(request.getParameter("precioC"));
         String tOfertaCEdit= request.getParameter("tipoOfertaC");
         String fechaFinCEdit= request.getParameter("fechaCaducidadC"); 
-        int descuentoCuponCEdit= Integer.parseInt(request.getParameter("descuentoCuponC"));  
         String fechaInicioCEdit= request.getParameter("fechaInicioC"); 
         int contador = Integer.parseInt(request.getParameter("contadorC"));
         contador = 0;
@@ -204,7 +203,7 @@ public class GestionCurso extends HttpServlet {
 					c.setPrecio(precioCEdit);
 					c.setTipoOferta(tOfertaCEdit);
 					c.setFechaCaducidad(fechaFinCEdit);
-					c.setDescuentoCupon(descuentoCuponCEdit);
+					c.setDescuentoCupon(10);
 					c.setFechaInicio(fechaInicioCEdit);
 					c.setIdImagen(img);					
 					c.setContador(contador);

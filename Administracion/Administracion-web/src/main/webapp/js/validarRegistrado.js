@@ -1,4 +1,5 @@
-function validarR(formulario){
+function validarR(){
+	alert("inicio comprobacion");
     var contador = 0;
 //    var mensaje = "";
     //Validado el campo nick de registrado
@@ -68,7 +69,7 @@ function validarR(formulario){
 	   //Validado el campo correo de registrado
     var correoRegistrado = document.getElementById("correoR").value;
     var correoR = correoRegistrado.toString();
-    if (correoR.match(/[^\w\d.@-_ñÑ&#/]/g)|| correoR == null || correoR == ""){
+    if (!correoR.match(/\S+@\S+\.\S+/g)|| correoR == null || correoR == ""){
         document.getElementById("correoR").style.borderColor="red";
         document.getElementById("correoR").style.borderStyle="dotted";
 //        mensaje = mensaje.concat("El campo correo no puede permanecer vacío" + '\n');
@@ -77,59 +78,11 @@ function validarR(formulario){
         document.getElementById("correoR").style.borderStyle="dotted";
         contador = contador + 1;
     }
-    //Validado el campo fecha de registrado
-	var fechaNcRegistrado = document.getElementById("fechaNcR").value;
-	var fechaNcR = fechaNcRegistrado.toString();
-	    hoy=new Date() 
-	    var array_fecha = fechaNcR.split("/") 
-	    var ano 
-	    ano = parseInt(array_fecha[2]); 
-	    var mes 
-	    mes = parseInt(array_fecha[1]); 
-	    var dia 
-	    dia = parseInt(array_fecha[0]); 
-	    edad=hoy.getYear()- ano - 1; 
-	    if (array_fecha.length!=3) {
-	    	 document.getElementById("fechaNcR").style.borderColor="red";
-	         document.getElementById("fechaNcR").style.borderStyle="dotted";
-//	         mensaje = mensaje.concat("La fecha no tiene el formato dd/mm/aaaa" + '\n');
-	    }else if (isNaN(ano)) {
-	    	 document.getElementById("fechaNcR").style.borderColor="red";
-	         document.getElementById("fechaNcR").style.borderStyle="dotted";
-//	         mensaje = mensaje.concat("El año es incorrecto" + '\n');
-	    }else if (isNaN(mes)) {
-	    	 document.getElementById("fechaNcR").style.borderColor="red";
-	         document.getElementById("fechaNcR").style.borderStyle="dotted";
-//	         mensaje = mensaje.concat("El mes es incorrecto" + '\n');
-	    }else if (isNaN(dia)) {
-	    	 document.getElementById("fechaNcR").style.borderColor="red";
-	         document.getElementById("fechaNcR").style.borderStyle="dotted";
-//	         mensaje = mensaje.concat("El dia es incorrecto" + '\n');
-	    }else if (ano<=99) {
-	        ano +=1900 
-	    }else if (hoy.getMonth() + 1 - mes < 0) {
-	    	 document.getElementById("fechaNcR").style.borderColor="red";
-	         document.getElementById("fechaNcR").style.borderStyle="dotted";
-//	         mensaje = mensaje.concat("Eres menor de edad" + '\n');
-	    }else if (hoy.getMonth() + 1 - mes > 0) {
-	    	 document.getElementById("fechaNcR").style.borderColor="green";
-	         document.getElementById("fechaNcR").style.borderStyle="dotted";
-	         contador = contador + 1;
-	    }else if (hoy.getUTCDate() - dia >= 0) {
-		   	 document.getElementById("fechaNcR").style.borderColor="red";
-	         document.getElementById("fechaNcR").style.borderStyle="dotted";
-//	         mensaje = mensaje.concat("Eres menor de edad por dia" + '\n');
-	    }else{
-	    	document.getElementById("fechaNcR").style.borderColor="red";
-	         document.getElementById("fechaNcR").style.borderStyle="dotted";
-//	         mensaje = mensaje.concat("La fecha no tiene el formato dd/mm/aaaa" + '\n');
-	    }
 
-     
-    if(contador == 6){
-        alert("Usuario registrado con éxito");
+    
+    
+    if(contador == 5){
     } else{
- //       alert(mensaje);
         return false;
     }
 }
