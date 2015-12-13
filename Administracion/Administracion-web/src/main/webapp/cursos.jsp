@@ -15,10 +15,17 @@
 				<!-- Page Heading -->
 				<div class="row">
 					<div class="col-lg-12 ">
-						<h1 class="page-header">Cursos  <button class="btn btn-info btn-xs" data-toggle="modal" data-toggle="tooltip" data-placement="left" title="Editar Curso" data-target="#miPromocion">
+					<c:if test='${promo}'>
+						<h1 class="page-header">Cursos  <button class="btn btn-info btn-xs" data-toggle="modal" data-toggle="tooltip" data-placement="left" title="Promocion" data-target="#miPromocion">
 						Promocion
                                         </button></h1>
+						 </c:if>
+						 <c:if test='${!promo}'>
 						 
+					
+						<h1 class="page-header">Cursos <a  href="gestionCurso?accion=quitarPromoC"> 
+                                    <button class="btn btn-danger btn-xs"   title="Quitar promocion"  >	Quitar promocion </button></a></h1>
+						 </c:if>
 						<div class="modal fade" id="miPromocion" tabindex="-1"
 										role="dialog" aria-labelledby="myModalLabel"
 										aria-hidden="true">

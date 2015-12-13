@@ -74,6 +74,7 @@ public class AdminLogin extends HttpServlet {
 		if (user.equals("admin@admin.es") && pass.equals("admin")) {
 			pagina = indexJSP;
 			sesion.setAttribute("acceso", "ok");
+			sesion.setAttribute("promo", true);
 		} else {
 			mensaje = "Usuario o contraseña incorrectos";
 			request.setAttribute("mensaje", mensaje);

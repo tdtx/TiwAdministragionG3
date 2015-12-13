@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
 import AdministracionG3.model.daos.CursoDAO;
@@ -28,7 +29,7 @@ public class GestionCurso extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String indexJSP = "/index.jsp";
 	private static final String cursosJSP = "/cursos.jsp";   
-
+	int promocionC;
 	@PersistenceContext(unitName="Administracion-model")
 	EntityManager em;
 	@Resource
@@ -55,6 +56,39 @@ public class GestionCurso extends HttpServlet {
 		String accion = request.getParameter("accion");
 		String pagina = indexJSP;
 		List cursos = null;
+		HttpSession sesion = request.getSession();
+		if (accion.equals("quitarPromoC")) {
+			try {
+				cursos = cdao.buscarCursos();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			for (int i = 0; i < cursos.size(); i++) {
+				Curso c = (Curso) cursos.get(i);
+				double precio = c.getPrecio();
+				double promo=(double)(promocionC+13)/100;
+				promo=precio*promo;
+				double total=precio+promo;
+				total = Math.round(total);
+				c.setPrecio(total);
+				try {
+					cdao.actualizarCurso(c);
+				} catch (Exception e) {
+					
+					e.printStackTrace();
+				}
+			}
+			try {
+				cursos = cdao.buscarCursos();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    		request.setAttribute("cursos", cursos);
+			sesion.setAttribute("promo", true);
+	        pagina = cursosJSP;	
+		}
 		if (accion != null && accion.equals("cc")) {
 			try {
 				cursos = cdao.buscarCursos();
@@ -75,7 +109,7 @@ public class GestionCurso extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			request.setAttribute("cursos", cursos);
+			request.setAttribute("cursos", cursos);			
 			pagina = cursosJSP;
 		}
 		response.setContentType("text/html");
@@ -90,9 +124,10 @@ public class GestionCurso extends HttpServlet {
 		List cursos = null;
         String pagina = indexJSP;
 		String accion = request.getParameter("accion");
+		HttpSession sesion = request.getSession();
 		if (accion.equals("promocion")) {
 			//promocion no puede superar el 30%
-			int promocionC= Integer.parseInt(request.getParameter("PromocionC"));
+			promocionC = Integer.parseInt(request.getParameter("PromocionC"));
 			try {
 				cursos = cdao.buscarCursos();
 			} catch (Exception e) {
@@ -110,7 +145,7 @@ public class GestionCurso extends HttpServlet {
 				try {
 					cdao.actualizarCurso(c);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
+					
 					e.printStackTrace();
 				}
 			}
@@ -119,7 +154,8 @@ public class GestionCurso extends HttpServlet {
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}		
+			sesion.setAttribute("promo", false);		
     		request.setAttribute("cursos", cursos);
 	        pagina = cursosJSP;	
 			
@@ -140,8 +176,11 @@ public class GestionCurso extends HttpServlet {
         String fechaFinCEdit= request.getParameter("fechaCaducidadC"); 
         int descuentoCuponCEdit= Integer.parseInt(request.getParameter("descuentoCuponC"));  
         String fechaInicioCEdit= request.getParameter("fechaInicioC"); 
+        int contador = 0;
         String img = "imagenes/addressbook_add_128.png";
 
+        
+        
         try {
 		    	Curso c = cdao.buscarCurso(idCEdit);
 		    	if (c!= null) {
@@ -161,6 +200,7 @@ public class GestionCurso extends HttpServlet {
 					c.setDescuentoCupon(descuentoCuponCEdit);
 					c.setFechaInicio(fechaInicioCEdit);
 					c.setIdImagen(img);
+					c.setContador(contador);
 					cdao.actualizarCurso(c);
 				}
 		    	cursos = cdao.buscarCursos();
