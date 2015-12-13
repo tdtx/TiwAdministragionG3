@@ -242,7 +242,15 @@
 																		value="${curso.id}">
 																</div>
 															</div>
-														
+														<div class="row">
+																<div class="form-group col-md-1"></div>
+																<div class="form-group col-md-5" id="columnas62">
+																 <label for="contadorC">Fecha Inicial </label> <span class="red">*</span><input type="text"
+																		class="form-control" id="contadorC" name="contadorC"
+																		value="${curso.contador}"> 
+																</div>
+															
+															</div>
 													
 														
 																<div class="modal-footer">

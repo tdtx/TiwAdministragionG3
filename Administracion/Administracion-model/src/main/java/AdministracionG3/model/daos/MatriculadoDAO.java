@@ -1,7 +1,13 @@
 package AdministracionG3.model.daos;
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 //import javax.persistence.NoResultException;
 import javax.transaction.UserTransaction;
+
+
+import AdministracionG3.model.dominios.Curso;
 //import javax.persistence.Query;
 import  AdministracionG3.model.dominios.Matriculados;
 
@@ -35,7 +41,23 @@ public class MatriculadoDAO {
         em.remove(em.merge(matriculado));
         ut.commit();
     }
-    
+    public Matriculados buscarTitulo(String titulo) {
+		
+		Query query =  em.createQuery("SELECT u FROM Curso u where u.titulo=:titulo", Matriculados.class);
+		query.setParameter("titulo", titulo);
+		List resultList = query.getResultList();
+		if (resultList.isEmpty()) {
+			return null;
+		}else{
+		
+			return (Matriculados) query.getSingleResult();
+		}
+		
+	}
+    public List<Matriculados> buscarMatriculados(String titulo)throws Exception{
+    	return em.createQuery("SELECT u FROM Matriculados u where u.titulo+='"+titulo+"'",Matriculados.class).getResultList();
+	 }
+
     // public matriculados comprobarLogin(String email, String password)throws NoResultException{
     //    return em.createQuery("select u from Cliente u where u.email='"+email+"' and u.password='"+password+"'",matriculados.class).getSingleResult();
     // }

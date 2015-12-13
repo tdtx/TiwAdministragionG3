@@ -16,8 +16,8 @@ import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
 
 import AdministracionG3.model.daos.CursoDAO;
+import AdministracionG3.model.daos.MatriculadoDAO;
 import AdministracionG3.model.dominios.Curso;
-
 
 
 
@@ -35,6 +35,7 @@ public class GestionCurso extends HttpServlet {
 	@Resource
 	UserTransaction ut;
 	CursoDAO cdao;
+	MatriculadoDAO mdao;
 	  /**
      * @see HttpServlet#HttpServlet()
      */
@@ -47,6 +48,7 @@ public class GestionCurso extends HttpServlet {
     	// TODO Auto-generated method stub
     	super.init();
     	cdao = new CursoDAO(em, ut);
+    	mdao = new MatriculadoDAO(em, ut);
     }
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -122,6 +124,7 @@ public class GestionCurso extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List cursos = null;
+		List matriculados = null;
         String pagina = indexJSP;
 		String accion = request.getParameter("accion");
 		HttpSession sesion = request.getSession();
@@ -176,13 +179,17 @@ public class GestionCurso extends HttpServlet {
         String fechaFinCEdit= request.getParameter("fechaCaducidadC"); 
         int descuentoCuponCEdit= Integer.parseInt(request.getParameter("descuentoCuponC"));  
         String fechaInicioCEdit= request.getParameter("fechaInicioC"); 
-        int contador = 0;
+        int contador = Integer.parseInt(request.getParameter("contadorC"));
+        contador = 0;
+        
         String img = "imagenes/addressbook_add_128.png";
 
         
         
         try {
 		    	Curso c = cdao.buscarCurso(idCEdit);
+		    	matriculados = mdao.buscarMatriculados(tituloCEdit);
+		    	contador = matriculados.size();
 		    	if (c!= null) {
 					c.setTitulo(tituloCEdit);
 					c.setDescripcion(descripcionCEdit);
@@ -199,7 +206,7 @@ public class GestionCurso extends HttpServlet {
 					c.setFechaCaducidad(fechaFinCEdit);
 					c.setDescuentoCupon(descuentoCuponCEdit);
 					c.setFechaInicio(fechaInicioCEdit);
-					c.setIdImagen(img);
+					c.setIdImagen(img);					
 					c.setContador(contador);
 					cdao.actualizarCurso(c);
 				}
