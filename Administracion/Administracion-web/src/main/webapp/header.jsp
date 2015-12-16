@@ -56,7 +56,6 @@
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav side-nav">
 					<li><a href="gestionRegistrado?accion=ur"> Registrados</a></li>
-					<li><a href="gestionMatriculado?accion=um"> Matriculados</a></li>
 					<li><a href="gestionCurso?accion=cc"> Cursos</a></li>
 					<!-- aqui van las redireciones entre li a -->
 				</ul>
