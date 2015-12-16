@@ -192,6 +192,7 @@ public class GestionCurso extends HttpServlet {
 		    	for (int j = 0; j < matriculados.size(); j++) {
 					Matriculados m = (Matriculados) matriculados.get(j);
 					m.setCurso(tituloCEdit);
+					m.setPrecio_final(precioCEdit);
 					mdao.actualizarMatriculado(m);
 				}
 		    	
