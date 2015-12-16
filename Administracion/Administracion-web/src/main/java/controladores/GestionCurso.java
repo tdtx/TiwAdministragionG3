@@ -18,6 +18,7 @@ import javax.transaction.UserTransaction;
 import AdministracionG3.model.daos.CursoDAO;
 import AdministracionG3.model.daos.MatriculadoDAO;
 import AdministracionG3.model.dominios.Curso;
+import AdministracionG3.model.dominios.Matriculados;
 
 
 
@@ -188,6 +189,12 @@ public class GestionCurso extends HttpServlet {
         try {
 		    	Curso c = cdao.buscarCurso(idCEdit);
 		    	matriculados = mdao.buscarMatriculados(c.getTitulo());
+		    	for (int j = 0; j < matriculados.size(); j++) {
+					Matriculados m = (Matriculados) matriculados.get(j);
+					m.setCurso(tituloCEdit);
+					mdao.actualizarMatriculado(m);
+				}
+		    	
 		    	contador = matriculados.size();
 		    	if (c!= null) {
 					c.setTitulo(tituloCEdit);
@@ -206,10 +213,11 @@ public class GestionCurso extends HttpServlet {
 					c.setDescuentoCupon(10);
 					c.setFechaInicio(fechaInicioCEdit);
 					c.setIdImagen(img);					
-					c.setContador(contador);
-					cdao.actualizarCurso(c);
+					c.setContador(contador);			
+					cdao.actualizarCurso(c);			
 				}
 		    	cursos = cdao.buscarCursos();
+		    	matriculados = mdao.buscarMatriculados();
         		request.setAttribute("cursos", cursos);
 		        pagina = cursosJSP;
 		    } catch (Exception e) {

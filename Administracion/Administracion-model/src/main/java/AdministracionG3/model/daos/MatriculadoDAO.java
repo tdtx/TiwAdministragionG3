@@ -7,9 +7,9 @@ import javax.persistence.Query;
 import javax.transaction.UserTransaction;
 
 
-import AdministracionG3.model.dominios.Curso;
 //import javax.persistence.Query;
 import  AdministracionG3.model.dominios.Matriculados;
+
 
 //import java.util.List;
 
@@ -54,10 +54,26 @@ public class MatriculadoDAO {
 		}
 		
 	}
+    public Matriculados actualizarMatriculados(String curso, String usuario) {
+		
+		Query query =  em.createQuery("SELECT u FROM Matriculados u where u.curso=:curso and u.usuario=:usuario", Matriculados.class);
+		query.setParameter("curso", curso);
+		query.setParameter("clave", usuario);
+		List resultList = query.getResultList();
+		if (resultList.isEmpty()) {
+			return null;
+		}else{
+		
+			return (Matriculados) query.getSingleResult();
+		}
+		
+	}
     public List<Matriculados> buscarMatriculados(String titulo)throws Exception{
     	return em.createQuery("SELECT u FROM Matriculados u where u.curso='"+titulo+"'",Matriculados.class).getResultList();
 	 }
-
+	 public List<Matriculados> buscarMatriculados()throws Exception{
+	        return em.createQuery("SELECT u FROM Matriculados u",Matriculados.class).getResultList();
+		 }
 
     public Matriculados buscarMatriculado(Long id) {
         return em.find(Matriculados.class, id);
