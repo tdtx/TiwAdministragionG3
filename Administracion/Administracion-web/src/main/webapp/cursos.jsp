@@ -6,6 +6,7 @@
 <html>
 <head>
 <script src="js/validarCurso.js"></script>
+<script src="js/validacionPromocion.js"></script>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -40,7 +41,7 @@
 												</div>
 												<div class="modal-body">
 													<div class="">
-														<form  action="gestionCurso" method="post"
+														<form onSubmit="return validarPromo(this)" action="gestionCurso" method="post"
 															class="form-horizontal" role="form">
 															<input type="text" name="accion" value="promocion"
 																style="display: none">																	
