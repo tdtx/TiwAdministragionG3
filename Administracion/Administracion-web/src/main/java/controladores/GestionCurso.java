@@ -187,7 +187,7 @@ public class GestionCurso extends HttpServlet {
         
         try {
 		    	Curso c = cdao.buscarCurso(idCEdit);
-		    	matriculados = mdao.buscarMatriculados(tituloCEdit);
+		    	matriculados = mdao.buscarMatriculados(c.getTitulo());
 		    	contador = matriculados.size();
 		    	if (c!= null) {
 					c.setTitulo(tituloCEdit);

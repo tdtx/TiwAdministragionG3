@@ -164,7 +164,6 @@ function validarC(formulario){
 //Validado el campo precio
 	        var precioCursos = document.getElementById("precioC").value;
 	        var precioC = precioCursos.toString();
-	        alert("precio:  "+precioC);
 	        if (precioC == null || precioC == "") {
 	            document.getElementById("precioC").style.borderColor="red";
 	            document.getElementById("precioC").style.borderStyle="dotted";
@@ -516,7 +515,6 @@ function validarC(formulario){
 		      
 	*/	  			    
 		    
-		alert("contador:    "+contador);    
     if(contador == 6){
         alert("Modificado correctamente");
     } else{

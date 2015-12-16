@@ -55,13 +55,10 @@ public class MatriculadoDAO {
 		
 	}
     public List<Matriculados> buscarMatriculados(String titulo)throws Exception{
-    	return em.createQuery("SELECT u FROM Matriculados u where u.titulo+='"+titulo+"'",Matriculados.class).getResultList();
+    	return em.createQuery("SELECT u FROM Matriculados u where u.curso='"+titulo+"'",Matriculados.class).getResultList();
 	 }
 
-    // public matriculados comprobarLogin(String email, String password)throws NoResultException{
-    //    return em.createQuery("select u from Cliente u where u.email='"+email+"' and u.password='"+password+"'",matriculados.class).getSingleResult();
-    // }
-     
+
     public Matriculados buscarMatriculado(Long id) {
         return em.find(Matriculados.class, id);
     } 
