@@ -17,7 +17,9 @@ import javax.transaction.UserTransaction;
 
 import AdministracionG3.model.daos.CursoDAO;
 import AdministracionG3.model.daos.MatriculadoDAO;
+import AdministracionG3.model.daos.UsuarioDAO;
 import AdministracionG3.model.dominios.Curso;
+import AdministracionG3.model.dominios.Usuarios;
 import AdministracionG3.model.dominios.Matriculados;
 
 
@@ -37,6 +39,7 @@ public class GestionCurso extends HttpServlet {
 	UserTransaction ut;
 	CursoDAO cdao;
 	MatriculadoDAO mdao;
+	UsuarioDAO udao;
 	  /**
      * @see HttpServlet#HttpServlet()
      */
@@ -50,6 +53,7 @@ public class GestionCurso extends HttpServlet {
     	super.init();
     	cdao = new CursoDAO(em, ut);
     	mdao = new MatriculadoDAO(em, ut);
+    	udao = new UsuarioDAO(em, ut);
     }
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -59,6 +63,10 @@ public class GestionCurso extends HttpServlet {
 		String accion = request.getParameter("accion");
 		String pagina = indexJSP;
 		List cursos = null;
+		List matriculados = null;
+		int[] beneficioProfe = new int[100];
+		List bporfe = null;
+		int beneficioAdmin = 0;
 		HttpSession sesion = request.getSession();
 		if (accion.equals("quitarPromoC")) {
 			try {
@@ -101,6 +109,44 @@ public class GestionCurso extends HttpServlet {
 			}
 			request.setAttribute("cursos", cursos);
 			pagina = cursosJSP;
+		}
+		if (accion != null && accion.equals("ccc")) {
+			try {
+				matriculados = mdao.buscarMatriculados();
+				cursos = cdao.buscarCursos();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			for (int i = 0; i < matriculados.size(); i++) {
+				Matriculados m = (Matriculados) matriculados.get(i);
+				Curso c = cdao.buscarTitulo(m.getCurso());
+				Usuarios u = udao.buscarNick(c.getUsuario());
+				double total = m.getPrecio_final();
+				double profe = total*0.7;
+				System.err.println("---------------->"+Math.round(profe));
+				int p = Math.toIntExact(u.getId());
+				beneficioProfe[p]+=Math.round(profe);
+				System.err.println("-----//////----->"+p);
+				System.err.println("--------++++++++-------->"+beneficioProfe[p]);
+				beneficioAdmin += Math.round((total-profe));
+				c.setDescuentoCupon(beneficioProfe[p]);
+				try {
+					cdao.actualizarCurso(c);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			try {
+				cursos = cdao.buscarCursos();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			request.setAttribute("beneficioProfe", cursos);
+			request.setAttribute("beneficioAdmin", beneficioAdmin);
+			pagina = "/conciliacion.jsp";
 		}
 		if(accion!=null && accion.equals("eliminarC")){
 			String titulo = request.getParameter("titulo");

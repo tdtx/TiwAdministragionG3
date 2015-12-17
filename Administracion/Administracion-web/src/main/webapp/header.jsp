@@ -57,6 +57,7 @@
 				<ul class="nav navbar-nav side-nav">
 					<li><a href="gestionRegistrado?accion=ur"> Registrados</a></li>
 					<li><a href="gestionCurso?accion=cc"> Cursos</a></li>
+					<li><a href="gestionCurso?accion=ccc"> Conciliacion</a></li>
 					<!-- aqui van las redireciones entre li a -->
 				</ul>
 			</div>
