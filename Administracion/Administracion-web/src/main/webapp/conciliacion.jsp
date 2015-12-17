@@ -8,8 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<jsp:include page="header.jsp"></jsp:include>
 <c:set var="bf" scope="session" value="${beneficioAdmin}"></c:set>
+	<div id="wrapper">
+		<div id="page-wrapper">
+			<div class="container-fluid">
 			<div class="row">
 					<div class="col-lg-12 ">
 						<h1 class="page-header">Tabla de beneficio</h1>
@@ -47,7 +50,11 @@
 				type="text" class="form-control" id="bf"
 				name="bf" 
 				value="${bf}">
-
-
+				<br></br>
+			</div>
+					</div>
+				</div>
+				
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
